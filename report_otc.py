@@ -31,7 +31,7 @@ CANDLES_PER_DAY = 24 * 60
 CANDLE_BATCH_SIZE = 500
 
 # Date we are analyzing.
-REPORT_DATE = "2026-09-08"
+REPORT_DATE = "2026-09-10"
 
 # Nigeria / West Africa timezone = UTC+1.
 # This makes 00:00:00 and 23:59:00 correspond to
