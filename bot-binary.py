@@ -1030,13 +1030,13 @@ def build_signal(
 
     if color == "GREEN":
 
-        prediction = "REVERSAL DOWN"
-        direction = "LOWER / PUT"
+        prediction = "REVERSAL DOWN 🟥"
+        direction = "LOWER / PUT 🟥"
 
     else:
 
-        prediction = "REVERSAL UP"
-        direction = "HIGHER / CALL"
+        prediction = "REVERSAL UP 🟩"
+        direction = "HIGHER / CALL 🟩"
 
     # --------------------------------------------------------
     # Martingale timing schedule.
@@ -1055,10 +1055,10 @@ def build_signal(
         f"📊 <b>Pair:</b> {pair}\n"
         f"💱 <b>Market:</b> REAL FOREX\n"
         f"📜 <b>Contract:</b> BINARY\n"
-        f"⏱ <b>Timeframe:</b> 1 Minute\n"
+        f"⏳ <b>Timeframe:</b> 1 Minute\n"
         f"🔥 <b>Streak:</b> {streak} {color} candles\n"
-        f"🔄 <b>Prediction:</b> {prediction}\n"
-        f"🎯 <b>Direction:</b> {direction}\n"
+        f"🔮 <b>Prediction:</b> {prediction}\n"
+        f"📈 <b>Direction:</b> {direction}\n"
         "\n"
         f"🕐 <b>Entry:</b> {format_time(entry_time)}\n"
         "\n"
