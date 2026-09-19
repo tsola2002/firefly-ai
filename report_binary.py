@@ -34,7 +34,7 @@ MAX_BATCHES = 10
 # DATE TO ANALYZE
 # ------------------------------------------------------------
 
-REPORT_DATE = "2026-09-11"
+REPORT_DATE = "2026-09-18"
 
 # Nigeria / West Africa
 # UTC + 1

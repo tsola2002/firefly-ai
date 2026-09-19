@@ -7,6 +7,7 @@ import threading
 import urllib.parse
 import urllib.request
 import concurrent.futures
+
 from datetime import datetime, timedelta, timezone
 
 from dotenv import load_dotenv
@@ -27,22 +28,24 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 
-# ------------------------------------------------------------
+# ============================================================
 # TRADING CONFIGURATION
-# ------------------------------------------------------------
+# ============================================================
 
 TIMEFRAME = 60
 
 # Signal:
-# 4 consecutive RED candles  -> CALL
-# 4 consecutive GREEN candles -> PUT
-TARGET_STREAK = 4
-
-
-# ------------------------------------------------------------
-# MARTINGALE STAKES
-# ------------------------------------------------------------
 #
+# 7 consecutive RED candles   -> CALL
+# 7 consecutive GREEN candles -> PUT
+
+TARGET_STREAK = 7
+
+
+# ============================================================
+# MARTINGALE STAKES
+# ============================================================
+
 # Level 0 = Base
 # Level 1 = Martingale 1
 # Level 2 = Martingale 2
@@ -52,21 +55,20 @@ TARGET_STREAK = 4
 #
 # User-requested progression:
 #
-# $1.18
-# $2.56
-# $5.58
-# $12.16
+# $118
+# $256
+# $558
+# $1216
 #
-# Total maximum exposure on one sequence:
-# $21.48
+# Total maximum exposure:
 #
-# ------------------------------------------------------------
+# $2148
 
 STAKE_SEQUENCE = [
-    1.18,
-    2.56,
-    5.58,
-    12.16
+    118,
+    256,
+    558,
+    1216
 ]
 
 BASE_STAKE = STAKE_SEQUENCE[0]
@@ -74,9 +76,9 @@ BASE_STAKE = STAKE_SEQUENCE[0]
 MAX_MARTINGALE_LEVELS = 3
 
 
-# ------------------------------------------------------------
+# ============================================================
 # 8 FAVOURITE OTC PAIRS
-# ------------------------------------------------------------
+# ============================================================
 
 OTC_PAIRS = [
     "USDJPY-OTC",
@@ -130,26 +132,32 @@ logger = logging.getLogger("FIREFLY-TRADER")
 
 API = None
 
+
 # ============================================================
 # TIME / TIMEZONE
 # ============================================================
 
 # Nigeria uses West Africa Time (UTC+1).
+
 WAT = timezone(timedelta(hours=1))
 
 
 def get_wat_time():
-    """Return the current local time in Nigeria."""
+    """
+    Return the current local time in Nigeria.
+    """
+
     return datetime.now(WAT)
 
 
 def format_trade_time(dt=None):
     """
-    Format a trade timestamp for Telegram/log notifications.
+    Format a trade timestamp for Telegram notifications.
 
     Example:
         13:56:24 WAT
     """
+
     if dt is None:
         dt = get_wat_time()
 
@@ -161,6 +169,9 @@ def format_trade_time(dt=None):
 # ============================================================
 
 def send_telegram_message(message):
+    """
+    Send an HTML-formatted Telegram message.
+    """
 
     url = (
         f"https://api.telegram.org/bot"
@@ -181,7 +192,10 @@ def send_telegram_message(message):
             method="POST"
         )
 
-        with urllib.request.urlopen(req, timeout=10) as response:
+        with urllib.request.urlopen(
+            req,
+            timeout=10
+        ) as response:
 
             res = json.loads(
                 response.read().decode("utf-8")
@@ -360,6 +374,68 @@ def refresh_otc_mappings():
 
 
 # ============================================================
+# BALANCE HELPERS
+# ============================================================
+
+def get_current_balance():
+    """
+    Retrieve the current IQ Option account balance.
+
+    Returns:
+        float | None
+    """
+
+    try:
+
+        if API is not None:
+
+            return API.get_balance()
+
+    except Exception as e:
+
+        logger.error(
+            "Failed to retrieve current account balance: %s",
+            e
+        )
+
+    return None
+
+
+def format_balance(balance):
+    """
+    Format account balance for Telegram.
+
+    Example:
+        $12,345.67
+    """
+
+    if balance is None:
+
+        return "Unavailable"
+
+    return f"${balance:,.2f}"
+
+
+# ============================================================
+# DIRECTION ICON
+# ============================================================
+
+def get_direction_icon(direction):
+    """
+    Return the requested direction icon.
+
+    CALL -> 🟢
+    PUT  -> 🔴
+    """
+
+    if direction.lower() == "call":
+
+        return "🟢"
+
+    return "🔴"
+
+
+# ============================================================
 # ORDER EXECUTION
 # ============================================================
 
@@ -400,7 +476,6 @@ def place_order_with_timeout(
 
             return status, order_id
 
-
     with concurrent.futures.ThreadPoolExecutor(
         max_workers=1
     ) as executor:
@@ -440,7 +515,6 @@ def execute_trade_sequence(
     pair,
     direction
 ):
-
     """
     Executes:
 
@@ -450,72 +524,103 @@ def execute_trade_sequence(
         Level 3: $12.16
 
     A win at ANY level ends the sequence.
+
     A loss moves to the next level.
 
-    Trade timing:
-        - placed_time is captured immediately after IQ Option
-          confirms the order was successfully placed.
-        - closed_time is captured after the 1-minute option has
-          expired and before the result notification is sent.
+    Every Telegram notification contains:
 
-    All Telegram trade notifications therefore show the relevant
-    placement or closing time in WAT (UTC+1).
+        - Market
+        - Direction
+        - Stake
+        - Level where applicable
+        - Time
+        - Current account balance
+
+    Direction icons:
+
+        CALL -> 🟢
+        PUT  -> 🔴
     """
 
     global global_trade_active
 
+    direction = direction.lower()
+
+    direction_icon = get_direction_icon(
+        direction
+    )
+
     try:
 
         if not ensure_connection():
-            logger.error("Could not recover connection.")
+
+            logger.error(
+                "Could not recover connection."
+            )
+
             return
 
-        # --------------------------------------------------------
+        # ========================================================
         # MARTINGALE LOOP
-        # --------------------------------------------------------
+        # ========================================================
 
-        for level, stake in enumerate(STAKE_SEQUENCE):
+        for level, stake in enumerate(
+            STAKE_SEQUENCE
+        ):
 
-            # ----------------------------------------------------
+            # ====================================================
             # LEVEL DESCRIPTION
-            # ----------------------------------------------------
+            # ====================================================
 
             if level == 0:
+
                 level_name = "BASE"
+
             else:
-                level_name = f"MARTINGALE {level}"
 
-            # ----------------------------------------------------
+                level_name = (
+                    f"MARTINGALE {level}"
+                )
+
+            # ====================================================
             # BALANCE BEFORE TRADE
-            # ----------------------------------------------------
+            # ====================================================
 
-            balance_before = API.get_balance()
+            balance_before = get_current_balance()
 
             logger.info(
-                "%s | %s | Direction: %s | Stake: $%.2f | Balance: $%.2f",
+                "%s | %s | Direction: %s | "
+                "Stake: $%.2f | Balance: $%.2f",
+
                 pair,
+
                 level_name,
+
                 direction.upper(),
+
                 stake,
+
                 balance_before
+                if balance_before is not None
+                else 0
             )
 
-            # ----------------------------------------------------
+            # ====================================================
             # PLACE TRADE
-            # ----------------------------------------------------
-            # IMPORTANT:
-            # The placement notification is sent AFTER API.buy()
-            # confirms that the order was actually placed. This
-            # makes "Placed" represent the real order placement
-            # moment rather than merely the time before API.buy().
-            # ----------------------------------------------------
+            # ====================================================
 
-            check, order_id = place_order_with_timeout(
-                pair,
-                stake,
-                direction,
-                1
+            check, order_id = (
+                place_order_with_timeout(
+                    pair,
+                    stake,
+                    direction,
+                    1
+                )
             )
+
+            # ====================================================
+            # ORDER FAILED
+            # ====================================================
 
             if not check or not order_id:
 
@@ -525,76 +630,150 @@ def execute_trade_sequence(
                     pair
                 )
 
+                current_balance = (
+                    get_current_balance()
+                )
+
                 send_telegram_message(
                     f"❌ <b>{level_name} ORDER FAILED</b>\n"
                     f"Market: <b>{pair}</b>\n"
-                    f"Direction: <b>{direction.upper()}</b>\n"
-                    f"Stake: <b>${stake:.2f}</b>"
+                    f"Direction: "
+                    f"<b>{direction_icon} "
+                    f"{direction.upper()}</b>\n"
+                    f"Stake: <b>${stake:.2f}</b>\n"
+                    f"💰 Balance: "
+                    f"<b>{format_balance(current_balance)}</b>"
                 )
 
                 return
 
-            # Capture the actual local timestamp immediately after
-            # successful order placement.
+            # ====================================================
+            # ACTUAL ORDER PLACEMENT TIME
+            # ====================================================
+
             placed_at = get_wat_time()
-            placed_time = format_trade_time(placed_at)
+
+            placed_time = format_trade_time(
+                placed_at
+            )
 
             logger.info(
                 "%s order placed successfully. "
                 "Order ID: %s | Placed: %s",
+
                 level_name,
+
                 order_id,
+
                 placed_time
             )
 
-            # ----------------------------------------------------
-            # TELEGRAM - TRADE PLACED
-            # ----------------------------------------------------
+            # ====================================================
+            # BALANCE AFTER ORDER PLACEMENT
+            # ====================================================
+
+            balance_after_placement = (
+                get_current_balance()
+            )
+
+            # ====================================================
+            # BASE TRADE NOTIFICATION
+            # ====================================================
 
             if level == 0:
 
                 send_telegram_message(
+
                     f"📝 <b>BASE TRADE</b>\n"
+
                     f"Market: <b>{pair}</b>\n"
-                    f"Direction: <b>{direction.upper()}</b>\n"
-                    f"Stake: <b>${stake:.2f}</b>\n"
+
+                    f"Direction: "
+                    f"<b>{direction_icon} "
+                    f"{direction.upper()}</b>\n"
+
+                    f"Stake: "
+                    f"<b>${stake:.2f}</b>\n"
+
                     f"Level: <b>0 / 3</b>\n"
-                    f"🕐 Placed: <b>{placed_time}</b>"
+
+                    f"🕐 Placed: "
+                    f"<b>{placed_time}</b>\n"
+
+                    f"💰 Balance: "
+                    f"<b>"
+                    f"{format_balance(balance_after_placement)}"
+                    f"</b>"
                 )
+
+            # ====================================================
+            # MARTINGALE TRADE NOTIFICATION
+            # ====================================================
 
             else:
 
                 send_telegram_message(
+
                     f"⚠️ <b>MARTINGALE {level}</b>\n"
+
                     f"Market: <b>{pair}</b>\n"
-                    f"Direction: <b>{direction.upper()}</b>\n"
-                    f"Stake: <b>${stake:.2f}</b>\n"
-                    f"Level: <b>{level} / 3</b>\n"
-                    f"🕐 Placed: <b>{placed_time}</b>"
+
+                    f"Direction: "
+                    f"<b>{direction_icon} "
+                    f"{direction.upper()}</b>\n"
+
+                    f"Stake: "
+                    f"<b>${stake:.2f}</b>\n"
+
+                    f"Level: "
+                    f"<b>{level} / 3</b>\n"
+
+                    f"🕐 Placed: "
+                    f"<b>{placed_time}</b>\n"
+
+                    f"💰 Balance: "
+                    f"<b>"
+                    f"{format_balance(balance_after_placement)}"
+                    f"</b>"
                 )
 
-            # ----------------------------------------------------
+            # ====================================================
             # WAIT FOR 1-MINUTE OPTION TO CLOSE
-            # ----------------------------------------------------
+            # ====================================================
 
             time.sleep(61)
 
-            # Capture the closing timestamp AFTER the option's
-            # duration has elapsed. This is the timestamp used by
-            # all WIN/LOSS notifications.
+            # ====================================================
+            # CAPTURE CLOSING TIME
+            # ====================================================
+
             closed_at = get_wat_time()
-            closed_time = format_trade_time(closed_at)
 
-            # ----------------------------------------------------
-            # BALANCE AFTER TRADE
-            # ----------------------------------------------------
-
-            balance_after = API.get_balance()
-
-            balance_diff = (
-                balance_after
-                - balance_before
+            closed_time = format_trade_time(
+                closed_at
             )
+
+            # ====================================================
+            # BALANCE AFTER TRADE
+            # ====================================================
+
+            balance_after = (
+                get_current_balance()
+            )
+
+            if (
+                balance_before is not None
+                and balance_after is not None
+            ):
+
+                balance_diff = (
+                    balance_after
+                    - balance_before
+                )
+
+            else:
+
+                balance_diff = 0
 
             logger.info(
                 "%s settlement -> "
@@ -602,16 +781,25 @@ def execute_trade_sequence(
                 "Post: $%.2f | "
                 "Diff: $%.2f | "
                 "Closed: %s",
+
                 level_name,
-                balance_before,
-                balance_after,
+
+                balance_before
+                if balance_before is not None
+                else 0,
+
+                balance_after
+                if balance_after is not None
+                else 0,
+
                 balance_diff,
+
                 closed_time
             )
 
-            # ----------------------------------------------------
+            # ====================================================
             # WIN
-            # ----------------------------------------------------
+            # ====================================================
 
             if balance_diff > 0:
 
@@ -623,76 +811,164 @@ def execute_trade_sequence(
                 )
 
                 send_telegram_message(
+
                     f"✅ <b>{level_name} WIN</b>\n"
+
                     f"Market: <b>{pair}</b>\n"
-                    f"Direction: <b>{direction.upper()}</b>\n"
-                    f"Stake: <b>${stake:.2f}</b>\n"
-                    f"Profit: <b>+${balance_diff:.2f}</b>\n"
-                    f"Sequence: <b>RECOVERED</b>\n"
-                    f"🕐 Closed: <b>{closed_time}</b>"
+
+                    f"Direction: "
+                    f"<b>{direction_icon} "
+                    f"{direction.upper()}</b>\n"
+
+                    f"Stake: "
+                    f"<b>${stake:.2f}</b>\n"
+
+                    f"Profit: "
+                    f"<b>+${balance_diff:.2f}</b>\n"
+
+                    f"Sequence: "
+                    f"<b>RECOVERED</b>\n"
+
+                    f"🕐 Closed: "
+                    f"<b>{closed_time}</b>\n"
+
+                    f"💰 Balance: "
+                    f"<b>"
+                    f"{format_balance(balance_after)}"
+                    f"</b>"
                 )
 
                 return
 
-            # ----------------------------------------------------
+            # ====================================================
             # LOSS
-            # ----------------------------------------------------
+            # ====================================================
 
             logger.warning(
-                "%s LOSS on %s | Loss: $%.2f | Closed: %s",
+                "%s LOSS on %s | "
+                "Loss: $%.2f | Closed: %s",
+
                 level_name,
+
                 pair,
+
                 abs(balance_diff),
+
                 closed_time
             )
 
-            # Every losing trade now gets its own LOSS notification,
-            # including the BASE trade.
+            # ----------------------------------------------------
+            # LOSS NOTIFICATION
+            # ----------------------------------------------------
+
             send_telegram_message(
+
                 f"❌ <b>{level_name} LOSS</b>\n"
+
                 f"Market: <b>{pair}</b>\n"
-                f"Direction: <b>{direction.upper()}</b>\n"
-                f"Stake: <b>${stake:.2f}</b>\n"
-                f"Loss: <b>-${abs(balance_diff):.2f}</b>\n"
-                f"🕐 Closed: <b>{closed_time}</b>"
+
+                f"Direction: "
+                f"<b>{direction_icon} "
+                f"{direction.upper()}</b>\n"
+
+                f"Stake: "
+                f"<b>${stake:.2f}</b>\n"
+
+                f"Loss: "
+                f"<b>-${abs(balance_diff):.2f}</b>\n"
+
+                f"🕐 Closed: "
+                f"<b>{closed_time}</b>\n"
+
+                f"💰 Balance: "
+                f"<b>"
+                f"{format_balance(balance_after)}"
+                f"</b>"
             )
 
-            # ----------------------------------------------------
-            # IF THIS WAS THE FINAL LEVEL
-            # ----------------------------------------------------
+            # ====================================================
+            # FINAL LEVEL LOST
+            # ====================================================
 
             if level == len(STAKE_SEQUENCE) - 1:
 
+                # Retrieve balance again immediately before
+                # sending the final sequence result.
+
+                final_balance = (
+                    get_current_balance()
+                )
+
                 send_telegram_message(
+
                     f"❌ <b>SEQUENCE LOST</b>\n"
+
                     f"Market: <b>{pair}</b>\n"
+
+                    f"Direction: "
+                    f"<b>{direction_icon} "
+                    f"{direction.upper()}</b>\n"
+
                     f"All 4 levels lost.\n"
-                    f"Maximum sequence exposure: <b>$21.48</b>\n"
-                    f"🕐 Final Closed: <b>{closed_time}</b>"
+
+                    f"Maximum sequence exposure: "
+                    f"<b>$21.48</b>\n"
+
+                    f"🕐 Final Closed: "
+                    f"<b>{closed_time}</b>\n"
+
+                    f"💰 Balance: "
+                    f"<b>"
+                    f"{format_balance(final_balance)}"
+                    f"</b>"
                 )
 
                 logger.error(
-                    "Complete Martingale sequence lost on %s.",
+                    "Complete Martingale sequence "
+                    "lost on %s.",
                     pair
                 )
 
                 return
 
-            # ----------------------------------------------------
+            # ====================================================
             # PREPARE NEXT MARTINGALE
-            # ----------------------------------------------------
+            # ====================================================
 
             next_stake = STAKE_SEQUENCE[
                 level + 1
             ]
 
+            current_balance = (
+                get_current_balance()
+            )
+
             send_telegram_message(
+
                 f"🔄 <b>LOSS → NEXT MARTINGALE</b>\n"
+
                 f"Market: <b>{pair}</b>\n"
-                f"Previous Stake: ${stake:.2f}\n"
-                f"Next Stake: <b>${next_stake:.2f}</b>\n"
-                f"Next Level: <b>{level + 1} / 3</b>\n"
-                f"🕐 Previous Closed: <b>{closed_time}</b>"
+
+                f"Direction: "
+                f"<b>{direction_icon} "
+                f"{direction.upper()}</b>\n"
+
+                f"Previous Stake: "
+                f"<b>${stake:.2f}</b>\n"
+
+                f"Next Stake: "
+                f"<b>${next_stake:.2f}</b>\n"
+
+                f"Next Level: "
+                f"<b>{level + 1} / 3</b>\n"
+
+                f"🕐 Previous Closed: "
+                f"<b>{closed_time}</b>\n"
+
+                f"💰 Balance: "
+                f"<b>"
+                f"{format_balance(current_balance)}"
+                f"</b>"
             )
 
     except Exception as e:
@@ -703,10 +979,26 @@ def execute_trade_sequence(
             e
         )
 
+        current_balance = (
+            get_current_balance()
+        )
+
         send_telegram_message(
+
             f"❌ <b>TRADE SEQUENCE ERROR</b>\n"
-            f"Market: {pair}\n"
-            f"Error: {str(e)}"
+
+            f"Market: <b>{pair}</b>\n"
+
+            f"Direction: "
+            f"<b>{direction_icon} "
+            f"{direction.upper()}</b>\n"
+
+            f"Error: {str(e)}\n"
+
+            f"💰 Balance: "
+            f"<b>"
+            f"{format_balance(current_balance)}"
+            f"</b>"
         )
 
     finally:
@@ -731,17 +1023,15 @@ def get_current_live_streak(candles):
 
         return "DOJI", 0
 
-
     color_streak = None
 
     count = 0
 
-
-    # --------------------------------------------------------
+    # ========================================================
     # Exclude the currently-forming candle.
     #
     # candles[:-1] = completed candles
-    # --------------------------------------------------------
+    # ========================================================
 
     for candle in reversed(
         candles[:-1]
@@ -755,7 +1045,6 @@ def get_current_live_streak(candles):
             candle["close"]
         )
 
-
         if close_price > open_price:
 
             candle_color = "GREEN"
@@ -768,10 +1057,9 @@ def get_current_live_streak(candles):
 
             candle_color = "DOJI"
 
-
-        # ----------------------------------------------------
+        # ====================================================
         # DOJI BREAKS THE STREAK
-        # ----------------------------------------------------
+        # ====================================================
 
         if color_streak is None:
 
@@ -783,16 +1071,13 @@ def get_current_live_streak(candles):
 
             count = 1
 
-
         elif candle_color == color_streak:
 
             count += 1
 
-
         else:
 
             break
-
 
     return color_streak, count
 
@@ -805,68 +1090,82 @@ def run_bot():
 
     global global_trade_active
 
-
-    # --------------------------------------------------------
+    # ========================================================
     # CONNECT
-    # --------------------------------------------------------
+    # ========================================================
 
     if not connect_iq_option():
 
         return
 
-
-    # --------------------------------------------------------
+    # ========================================================
     # MAP OTC PAIRS
-    # --------------------------------------------------------
+    # ========================================================
 
     refresh_otc_mappings()
 
-
-    # --------------------------------------------------------
+    # ========================================================
     # START MESSAGE
-    # --------------------------------------------------------
+    # ========================================================
 
     total_exposure = sum(
         STAKE_SEQUENCE
     )
 
-
-    send_telegram_message(
-        f"🚀 <b>Firefly AI Bot Started</b>\n\n"
-        f"📊 Monitoring: <b>8 OTC pairs</b>\n"
-        f"🎯 Target Streak: <b>4 candles</b>\n"
-        f"💰 Base Stake: <b>$1.18</b>\n"
-        f"🔄 Martingale Levels: <b>3</b>\n"
-        f"📈 Max Trades / Sequence: <b>4</b>\n"
-        f"💵 Maximum Exposure: <b>${total_exposure:.2f}</b>\n\n"
-        f"🔴 4 RED → CALL\n"
-        f"🟢 4 GREEN → PUT"
+    current_balance = (
+        get_current_balance()
     )
 
+    send_telegram_message(
+
+        f"🚀 <b>Firefly AI Bot Started</b>\n\n"
+
+        f"📊 Monitoring: "
+        f"<b>8 OTC pairs</b>\n"
+
+        f"🎯 Target Streak: "
+        f"<b>7 candles</b>\n"
+
+        f"💰 Base Stake: "
+        f"<b>$118</b>\n"
+
+        f"🔄 Martingale Levels: "
+        f"<b>3</b>\n"
+
+        f"📈 Max Trades / Sequence: "
+        f"<b>4</b>\n"
+
+        f"💵 Maximum Exposure: "
+        f"<b>${total_exposure:.2f}</b>\n"
+
+        f"💰 Current Balance: "
+        f"<b>{format_balance(current_balance)}</b>\n\n"
+
+        f"🔴 7 RED → CALL\n"
+
+        f"🟢 7 GREEN → PUT"
+    )
 
     logger.info(
         "Bot running. Monitoring 8 OTC pairs..."
     )
 
-
-    # --------------------------------------------------------
+    # ========================================================
     # PREVENT PROCESSING SAME CANDLE REPEATEDLY
-    # --------------------------------------------------------
+    # ========================================================
 
     last_checked_timestamps = {
         pair: 0
         for pair in OTC_PAIRS
     }
 
-
     try:
 
         while True:
 
-
-            # ------------------------------------------------
+            # ====================================================
             # CONNECTION
-            # ------------------------------------------------
+            # ====================================================
 
             if not ensure_connection():
 
@@ -874,10 +1173,9 @@ def run_bot():
 
                 continue
 
-
-            # ------------------------------------------------
+            # ====================================================
             # DON'T SCAN WHILE A TRADE SEQUENCE IS RUNNING
-            # ------------------------------------------------
+            # ====================================================
 
             with global_trade_lock:
 
@@ -887,19 +1185,17 @@ def run_bot():
 
                     continue
 
-
-            # ------------------------------------------------
+            # ====================================================
             # SCAN ALL 8 PAIRS
-            # ------------------------------------------------
+            # ====================================================
 
             for pair in OTC_PAIRS:
 
                 try:
 
-
-                    # ----------------------------------------
-                    # Check global lock again
-                    # ----------------------------------------
+                    # ============================================
+                    # CHECK GLOBAL LOCK AGAIN
+                    # ============================================
 
                     with global_trade_lock:
 
@@ -907,10 +1203,9 @@ def run_bot():
 
                             break
 
-
-                    # ----------------------------------------
+                    # ============================================
                     # GET 20 CANDLES
-                    # ----------------------------------------
+                    # ============================================
 
                     candles = API.get_candles(
                         pair,
@@ -919,15 +1214,13 @@ def run_bot():
                         time.time()
                     )
 
-
                     if not candles:
 
                         continue
 
-
-                    # ----------------------------------------
+                    # ============================================
                     # LATEST CANDLE
-                    # ----------------------------------------
+                    # ============================================
 
                     latest_candle = candles[-1]
 
@@ -935,10 +1228,9 @@ def run_bot():
                         latest_candle["from"]
                     )
 
-
-                    # ----------------------------------------
+                    # ============================================
                     # ONLY PROCESS NEW CANDLES
-                    # ----------------------------------------
+                    # ============================================
 
                     if (
                         candle_from
@@ -949,38 +1241,40 @@ def run_bot():
                             pair
                         ] = candle_from
 
-
-                        # ------------------------------------
+                        # ========================================
                         # ANALYZE STREAK
-                        # ------------------------------------
+                        # ========================================
 
-                        current_color, streak_count = (
-                            get_current_live_streak(
-                                candles
-                            )
+                        (
+                            current_color,
+                            streak_count
+                        ) = get_current_live_streak(
+                            candles
                         )
-
 
                         logger.info(
                             "Pair: %s | "
                             "Streak: %d %s",
 
                             pair,
+
                             streak_count,
+
                             current_color
                         )
 
-
-                        # ------------------------------------
+                        # ========================================
                         # TARGET STREAK REACHED
-                        # ------------------------------------
+                        # ========================================
 
-                        if streak_count >= TARGET_STREAK:
+                        if (
+                            streak_count
+                            >= TARGET_STREAK
+                        ):
 
-
-                            # --------------------------------
+                            # ====================================
                             # LOCK TRADING
-                            # --------------------------------
+                            # ====================================
 
                             with global_trade_lock:
 
@@ -990,10 +1284,9 @@ def run_bot():
 
                                 global_trade_active = True
 
-
-                            # --------------------------------
-                            # RED → CALL
-                            # --------------------------------
+                            # ====================================
+                            # RED -> CALL
+                            # ====================================
 
                             if current_color == "RED":
 
@@ -1003,15 +1296,24 @@ def run_bot():
                                     pair
                                 )
 
-
                                 send_telegram_message(
-                                    f"🔥 <b>4 RED STREAK</b>\n"
-                                    f"Market: <b>{pair}</b>\n"
-                                    f"Streak: <b>{streak_count} RED</b>\n"
-                                    f"Signal: <b>CALL</b>\n"
-                                    f"Base Stake: <b>$1.18</b>"
-                                )
 
+                                    f"🔥 <b>4 RED STREAK</b>\n"
+
+                                    f"Market: "
+                                    f"<b>{pair}</b>\n"
+
+                                    f"Streak: "
+                                    f"<b>"
+                                    f"{streak_count} RED"
+                                    f"</b>\n"
+
+                                    f"Signal: "
+                                    f"<b>🟢 CALL</b>\n"
+
+                                    f"Base Stake: "
+                                    f"<b>$1.18</b>"
+                                )
 
                                 threading.Thread(
                                     target=execute_trade_sequence,
@@ -1022,13 +1324,11 @@ def run_bot():
                                     daemon=True
                                 ).start()
 
-
                                 break
 
-
-                            # --------------------------------
-                            # GREEN → PUT
-                            # --------------------------------
+                            # ====================================
+                            # GREEN -> PUT
+                            # ====================================
 
                             elif current_color == "GREEN":
 
@@ -1038,15 +1338,24 @@ def run_bot():
                                     pair
                                 )
 
-
                                 send_telegram_message(
-                                    f"🔥 <b>4 GREEN STREAK</b>\n"
-                                    f"Market: <b>{pair}</b>\n"
-                                    f"Streak: <b>{streak_count} GREEN</b>\n"
-                                    f"Signal: <b>PUT</b>\n"
-                                    f"Base Stake: <b>$1.18</b>"
-                                )
 
+                                    f"🔥 <b>4 GREEN STREAK</b>\n"
+
+                                    f"Market: "
+                                    f"<b>{pair}</b>\n"
+
+                                    f"Streak: "
+                                    f"<b>"
+                                    f"{streak_count} GREEN"
+                                    f"</b>\n"
+
+                                    f"Signal: "
+                                    f"<b>🔴 PUT</b>\n"
+
+                                    f"Base Stake: "
+                                    f"<b>$1.18</b>"
+                                )
 
                                 threading.Thread(
                                     target=execute_trade_sequence,
@@ -1057,25 +1366,22 @@ def run_bot():
                                     daemon=True
                                 ).start()
 
-
                                 break
-
 
                 except Exception as ex:
 
                     logger.error(
-                        "Error checking candles for %s: %s",
+                        "Error checking candles "
+                        "for %s: %s",
                         pair,
                         ex
                     )
 
-
-            # ------------------------------------------------
+            # ====================================================
             # POLLING INTERVAL
-            # ------------------------------------------------
+            # ====================================================
 
             time.sleep(3)
-
 
     except KeyboardInterrupt:
 
@@ -1084,6 +1390,7 @@ def run_bot():
         )
 
         send_telegram_message(
+
             "⚠️ <b>Firefly AI Bot Stopped</b> "
             "by user command."
         )
@@ -1096,4 +1403,3 @@ def run_bot():
 if __name__ == "__main__":
 
     run_bot()
-
