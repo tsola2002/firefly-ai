@@ -30,8 +30,15 @@ CANDLES_PER_DAY = 24 * 60
 # multiple batches.
 CANDLE_BATCH_SIZE = 500
 
+# Streak lengths for the frequency analysis.
+# A streak is counted once at every threshold it reaches.
+# Example: one run of 10 RED candles contributes:
+# 1 occurrence to 7+, 8+, 9+ and 10+.
+STREAK_LENGTHS = list(range(7, 16))
+
 # Date we are analyzing.
-REPORT_DATE = "2026-09-17"
+# DATE FORMAT: YYYY-MM-DD
+REPORT_DATE = "2026-09-20"
 
 # Nigeria / West Africa timezone = UTC+1.
 # This makes 00:00:00 and 23:59:00 correspond to
@@ -376,9 +383,9 @@ def get_report_range():
 
     Report period:
 
-        06 September 2026 00:00:00
+        REPORT_DATE 00:00:00
         through
-        06 September 2026 23:59:00
+        REPORT_DATE 23:59:00
 
     The end boundary is the start of the next day.
     """
@@ -703,6 +710,90 @@ def calculate_max_streaks(candles):
 
 
 # ============================================================
+# STREAK FREQUENCY ANALYSIS
+# ============================================================
+
+def calculate_streak_frequency(candles):
+    """
+    Count how many distinct GREEN and RED streak runs reached
+    each threshold from 7 through 15 candles.
+
+    Important counting rule:
+        A single uninterrupted run is counted ONCE for every
+        threshold it reaches, rather than counting overlapping
+        windows inside the same run.
+
+    Example:
+        A run of 10 RED candles contributes:
+            7+  -> 1
+            8+  -> 1
+            9+  -> 1
+            10+ -> 1
+            11+ -> 0
+
+        This makes the table represent the number of streak EVENTS
+        that reached each length, which is more useful for evaluating
+        a 7-candle reversal strategy.
+
+    A DOJI ends the current streak and does not count toward either
+    color.
+
+    Returns:
+        {
+            "green": {7: count, 8: count, ..., 15: count},
+            "red":   {7: count, 8: count, ..., 15: count}
+        }
+    """
+
+    green_frequency = {length: 0 for length in STREAK_LENGTHS}
+    red_frequency = {length: 0 for length in STREAK_LENGTHS}
+
+    current_color = None
+    current_length = 0
+
+    def record_completed_streak(color, length):
+        if color == "GREEN":
+            frequency = green_frequency
+        elif color == "RED":
+            frequency = red_frequency
+        else:
+            return
+
+        for threshold in STREAK_LENGTHS:
+            if length >= threshold:
+                frequency[threshold] += 1
+
+    for candle in candles:
+        color = candle_color(candle)
+
+        if color == current_color:
+            current_length += 1
+            continue
+
+        # The previous run has ended because the color changed or
+        # a DOJI appeared. Record it before starting the new run.
+        if current_color in ("GREEN", "RED"):
+            record_completed_streak(current_color, current_length)
+
+        if color in ("GREEN", "RED"):
+            current_color = color
+            current_length = 1
+        else:
+            current_color = None
+            current_length = 0
+
+    # Record the final run because there may be no following candle
+    # to trigger the color-change logic.
+    if current_color in ("GREEN", "RED"):
+        record_completed_streak(current_color, current_length)
+
+    return {
+        "green": green_frequency,
+        "red": red_frequency,
+    }
+
+
+# ============================================================
 # FIND STREAK DETAILS
 # ============================================================
 
@@ -973,6 +1064,68 @@ def display_detailed_streaks(results):
 
 
 # ============================================================
+# DISPLAY STREAK FREQUENCY TABLE
+# ============================================================
+
+def display_streak_frequency(results):
+    """
+    Display how many streak EVENTS reached each consecutive-candle
+    threshold from 7 through 15 for every OTC pair.
+
+    GREEN and RED are displayed separately so the report can show
+    whether long bullish or bearish runs were more frequent.
+    """
+
+    print("")
+    print("=" * 150)
+    print("STREAK FREQUENCY TABLE - 7 TO 15 CONSECUTIVE CANDLES")
+    print("=" * 150)
+    print(
+        "Each number represents the number of distinct streak runs "
+        "that reached AT LEAST that many candles."
+    )
+    print(
+        "Example: one 10-candle RED run counts once under 7+, 8+, 9+ "
+        "and 10+, but not under 11+ through 15+."
+    )
+    print("")
+
+    header = f"{'PAIR':<16}"
+    for length in STREAK_LENGTHS:
+        header += f"{length:>6}"
+
+    print("GREEN STREAKS (AT LEAST N CONSECUTIVE GREEN CANDLES)")
+    print("-" * len(header))
+    print(header)
+    print("-" * len(header))
+
+    for result in results:
+        frequency = result.get("green_frequency", {})
+        row = f"{result['pair']:<16}"
+        for length in STREAK_LENGTHS:
+            row += f"{frequency.get(length, 0):>6}"
+        print(row)
+
+    print("-" * len(header))
+    print("")
+
+    print("RED STREAKS (AT LEAST N CONSECUTIVE RED CANDLES)")
+    print("-" * len(header))
+    print(header)
+    print("-" * len(header))
+
+    for result in results:
+        frequency = result.get("red_frequency", {})
+        row = f"{result['pair']:<16}"
+        for length in STREAK_LENGTHS:
+            row += f"{frequency.get(length, 0):>6}"
+        print(row)
+
+    print("-" * len(header))
+    print("")
+
+
+# ============================================================
 # GENERATE REPORT
 # ============================================================
 
@@ -1054,6 +1207,12 @@ def generate_report():
                     "green_end": None,
                     "red_start": None,
                     "red_end": None,
+                    "green_frequency": {
+                        length: 0 for length in STREAK_LENGTHS
+                    },
+                    "red_frequency": {
+                        length: 0 for length in STREAK_LENGTHS
+                    },
                 }
             )
 
@@ -1070,6 +1229,8 @@ def generate_report():
             candles
         )
 
+        streak_frequency = calculate_streak_frequency(candles)
+
         results.append(
             {
                 "pair": pair,
@@ -1080,6 +1241,8 @@ def generate_report():
                 "green_end": green_end,
                 "red_start": red_start,
                 "red_end": red_end,
+                "green_frequency": streak_frequency["green"],
+                "red_frequency": streak_frequency["red"],
             }
         )
 
@@ -1101,6 +1264,10 @@ def generate_report():
     )
 
     display_detailed_streaks(
+        results
+    )
+
+    display_streak_frequency(
         results
     )
 

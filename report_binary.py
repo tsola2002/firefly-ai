@@ -34,6 +34,7 @@ MAX_BATCHES = 10
 # DATE TO ANALYZE
 # ------------------------------------------------------------
 
+# DATE FORMAT: YYYY-MM-DD
 REPORT_DATE = "2026-09-18"
 
 # Nigeria / West Africa
@@ -895,6 +896,149 @@ def find_highest_streak_details(candles):
 
 
 # ============================================================
+# STREAK FREQUENCY ANALYSIS
+# ============================================================
+
+STREAK_LENGTHS = list(range(7, 16))
+
+
+def calculate_streak_frequencies(candles):
+    """
+    Count how many independent GREEN and RED streaks reached at
+    least 7, 8, 9, ... 15 consecutive candles.
+
+    A single uninterrupted streak is counted once for every
+    threshold it reaches.
+
+    Example:
+        A 10-RED-candle streak contributes:
+            RED 7+  = 1
+            RED 8+  = 1
+            RED 9+  = 1
+            RED 10+ = 1
+
+        It does NOT count as multiple separate 7-candle events.
+
+    DOJI candles terminate the current streak.
+    """
+
+    green_frequency = {length: 0 for length in STREAK_LENGTHS}
+    red_frequency = {length: 0 for length in STREAK_LENGTHS}
+
+    current_color = None
+    current_length = 0
+
+    def record_streak(color, length):
+        if color == "GREEN":
+            frequency = green_frequency
+        elif color == "RED":
+            frequency = red_frequency
+        else:
+            return
+
+        for threshold in STREAK_LENGTHS:
+            if length >= threshold:
+                frequency[threshold] += 1
+
+    for candle in candles:
+        color = candle_color(candle)
+
+        if color == current_color:
+            current_length += 1
+        else:
+            # Finalize the previous uninterrupted streak.
+            record_streak(current_color, current_length)
+
+            current_color = color
+            current_length = 1
+
+    # Finalize the final streak in the dataset.
+    record_streak(current_color, current_length)
+
+    return {
+        "green_frequency": green_frequency,
+        "red_frequency": red_frequency,
+    }
+
+
+# ============================================================
+# DISPLAY STREAK FREQUENCY TABLES
+# ============================================================
+
+def display_streak_frequency_table(results, color):
+    """
+    Display the frequency of GREEN or RED streaks reaching
+    at least 7 through 15 consecutive candles.
+    """
+
+    color = color.upper()
+
+    if color not in ("GREEN", "RED"):
+        raise ValueError("color must be GREEN or RED")
+
+    frequency_key = (
+        "green_frequency"
+        if color == "GREEN"
+        else "red_frequency"
+    )
+
+    print("")
+    print("=" * 125)
+    print(
+        f"{color} STREAK FREQUENCY TABLE "
+        f"(AT LEAST N CONSECUTIVE CANDLES)"
+    )
+    print("=" * 125)
+
+    print(
+        f"{'PAIR':<15}"
+        f"{'7+':>8}"
+        f"{'8+':>8}"
+        f"{'9+':>8}"
+        f"{'10+':>8}"
+        f"{'11+':>8}"
+        f"{'12+':>8}"
+        f"{'13+':>8}"
+        f"{'14+':>8}"
+        f"{'15+':>8}"
+    )
+
+    print("-" * 87)
+
+    for result in results:
+        frequency = result.get(
+            frequency_key,
+            {},
+        )
+
+        print(
+            f"{result['pair']:<15}"
+            f"{frequency.get(7, 0):>8}"
+            f"{frequency.get(8, 0):>8}"
+            f"{frequency.get(9, 0):>8}"
+            f"{frequency.get(10, 0):>8}"
+            f"{frequency.get(11, 0):>8}"
+            f"{frequency.get(12, 0):>8}"
+            f"{frequency.get(13, 0):>8}"
+            f"{frequency.get(14, 0):>8}"
+            f"{frequency.get(15, 0):>8}"
+        )
+
+    print("-" * 87)
+
+    print("")
+    print(
+        f"Each {color} streak is counted once for every "
+        "threshold it reaches."
+    )
+    print(
+        "Example: one 10-candle streak contributes 1 event "
+        "to 7+, 8+, 9+ and 10+."
+    )
+    print("")
+
+
+# ============================================================
 # FORMAT LOCAL TIME
 # ============================================================
 
@@ -1221,6 +1365,12 @@ def generate_report():
                     "highest_red": 0,
                     "red_start": None,
                     "red_end": None,
+                    "green_frequency": {
+                        length: 0 for length in STREAK_LENGTHS
+                    },
+                    "red_frequency": {
+                        length: 0 for length in STREAK_LENGTHS
+                    },
                 }
             )
 
@@ -1231,6 +1381,14 @@ def generate_report():
         # ----------------------------------------------------
 
         details = find_highest_streak_details(
+            candles
+        )
+
+        # ----------------------------------------------------
+        # Calculate 7-15 candle streak frequencies
+        # ----------------------------------------------------
+
+        frequencies = calculate_streak_frequencies(
             candles
         )
 
@@ -1256,6 +1414,12 @@ def generate_report():
 
             "red_end":
                 details["red_end"],
+
+            "green_frequency":
+                frequencies["green_frequency"],
+
+            "red_frequency":
+                frequencies["red_frequency"],
         }
 
         results.append(result)
@@ -1287,6 +1451,20 @@ def generate_report():
     display_report(results)
 
     display_detailed_streaks(results)
+
+    # --------------------------------------------------------
+    # 7-15 CANDLE STREAK FREQUENCY TABLES
+    # --------------------------------------------------------
+
+    display_streak_frequency_table(
+        results,
+        "GREEN"
+    )
+
+    display_streak_frequency_table(
+        results,
+        "RED"
+    )
 
     logger.info("")
     logger.info(

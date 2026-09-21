@@ -732,13 +732,13 @@ def build_signal(
 
     if color == "GREEN":
 
-        prediction = "REVERSAL DOWN"
-        direction = "SELL / LOWER"
+        prediction = "REVERSAL DOWN 🟥"
+        direction = "SELL / LOWER 🟥"
 
     else:
 
-        prediction = "REVERSAL UP"
-        direction = "BUY / HIGHER"
+        prediction = "REVERSAL UP 🟩"
+        direction = "BUY / HIGHER 🟩"
 
     level_1 = entry_time + 60
     level_2 = entry_time + 120
