@@ -2,6 +2,8 @@ import os
 import sys
 import time
 import logging
+import sqlite3
+from pathlib import Path
 from datetime import datetime, timezone, timedelta
 
 from dotenv import load_dotenv
@@ -34,12 +36,20 @@ MAX_BATCHES = 10
 # DATE TO ANALYZE
 # ------------------------------------------------------------
 
-# DATE FORMAT: YYYY-MM-DD
-REPORT_DATE = "2026-09-18"
+REPORT_DATE = "2026-09-21"
 
 # Nigeria / West Africa
 # UTC + 1
 LOCAL_TIMEZONE = timezone(timedelta(hours=1))
+
+# ------------------------------------------------------------
+# SQLITE DATABASE
+# ------------------------------------------------------------
+# SQLite is a serverless database stored in a single local file.
+# ------------------------------------------------------------
+
+DATABASE_FILE = Path(__file__).resolve().parent / "firefly_binary_reports.db"
+DATABASE_SCHEMA_VERSION = 1
 
 
 # ============================================================
@@ -1057,6 +1067,440 @@ def format_report_time(timestamp):
     )
 
 
+
+# ============================================================
+# SQLITE DATABASE
+# ============================================================
+
+def get_database_connection():
+    """Open the local SQLite database with useful safety settings."""
+    connection = sqlite3.connect(str(DATABASE_FILE))
+    connection.execute("PRAGMA foreign_keys = ON")
+    connection.execute("PRAGMA journal_mode = WAL")
+    connection.execute("PRAGMA busy_timeout = 5000")
+    return connection
+
+
+def initialize_database():
+    """
+    Create the reporting schema if it does not already exist.
+
+    Tables:
+        report_runs          One row per generated report.
+        pair_reports         One row per pair in a report.
+        streak_frequencies  GREEN/RED 7+ through 15+ statistics.
+        candle_data         The raw 1-minute candles used by the report.
+    """
+    with get_database_connection() as connection:
+        connection.executescript(
+            """
+            CREATE TABLE IF NOT EXISTS report_runs (
+                id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+                report_date         TEXT NOT NULL,
+                market              TEXT NOT NULL,
+                contract_type      TEXT NOT NULL,
+                timeframe_seconds  INTEGER NOT NULL,
+                timezone_name       TEXT NOT NULL,
+                generated_at_utc   TEXT NOT NULL,
+                expected_candles    INTEGER NOT NULL,
+                database_version    INTEGER NOT NULL DEFAULT 1,
+                UNIQUE (
+                    report_date,
+                    market,
+                    contract_type,
+                    timeframe_seconds
+                )
+            );
+
+            CREATE TABLE IF NOT EXISTS pair_reports (
+                id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+                report_run_id       INTEGER NOT NULL,
+                pair                TEXT NOT NULL,
+                candle_count        INTEGER NOT NULL DEFAULT 0,
+                highest_green       INTEGER NOT NULL DEFAULT 0,
+                green_start_utc     TEXT,
+                green_end_utc       TEXT,
+                highest_red         INTEGER NOT NULL DEFAULT 0,
+                red_start_utc       TEXT,
+                red_end_utc         TEXT,
+                FOREIGN KEY (report_run_id)
+                    REFERENCES report_runs(id)
+                    ON DELETE CASCADE,
+                UNIQUE (report_run_id, pair)
+            );
+
+            CREATE TABLE IF NOT EXISTS streak_frequencies (
+                id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+                pair_report_id      INTEGER NOT NULL,
+                color               TEXT NOT NULL
+                                    CHECK (color IN ('GREEN', 'RED')),
+                threshold           INTEGER NOT NULL
+                                    CHECK (threshold BETWEEN 7 AND 15),
+                frequency           INTEGER NOT NULL DEFAULT 0,
+                FOREIGN KEY (pair_report_id)
+                    REFERENCES pair_reports(id)
+                    ON DELETE CASCADE,
+                UNIQUE (
+                    pair_report_id,
+                    color,
+                    threshold
+                )
+            );
+
+            CREATE TABLE IF NOT EXISTS candle_data (
+                id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+                pair_report_id      INTEGER NOT NULL,
+                candle_timestamp_utc INTEGER NOT NULL,
+                candle_time_utc     TEXT NOT NULL,
+                candle_time_local   TEXT NOT NULL,
+                open_price          REAL NOT NULL,
+                close_price         REAL NOT NULL,
+                high_price           REAL,
+                low_price            REAL,
+                candle_to_utc       TEXT,
+                candle_to_local     TEXT,
+                color               TEXT NOT NULL
+                                    CHECK (color IN ('GREEN', 'RED', 'DOJI')),
+                FOREIGN KEY (pair_report_id)
+                    REFERENCES pair_reports(id)
+                    ON DELETE CASCADE,
+                UNIQUE (
+                    pair_report_id,
+                    candle_timestamp_utc
+                )
+            );
+
+            CREATE INDEX IF NOT EXISTS idx_report_runs_date
+                ON report_runs(report_date);
+
+            CREATE INDEX IF NOT EXISTS idx_pair_reports_pair
+                ON pair_reports(pair);
+
+            CREATE INDEX IF NOT EXISTS idx_streak_frequency_lookup
+                ON streak_frequencies(pair_report_id, color, threshold);
+
+            CREATE INDEX IF NOT EXISTS idx_candle_data_lookup
+                ON candle_data(pair_report_id, candle_timestamp_utc);
+
+            CREATE INDEX IF NOT EXISTS idx_candle_data_color
+                ON candle_data(pair_report_id, color);
+            """
+        )
+
+    logger.info("SQLite database ready: %s", DATABASE_FILE)
+
+
+def timestamp_to_utc_iso(timestamp):
+    if timestamp is None:
+        return None
+
+    return datetime.fromtimestamp(
+        float(timestamp),
+        tz=timezone.utc,
+    ).isoformat(timespec="seconds")
+
+
+def timestamp_to_local_iso(timestamp):
+    if timestamp is None:
+        return None
+
+    return (
+        datetime.fromtimestamp(
+            float(timestamp),
+            tz=timezone.utc,
+        )
+        .astimezone(LOCAL_TIMEZONE)
+        .isoformat(timespec="seconds")
+    )
+
+
+def save_report_to_database(results, candles_by_pair):
+    """
+    Save the displayed report into SQLite.
+
+    The write happens only after all report tables have been displayed.
+
+    If the same report date is run again, the previous copy for that
+    date/market/timeframe is replaced as one transaction, preventing
+    duplicate report rows.
+    """
+    initialize_database()
+
+    generated_at_utc = datetime.now(
+        timezone.utc
+    ).isoformat(timespec="seconds")
+
+    connection = get_database_connection()
+
+    try:
+        with connection:
+            connection.execute(
+                """
+                DELETE FROM report_runs
+                WHERE report_date = ?
+                  AND market = ?
+                  AND contract_type = ?
+                  AND timeframe_seconds = ?
+                """,
+                (
+                    REPORT_DATE,
+                    "REAL FOREX",
+                    "BINARY",
+                    TIMEFRAME,
+                ),
+            )
+
+            cursor = connection.execute(
+                """
+                INSERT INTO report_runs (
+                    report_date,
+                    market,
+                    contract_type,
+                    timeframe_seconds,
+                    timezone_name,
+                    generated_at_utc,
+                    expected_candles,
+                    database_version
+                )
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    REPORT_DATE,
+                    "REAL FOREX",
+                    "BINARY",
+                    TIMEFRAME,
+                    "Africa/Lagos / UTC+1",
+                    generated_at_utc,
+                    EXPECTED_CANDLES_PER_DAY,
+                    DATABASE_SCHEMA_VERSION,
+                ),
+            )
+
+            report_run_id = cursor.lastrowid
+
+            for result in results:
+                pair = result["pair"]
+
+                pair_cursor = connection.execute(
+                    """
+                    INSERT INTO pair_reports (
+                        report_run_id,
+                        pair,
+                        candle_count,
+                        highest_green,
+                        green_start_utc,
+                        green_end_utc,
+                        highest_red,
+                        red_start_utc,
+                        red_end_utc
+                    )
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        report_run_id,
+                        pair,
+                        result.get("candles", 0),
+                        result.get("highest_green", 0),
+                        timestamp_to_utc_iso(result.get("green_start")),
+                        timestamp_to_utc_iso(result.get("green_end")),
+                        result.get("highest_red", 0),
+                        timestamp_to_utc_iso(result.get("red_start")),
+                        timestamp_to_utc_iso(result.get("red_end")),
+                    ),
+                )
+
+                pair_report_id = pair_cursor.lastrowid
+
+                for color, frequency_key in (
+                    ("GREEN", "green_frequency"),
+                    ("RED", "red_frequency"),
+                ):
+                    frequency = result.get(frequency_key, {})
+
+                    for threshold in STREAK_LENGTHS:
+                        connection.execute(
+                            """
+                            INSERT INTO streak_frequencies (
+                                pair_report_id,
+                                color,
+                                threshold,
+                                frequency
+                            )
+                            VALUES (?, ?, ?, ?)
+                            """,
+                            (
+                                pair_report_id,
+                                color,
+                                threshold,
+                                frequency.get(threshold, 0),
+                            ),
+                        )
+
+                candle_rows = []
+
+                for candle in candles_by_pair.get(pair, []):
+                    try:
+                        candle_from = int(float(candle["from"]))
+                        candle_to = float(
+                            candle.get(
+                                "to",
+                                candle_from + TIMEFRAME,
+                            )
+                        )
+
+                        open_price = float(candle["open"])
+                        close_price = float(candle["close"])
+
+                        high_price = (
+                            float(candle["max"])
+                            if candle.get("max") is not None
+                            else None
+                        )
+
+                        low_price = (
+                            float(candle["min"])
+                            if candle.get("min") is not None
+                            else None
+                        )
+
+                        candle_rows.append(
+                            (
+                                pair_report_id,
+                                candle_from,
+                                timestamp_to_utc_iso(candle_from),
+                                timestamp_to_local_iso(candle_from),
+                                open_price,
+                                close_price,
+                                high_price,
+                                low_price,
+                                timestamp_to_utc_iso(candle_to),
+                                timestamp_to_local_iso(candle_to),
+                                candle_color(candle),
+                            )
+                        )
+
+                    except (KeyError, TypeError, ValueError):
+                        continue
+
+                connection.executemany(
+                    """
+                    INSERT INTO candle_data (
+                        pair_report_id,
+                        candle_timestamp_utc,
+                        candle_time_utc,
+                        candle_time_local,
+                        open_price,
+                        close_price,
+                        high_price,
+                        low_price,
+                        candle_to_utc,
+                        candle_to_local,
+                        color
+                    )
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    candle_rows,
+                )
+
+                logger.info(
+                    "Saved %-12s | pair ID: %d | candles: %d | "
+                    "frequency rows: %d",
+                    pair,
+                    pair_report_id,
+                    len(candle_rows),
+                    len(STREAK_LENGTHS) * 2,
+                )
+
+        logger.info("SQLite report saved successfully: %s", DATABASE_FILE)
+        return report_run_id
+
+    except Exception:
+        connection.rollback()
+        logger.exception("SQLite database write failed.")
+        raise
+
+    finally:
+        connection.close()
+
+
+def display_database_summary(report_run_id):
+    """Display a concise confirmation of what was persisted."""
+    try:
+        with get_database_connection() as connection:
+            report = connection.execute(
+                """
+                SELECT
+                    report_date,
+                    market,
+                    contract_type,
+                    timeframe_seconds,
+                    generated_at_utc
+                FROM report_runs
+                WHERE id = ?
+                """,
+                (report_run_id,),
+            ).fetchone()
+
+            pair_count = connection.execute(
+                """
+                SELECT COUNT(*)
+                FROM pair_reports
+                WHERE report_run_id = ?
+                """,
+                (report_run_id,),
+            ).fetchone()[0]
+
+            candle_count = connection.execute(
+                """
+                SELECT COUNT(*)
+                FROM candle_data
+                WHERE pair_report_id IN (
+                    SELECT id
+                    FROM pair_reports
+                    WHERE report_run_id = ?
+                )
+                """,
+                (report_run_id,),
+            ).fetchone()[0]
+
+            frequency_count = connection.execute(
+                """
+                SELECT COUNT(*)
+                FROM streak_frequencies
+                WHERE pair_report_id IN (
+                    SELECT id
+                    FROM pair_reports
+                    WHERE report_run_id = ?
+                )
+                """,
+                (report_run_id,),
+            ).fetchone()[0]
+
+        print("")
+        print("=" * 90)
+        print("SQLITE DATABASE PERSISTENCE")
+        print("=" * 90)
+        print(f"Database:       {DATABASE_FILE}")
+        print(f"Report ID:      {report_run_id}")
+
+        if report:
+            print(
+                f"Report:         {report[0]} | {report[1]} | "
+                f"{report[2]} | {report[3]} seconds"
+            )
+
+        print(f"Pairs saved:    {pair_count}")
+        print(f"Candles saved:  {candle_count}")
+        print(f"Frequency rows: {frequency_count}")
+        print("=" * 90)
+
+    except Exception as exc:
+        logger.exception(
+            "Could not display SQLite persistence summary: %s",
+            exc,
+        )
+
+
 # ============================================================
 # DISPLAY MAIN REPORT
 # ============================================================
@@ -1339,12 +1783,17 @@ def generate_report():
     # ========================================================
 
     results = []
+    candles_by_pair = {}
 
     for pair in FOREX_PAIRS:
 
         candles = get_historical_candles(
             pair
         )
+
+        # Keep the exact dataset used by the report so it can be
+        # persisted after the report has been displayed.
+        candles_by_pair[pair] = candles
 
         if not candles:
 
@@ -1464,6 +1913,21 @@ def generate_report():
     display_streak_frequency_table(
         results,
         "RED"
+    )
+
+    # ========================================================
+    # PERSIST REPORT AFTER DISPLAY
+    # ========================================================
+    # All report tables are printed first. Only then is the
+    # complete report dataset written to SQLite.
+
+    report_run_id = save_report_to_database(
+        results,
+        candles_by_pair,
+    )
+
+    display_database_summary(
+        report_run_id
     )
 
     logger.info("")

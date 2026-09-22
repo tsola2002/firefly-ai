@@ -2,6 +2,7 @@ import os
 import sys
 import time
 import logging
+import sqlite3
 from datetime import datetime, timezone, timedelta
 
 from dotenv import load_dotenv
@@ -38,12 +39,16 @@ STREAK_LENGTHS = list(range(7, 16))
 
 # Date we are analyzing.
 # DATE FORMAT: YYYY-MM-DD
-REPORT_DATE = "2026-09-20"
+REPORT_DATE = "2026-09-21"
 
 # Nigeria / West Africa timezone = UTC+1.
 # This makes 00:00:00 and 23:59:00 correspond to
 # the user's local Nigerian time.
 LOCAL_TIMEZONE = timezone(timedelta(hours=1))
+
+# SQLite database for OTC reports.
+# Kept separate from the real-forex report database.
+DATABASE_FILE = "firefly_otc_reports.db"
 
 
 # ============================================================
@@ -963,6 +968,10 @@ def display_report(results):
         "TIMEFRAME: 1 MINUTE"
     )
 
+    print(
+        f"DATABASE: {DATABASE_FILE}"
+    )
+
     print("=" * 90)
 
     # --------------------------------------------------------
@@ -1126,6 +1135,317 @@ def display_streak_frequency(results):
 
 
 # ============================================================
+# SQLITE DATABASE
+# ============================================================
+
+def initialize_database():
+    """
+    Create the separate OTC SQLite database and its tables if they
+    do not already exist.
+
+    Database file:
+        firefly_otc_reports.db
+    """
+    connection = sqlite3.connect(DATABASE_FILE)
+
+    try:
+        cursor = connection.cursor()
+
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS report_runs (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                report_date TEXT NOT NULL,
+                timeframe_seconds INTEGER NOT NULL,
+                created_at TEXT NOT NULL,
+                total_pairs INTEGER NOT NULL,
+                status TEXT NOT NULL
+            )
+        """)
+
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS pair_reports (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                report_run_id INTEGER NOT NULL,
+                pair TEXT NOT NULL,
+                candle_count INTEGER NOT NULL,
+                highest_green INTEGER NOT NULL,
+                highest_red INTEGER NOT NULL,
+                green_start_timestamp INTEGER,
+                green_end_timestamp INTEGER,
+                red_start_timestamp INTEGER,
+                red_end_timestamp INTEGER,
+                FOREIGN KEY (report_run_id) REFERENCES report_runs(id),
+                UNIQUE(report_run_id, pair)
+            )
+        """)
+
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS streak_frequencies (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                report_run_id INTEGER NOT NULL,
+                pair TEXT NOT NULL,
+                color TEXT NOT NULL,
+                streak_length INTEGER NOT NULL,
+                occurrence_count INTEGER NOT NULL,
+                FOREIGN KEY (report_run_id) REFERENCES report_runs(id),
+                UNIQUE(
+                    report_run_id,
+                    pair,
+                    color,
+                    streak_length
+                )
+            )
+        """)
+
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS candle_data (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                report_run_id INTEGER NOT NULL,
+                pair TEXT NOT NULL,
+                candle_timestamp INTEGER NOT NULL,
+                candle_end_timestamp INTEGER,
+                open_price REAL NOT NULL,
+                close_price REAL NOT NULL,
+                high_price REAL,
+                low_price REAL,
+                volume REAL,
+                candle_color TEXT NOT NULL,
+                FOREIGN KEY (report_run_id) REFERENCES report_runs(id),
+                UNIQUE(report_run_id, pair, candle_timestamp)
+            )
+        """)
+
+        cursor.execute("""
+            CREATE INDEX IF NOT EXISTS idx_otc_pair_reports_run
+            ON pair_reports(report_run_id)
+        """)
+
+        cursor.execute("""
+            CREATE INDEX IF NOT EXISTS idx_otc_streak_frequency_run
+            ON streak_frequencies(report_run_id)
+        """)
+
+        cursor.execute("""
+            CREATE INDEX IF NOT EXISTS idx_otc_candle_data_pair_time
+            ON candle_data(pair, candle_timestamp)
+        """)
+
+        connection.commit()
+
+        logger.info(
+            "OTC SQLite database ready: %s",
+            DATABASE_FILE,
+        )
+
+    finally:
+        connection.close()
+
+
+def save_report_to_database(results):
+    """
+    Persist the completed OTC report into the separate SQLite database.
+
+    Every execution creates a new report_runs record, so historical
+    report dates/runs are preserved rather than overwritten.
+    """
+    initialize_database()
+
+    connection = sqlite3.connect(DATABASE_FILE)
+
+    try:
+        cursor = connection.cursor()
+
+        created_at = datetime.now(
+            tz=LOCAL_TIMEZONE
+        ).isoformat(timespec="seconds")
+
+        cursor.execute("""
+            INSERT INTO report_runs (
+                report_date,
+                timeframe_seconds,
+                created_at,
+                total_pairs,
+                status
+            )
+            VALUES (?, ?, ?, ?, ?)
+        """, (
+            REPORT_DATE,
+            TIMEFRAME,
+            created_at,
+            len(results),
+            "COMPLETED",
+        ))
+
+        report_run_id = cursor.lastrowid
+
+        for result in results:
+            cursor.execute("""
+                INSERT INTO pair_reports (
+                    report_run_id,
+                    pair,
+                    candle_count,
+                    highest_green,
+                    highest_red,
+                    green_start_timestamp,
+                    green_end_timestamp,
+                    red_start_timestamp,
+                    red_end_timestamp
+                )
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                report_run_id,
+                result["pair"],
+                result["candles"],
+                result["highest_green"],
+                result["highest_red"],
+                int(result["green_start"])
+                if result["green_start"] is not None else None,
+                int(result["green_end"])
+                if result["green_end"] is not None else None,
+                int(result["red_start"])
+                if result["red_start"] is not None else None,
+                int(result["red_end"])
+                if result["red_end"] is not None else None,
+            ))
+
+            for color, frequency_key in (
+                ("GREEN", "green_frequency"),
+                ("RED", "red_frequency"),
+            ):
+                frequency = result.get(
+                    frequency_key,
+                    {}
+                )
+
+                for streak_length in STREAK_LENGTHS:
+                    cursor.execute("""
+                        INSERT INTO streak_frequencies (
+                            report_run_id,
+                            pair,
+                            color,
+                            streak_length,
+                            occurrence_count
+                        )
+                        VALUES (?, ?, ?, ?, ?)
+                    """, (
+                        report_run_id,
+                        result["pair"],
+                        color,
+                        streak_length,
+                        frequency.get(streak_length, 0),
+                    ))
+
+        connection.commit()
+
+        logger.info(
+            "OTC report saved to SQLite. Run ID: %s | Database: %s",
+            report_run_id,
+            DATABASE_FILE,
+        )
+
+        return report_run_id
+
+    except Exception:
+        connection.rollback()
+        raise
+
+    finally:
+        connection.close()
+
+
+def save_candles_to_database(report_run_id, pair, candles):
+    """
+    Save the raw one-minute OTC candles used for the report.
+
+    Existing candles for the same report run/pair/timestamp are ignored
+    so duplicate API batches do not create duplicate database rows.
+    """
+    if not candles:
+        return 0
+
+    connection = sqlite3.connect(DATABASE_FILE)
+
+    try:
+        cursor = connection.cursor()
+
+        rows = []
+
+        for candle in candles:
+            candle_from = int(float(candle["from"]))
+            candle_to = int(
+                float(
+                    candle.get(
+                        "to",
+                        candle_from + TIMEFRAME,
+                    )
+                )
+            )
+
+            open_price = float(candle["open"])
+            close_price = float(candle["close"])
+
+            high_price = (
+                float(candle["max"])
+                if candle.get("max") is not None
+                else float(candle.get("high", open_price))
+            )
+
+            low_price = (
+                float(candle["min"])
+                if candle.get("min") is not None
+                else float(candle.get("low", open_price))
+            )
+
+            volume_value = candle.get("volume")
+
+            volume = (
+                float(volume_value)
+                if volume_value is not None
+                else None
+            )
+
+            rows.append((
+                report_run_id,
+                pair,
+                candle_from,
+                candle_to,
+                open_price,
+                close_price,
+                high_price,
+                low_price,
+                volume,
+                candle_color(candle),
+            ))
+
+        cursor.executemany("""
+            INSERT OR IGNORE INTO candle_data (
+                report_run_id,
+                pair,
+                candle_timestamp,
+                candle_end_timestamp,
+                open_price,
+                close_price,
+                high_price,
+                low_price,
+                volume,
+                candle_color
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, rows)
+
+        connection.commit()
+
+        return cursor.rowcount
+
+    except Exception:
+        connection.rollback()
+        raise
+
+    finally:
+        connection.close()
+
+
+# ============================================================
 # GENERATE REPORT
 # ============================================================
 
@@ -1213,6 +1533,7 @@ def generate_report():
                     "red_frequency": {
                         length: 0 for length in STREAK_LENGTHS
                     },
+                    "candles_data": [],
                 }
             )
 
@@ -1243,6 +1564,7 @@ def generate_report():
                 "red_end": red_end,
                 "green_frequency": streak_frequency["green"],
                 "red_frequency": streak_frequency["red"],
+                "candles_data": candles,
             }
         )
 
@@ -1271,8 +1593,33 @@ def generate_report():
         results
     )
 
+    # --------------------------------------------------------
+    # SAVE TO SEPARATE OTC SQLITE DATABASE
+    # --------------------------------------------------------
+
+    report_run_id = save_report_to_database(
+        results
+    )
+
+    total_saved_candles = 0
+
+    for result in results:
+        saved_count = save_candles_to_database(
+            report_run_id,
+            result["pair"],
+            result.get("candles_data", []),
+        )
+
+        total_saved_candles += saved_count
+
     logger.info(
-        "Historical report completed."
+        "Saved %d candle rows to %s.",
+        total_saved_candles,
+        DATABASE_FILE,
+    )
+
+    logger.info(
+        "Historical OTC report completed."
     )
 
 
