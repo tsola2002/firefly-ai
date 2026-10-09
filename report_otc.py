@@ -39,7 +39,7 @@ STREAK_LENGTHS = list(range(7, 16))
 
 # Date we are analyzing.
 # DATE FORMAT: YYYY-MM-DD
-REPORT_DATE = "2026-10-04"
+REPORT_DATE = "2026-10-08"
 
 # Nigeria / West Africa timezone = UTC+1.
 # This makes 00:00:00 and 23:59:00 correspond to
