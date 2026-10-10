@@ -1,0 +1,1358 @@
+2026-10-10 03:23:55,905 | INFO | Report date: 2026-10-09
+2026-10-10 03:23:55,907 | INFO | Timezone: Africa/Lagos
+2026-10-10 03:23:55,910 | INFO | Candle period: 60 seconds
+2026-10-10 03:23:55,911 | INFO | Database: firefly_pocketoption_reports.db
+2026-10-10 03:23:57,092 | INFO | SSID parsed: REAL mode, uid=15748268, session_len=308
+2026-10-10 03:23:57,094 | INFO | Connecting to Pocket Option...
+2026-10-10 03:23:58,774 | INFO | Server latency probe: api-us-north.po.market (1233ms)
+2026-10-10 03:23:58,774 | INFO | Connection attempt 1 to: wss://api-us-north.po.market/socket.io/?EIO=4&transport=websocket (REAL)
+2026-10-10 03:24:00,348 | INFO | Initial time sync from HTTP Date header: Sat, 10 Oct 2026 02:24:00 GMT -> 1791599040
+2026-10-10 03:24:00,729 | INFO | Sending auth: 42["auth", {"session": "a:4:{s:10:\"session_id\";s:32:\"73d0bf4ef01d38a25a5a6881ac18b74e\";s:10:\"ip_address\";s:14:\"15...
+2026-10-10 03:24:01,442 | INFO | Assets catalog loaded: 183 assets
+2026-10-10 03:24:01,443 | INFO | Authentication successful
+2026-10-10 03:24:01,443 | INFO | Authenticated & connected to: wss://api-us-north.po.market/socket.io/?EIO=4&transport=websocket
+2026-10-10 03:24:01,516 | INFO | Connected; server time is synchronized.
+2026-10-10 03:24:01,518 | INFO | USDJPY_otc asset check: symbol=USDJPY_otc, available=True, id=93
+2026-10-10 03:24:01,554 | INFO | Subscribed to USDJPY_otc period=60
+2026-10-10 03:24:01,554 | INFO | USDJPY_otc subscription result: True
+2026-10-10 03:24:02,003 | INFO | Detected stream timezone offset: 7200s (+2h from UTC)
+2026-10-10 03:24:02,555 | INFO | USDJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:24:02,555 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159904255, 'offset': 2000, 'period': 60, 'time': 1791586800}]
+2026-10-10 03:24:03,160 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791586800, before forming 1791606240)
+2026-10-10 03:24:03,162 | INFO | USDJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:24:03,163 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159904316, 'offset': 2000, 'period': 60, 'time': 1791584760}]
+2026-10-10 03:24:03,784 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791584760, before forming 1791606240)
+2026-10-10 03:24:03,787 | INFO | USDJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:24:03,788 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159904378, 'offset': 2000, 'period': 60, 'time': 1791582720}]
+2026-10-10 03:24:04,390 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791582720, before forming 1791606240)
+2026-10-10 03:24:04,391 | INFO | USDJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:24:04,391 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159904439, 'offset': 2000, 'period': 60, 'time': 1791580680}]
+2026-10-10 03:24:04,984 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791580680, before forming 1791606240)
+2026-10-10 03:24:04,985 | INFO | USDJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:24:04,986 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159904498, 'offset': 2000, 'period': 60, 'time': 1791578640}]
+2026-10-10 03:24:05,582 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791578640, before forming 1791606240)
+2026-10-10 03:24:05,585 | INFO | USDJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:24:05,586 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159904558, 'offset': 2000, 'period': 60, 'time': 1791576600}]
+2026-10-10 03:24:06,172 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791576600, before forming 1791606240)
+2026-10-10 03:24:06,174 | INFO | USDJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:24:06,175 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159904617, 'offset': 2000, 'period': 60, 'time': 1791574560}]
+2026-10-10 03:24:06,857 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791574560, before forming 1791606240)
+2026-10-10 03:24:06,859 | INFO | USDJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:24:06,861 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159904685, 'offset': 2000, 'period': 60, 'time': 1791572520}]
+2026-10-10 03:24:07,471 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791572520, before forming 1791606240)
+2026-10-10 03:24:07,472 | INFO | USDJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:24:07,474 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159904747, 'offset': 2000, 'period': 60, 'time': 1791570480}]
+2026-10-10 03:24:08,103 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791570480, before forming 1791606240)
+2026-10-10 03:24:08,104 | INFO | USDJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:24:08,104 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159904810, 'offset': 2000, 'period': 60, 'time': 1791568440}]
+2026-10-10 03:24:08,696 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791568440, before forming 1791606240)
+2026-10-10 03:24:08,697 | INFO | USDJPY_otc: received 339 unique candles; first=2026-10-09 18:21:00; last=2026-10-09 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:24:08,698 | WARNING | USDJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:24:09,062 | INFO | AUDUSD_otc asset check: symbol=AUDUSD_otc, available=True, id=71
+2026-10-10 03:24:09,082 | INFO | Subscribed to AUDUSD_otc period=60
+2026-10-10 03:24:09,082 | INFO | AUDUSD_otc subscription result: True
+2026-10-10 03:24:10,083 | INFO | AUDUSD_otc: requesting history page 1, offset=2000
+2026-10-10 03:24:10,083 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159905008, 'offset': 2000, 'period': 60, 'time': 1791594000}]
+2026-10-10 03:24:10,740 | INFO | Assets catalog loaded: 183 assets
+2026-10-10 03:24:10,756 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791594000, before forming 1791606240)
+2026-10-10 03:24:10,765 | INFO | AUDUSD_otc: requesting history page 2, offset=2000
+2026-10-10 03:24:10,766 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159905076, 'offset': 2000, 'period': 60, 'time': 1791591960}]
+2026-10-10 03:24:11,447 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791591960, before forming 1791606240)
+2026-10-10 03:24:11,484 | INFO | AUDUSD_otc: requesting history page 3, offset=2000
+2026-10-10 03:24:11,501 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159905150, 'offset': 2000, 'period': 60, 'time': 1791589920}]
+2026-10-10 03:24:12,111 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791589920, before forming 1791606240)
+2026-10-10 03:24:12,112 | INFO | AUDUSD_otc: requesting history page 4, offset=2000
+2026-10-10 03:24:12,112 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159905211, 'offset': 2000, 'period': 60, 'time': 1791587880}]
+2026-10-10 03:24:13,307 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791587880, before forming 1791606240)
+2026-10-10 03:24:13,309 | INFO | AUDUSD_otc: requesting history page 5, offset=2000
+2026-10-10 03:24:13,310 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159905331, 'offset': 2000, 'period': 60, 'time': 1791585840}]
+2026-10-10 03:24:13,889 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791585840, before forming 1791606240)
+2026-10-10 03:24:13,896 | INFO | AUDUSD_otc: requesting history page 6, offset=2000
+2026-10-10 03:24:13,897 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159905389, 'offset': 2000, 'period': 60, 'time': 1791583800}]
+2026-10-10 03:24:14,528 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791583800, before forming 1791606240)
+2026-10-10 03:24:14,530 | INFO | AUDUSD_otc: requesting history page 7, offset=2000
+2026-10-10 03:24:14,531 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159905453, 'offset': 2000, 'period': 60, 'time': 1791581760}]
+2026-10-10 03:24:15,107 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791581760, before forming 1791606240)
+2026-10-10 03:24:15,108 | INFO | AUDUSD_otc: requesting history page 8, offset=2000
+2026-10-10 03:24:15,108 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159905510, 'offset': 2000, 'period': 60, 'time': 1791579720}]
+2026-10-10 03:24:15,681 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791579720, before forming 1791606240)
+2026-10-10 03:24:15,682 | INFO | AUDUSD_otc: requesting history page 9, offset=2000
+2026-10-10 03:24:15,682 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159905568, 'offset': 2000, 'period': 60, 'time': 1791577680}]
+2026-10-10 03:24:16,257 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791577680, before forming 1791606240)
+2026-10-10 03:24:16,263 | INFO | AUDUSD_otc: requesting history page 10, offset=2000
+2026-10-10 03:24:16,268 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159905626, 'offset': 2000, 'period': 60, 'time': 1791575640}]
+2026-10-10 03:24:16,892 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791575640, before forming 1791606240)
+2026-10-10 03:24:16,894 | INFO | AUDUSD_otc: received 339 unique candles; first=2026-10-09 18:21:00; last=2026-10-09 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:24:16,895 | WARNING | AUDUSD_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:24:17,427 | INFO | EURJPY_otc asset check: symbol=EURJPY_otc, available=True, id=79
+2026-10-10 03:24:17,431 | INFO | Subscribed to EURJPY_otc period=60
+2026-10-10 03:24:17,431 | INFO | EURJPY_otc subscription result: True
+2026-10-10 03:24:18,433 | INFO | EURJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:24:18,436 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159905843, 'offset': 2000, 'period': 60, 'time': 1791594000}]
+2026-10-10 03:24:19,153 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791594000, before forming 1791606240)
+2026-10-10 03:24:19,155 | INFO | EURJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:24:19,156 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159905915, 'offset': 2000, 'period': 60, 'time': 1791591960}]
+2026-10-10 03:24:19,755 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791591960, before forming 1791606240)
+2026-10-10 03:24:19,757 | INFO | EURJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:24:19,757 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159905975, 'offset': 2000, 'period': 60, 'time': 1791589920}]
+2026-10-10 03:24:20,367 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791589920, before forming 1791606240)
+2026-10-10 03:24:20,409 | INFO | EURJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:24:20,419 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159906041, 'offset': 2000, 'period': 60, 'time': 1791587880}]
+2026-10-10 03:24:21,096 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791587880, before forming 1791606240)
+2026-10-10 03:24:21,103 | INFO | EURJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:24:21,105 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159906110, 'offset': 2000, 'period': 60, 'time': 1791585840}]
+2026-10-10 03:24:21,803 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791585840, before forming 1791606240)
+2026-10-10 03:24:21,806 | INFO | EURJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:24:21,807 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159906180, 'offset': 2000, 'period': 60, 'time': 1791583800}]
+2026-10-10 03:24:22,402 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791583800, before forming 1791606240)
+2026-10-10 03:24:22,403 | INFO | EURJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:24:22,403 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159906240, 'offset': 2000, 'period': 60, 'time': 1791581760}]
+2026-10-10 03:24:23,016 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791581760, before forming 1791606240)
+2026-10-10 03:24:23,017 | INFO | EURJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:24:23,018 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159906301, 'offset': 2000, 'period': 60, 'time': 1791579720}]
+2026-10-10 03:24:23,599 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791579720, before forming 1791606240)
+2026-10-10 03:24:23,600 | INFO | EURJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:24:23,600 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159906360, 'offset': 2000, 'period': 60, 'time': 1791577680}]
+2026-10-10 03:24:24,174 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791577680, before forming 1791606240)
+2026-10-10 03:24:24,175 | INFO | EURJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:24:24,175 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159906417, 'offset': 2000, 'period': 60, 'time': 1791575640}]
+2026-10-10 03:24:24,770 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791575640, before forming 1791606240)
+2026-10-10 03:24:24,772 | INFO | EURJPY_otc: received 339 unique candles; first=2026-10-09 18:21:00; last=2026-10-09 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:24:24,772 | WARNING | EURJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:24:25,101 | INFO | AUDJPY_otc asset check: symbol=AUDJPY_otc, available=True, id=69
+2026-10-10 03:24:25,108 | INFO | Subscribed to AUDJPY_otc period=60
+2026-10-10 03:24:25,110 | INFO | AUDJPY_otc subscription result: True
+2026-10-10 03:24:26,112 | INFO | AUDJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:24:26,113 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159906611, 'offset': 2000, 'period': 60, 'time': 1791594000}]
+2026-10-10 03:24:26,701 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791594000, before forming 1791606240)
+2026-10-10 03:24:26,702 | INFO | AUDJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:24:26,703 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159906670, 'offset': 2000, 'period': 60, 'time': 1791591960}]
+2026-10-10 03:24:27,330 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791591960, before forming 1791606240)
+2026-10-10 03:24:27,331 | INFO | AUDJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:24:27,332 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159906733, 'offset': 2000, 'period': 60, 'time': 1791589920}]
+2026-10-10 03:24:28,055 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791589920, before forming 1791606240)
+2026-10-10 03:24:28,057 | INFO | AUDJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:24:28,058 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159906805, 'offset': 2000, 'period': 60, 'time': 1791587880}]
+2026-10-10 03:24:28,645 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791587880, before forming 1791606240)
+2026-10-10 03:24:28,647 | INFO | AUDJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:24:28,647 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159906864, 'offset': 2000, 'period': 60, 'time': 1791585840}]
+2026-10-10 03:24:29,791 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791585840, before forming 1791606240)
+2026-10-10 03:24:29,793 | INFO | AUDJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:24:29,794 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159906979, 'offset': 2000, 'period': 60, 'time': 1791583800}]
+2026-10-10 03:24:30,385 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791583800, before forming 1791606240)
+2026-10-10 03:24:30,387 | INFO | AUDJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:24:30,388 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159907038, 'offset': 2000, 'period': 60, 'time': 1791581760}]
+2026-10-10 03:24:31,099 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791581760, before forming 1791606240)
+2026-10-10 03:24:31,102 | INFO | AUDJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:24:31,103 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159907110, 'offset': 2000, 'period': 60, 'time': 1791579720}]
+2026-10-10 03:24:31,880 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791579720, before forming 1791606240)
+2026-10-10 03:24:31,884 | INFO | AUDJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:24:31,885 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159907188, 'offset': 2000, 'period': 60, 'time': 1791577680}]
+2026-10-10 03:24:32,790 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791577680, before forming 1791606240)
+2026-10-10 03:24:32,793 | INFO | AUDJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:24:32,794 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159907279, 'offset': 2000, 'period': 60, 'time': 1791575640}]
+2026-10-10 03:24:33,401 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791575640, before forming 1791606240)
+2026-10-10 03:24:33,406 | INFO | AUDJPY_otc: received 339 unique candles; first=2026-10-09 18:21:00; last=2026-10-09 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:24:33,407 | WARNING | AUDJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:24:33,641 | INFO | GBPJPY_otc asset check: symbol=GBPJPY_otc, available=True, id=84
+2026-10-10 03:24:33,644 | INFO | Subscribed to GBPJPY_otc period=60
+2026-10-10 03:24:33,644 | INFO | GBPJPY_otc subscription result: True
+2026-10-10 03:24:34,645 | INFO | GBPJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:24:34,646 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159907464, 'offset': 2000, 'period': 60, 'time': 1791594000}]
+2026-10-10 03:24:35,328 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791594000, before forming 1791606240)
+2026-10-10 03:24:35,330 | INFO | GBPJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:24:35,331 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159907533, 'offset': 2000, 'period': 60, 'time': 1791591960}]
+2026-10-10 03:24:35,904 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791591960, before forming 1791606240)
+2026-10-10 03:24:35,907 | INFO | GBPJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:24:35,908 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159907590, 'offset': 2000, 'period': 60, 'time': 1791589920}]
+2026-10-10 03:24:36,558 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791589920, before forming 1791606240)
+2026-10-10 03:24:36,560 | INFO | GBPJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:24:36,561 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159907656, 'offset': 2000, 'period': 60, 'time': 1791587880}]
+2026-10-10 03:24:37,142 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791587880, before forming 1791606240)
+2026-10-10 03:24:37,144 | INFO | GBPJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:24:37,145 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159907714, 'offset': 2000, 'period': 60, 'time': 1791585840}]
+2026-10-10 03:24:37,775 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791585840, before forming 1791606240)
+2026-10-10 03:24:37,776 | INFO | GBPJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:24:37,777 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159907777, 'offset': 2000, 'period': 60, 'time': 1791583800}]
+2026-10-10 03:24:38,394 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791583800, before forming 1791606240)
+2026-10-10 03:24:38,396 | INFO | GBPJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:24:38,397 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159907839, 'offset': 2000, 'period': 60, 'time': 1791581760}]
+2026-10-10 03:24:39,009 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791581760, before forming 1791606240)
+2026-10-10 03:24:39,010 | INFO | GBPJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:24:39,011 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159907901, 'offset': 2000, 'period': 60, 'time': 1791579720}]
+2026-10-10 03:24:39,645 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791579720, before forming 1791606240)
+2026-10-10 03:24:39,649 | INFO | GBPJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:24:39,650 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159907965, 'offset': 2000, 'period': 60, 'time': 1791577680}]
+2026-10-10 03:24:40,237 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791577680, before forming 1791606240)
+2026-10-10 03:24:40,239 | INFO | GBPJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:24:40,239 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159908023, 'offset': 2000, 'period': 60, 'time': 1791575640}]
+2026-10-10 03:24:40,823 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791575640, before forming 1791606240)
+2026-10-10 03:24:40,824 | INFO | GBPJPY_otc: received 339 unique candles; first=2026-10-09 18:21:00; last=2026-10-09 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:24:40,825 | WARNING | GBPJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:24:41,132 | INFO | GBPAUD_otc asset check: symbol=GBPAUD_otc, available=True, id=81
+2026-10-10 03:24:41,149 | INFO | Subscribed to GBPAUD_otc period=60
+2026-10-10 03:24:41,153 | INFO | GBPAUD_otc subscription result: True
+2026-10-10 03:24:42,162 | INFO | GBPAUD_otc: requesting history page 1, offset=2000
+2026-10-10 03:24:42,166 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159908216, 'offset': 2000, 'period': 60, 'time': 1791594000}]
+2026-10-10 03:24:42,792 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791594000, before forming 1791606240)
+2026-10-10 03:24:42,802 | INFO | GBPAUD_otc: requesting history page 2, offset=2000
+2026-10-10 03:24:42,802 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159908280, 'offset': 2000, 'period': 60, 'time': 1791591960}]
+2026-10-10 03:24:43,406 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791591960, before forming 1791606240)
+2026-10-10 03:24:43,407 | INFO | GBPAUD_otc: requesting history page 3, offset=2000
+2026-10-10 03:24:43,407 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159908340, 'offset': 2000, 'period': 60, 'time': 1791589920}]
+2026-10-10 03:24:44,030 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791589920, before forming 1791606240)
+2026-10-10 03:24:44,034 | INFO | GBPAUD_otc: requesting history page 4, offset=2000
+2026-10-10 03:24:44,035 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159908403, 'offset': 2000, 'period': 60, 'time': 1791587880}]
+2026-10-10 03:24:44,646 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791587880, before forming 1791606240)
+2026-10-10 03:24:44,649 | INFO | GBPAUD_otc: requesting history page 5, offset=2000
+2026-10-10 03:24:44,649 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159908464, 'offset': 2000, 'period': 60, 'time': 1791585840}]
+2026-10-10 03:24:45,234 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791585840, before forming 1791606240)
+2026-10-10 03:24:45,235 | INFO | GBPAUD_otc: requesting history page 6, offset=2000
+2026-10-10 03:24:45,235 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159908523, 'offset': 2000, 'period': 60, 'time': 1791583800}]
+2026-10-10 03:24:45,806 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791583800, before forming 1791606240)
+2026-10-10 03:24:45,808 | INFO | GBPAUD_otc: requesting history page 7, offset=2000
+2026-10-10 03:24:45,810 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159908580, 'offset': 2000, 'period': 60, 'time': 1791581760}]
+2026-10-10 03:24:46,484 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791581760, before forming 1791606240)
+2026-10-10 03:24:46,486 | INFO | GBPAUD_otc: requesting history page 8, offset=2000
+2026-10-10 03:24:46,487 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159908648, 'offset': 2000, 'period': 60, 'time': 1791579720}]
+2026-10-10 03:24:47,099 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791579720, before forming 1791606240)
+2026-10-10 03:24:47,101 | INFO | GBPAUD_otc: requesting history page 9, offset=2000
+2026-10-10 03:24:47,101 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159908710, 'offset': 2000, 'period': 60, 'time': 1791577680}]
+2026-10-10 03:24:47,691 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791577680, before forming 1791606240)
+2026-10-10 03:24:47,693 | INFO | GBPAUD_otc: requesting history page 10, offset=2000
+2026-10-10 03:24:47,694 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159908769, 'offset': 2000, 'period': 60, 'time': 1791575640}]
+2026-10-10 03:24:48,336 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791575640, before forming 1791606240)
+2026-10-10 03:24:48,338 | INFO | GBPAUD_otc: received 339 unique candles; first=2026-10-09 18:21:00; last=2026-10-09 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:24:48,340 | WARNING | GBPAUD_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:24:48,649 | WARNING | GBPCAD_otc was not found in the asset catalogue. Attempting the history request anyway.
+2026-10-10 03:24:48,654 | INFO | Subscribed to GBPCAD_otc period=60
+2026-10-10 03:24:48,654 | INFO | GBPCAD_otc subscription result: True
+2026-10-10 03:24:49,659 | INFO | GBPCAD_otc: requesting history page 1, offset=2000
+2026-10-10 03:24:49,660 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPCAD_otc', 'index': 179159908966, 'offset': 2000, 'period': 60, 'time': 1791594000}]
+2026-10-10 03:24:59,675 | ERROR | Timeout waiting for historical data
+2026-10-10 03:24:59,676 | WARNING | GBPCAD_otc: API returned no candles on page 1.
+2026-10-10 03:24:59,677 | WARNING | GBPCAD_otc: no candles fell within 2026-10-09 in timezone Africa/Lagos.
+2026-10-10 03:24:59,678 | INFO | CADJPY_otc asset check: symbol=CADJPY_otc, available=True, id=73
+2026-10-10 03:24:59,686 | INFO | Subscribed to CADJPY_otc period=60
+2026-10-10 03:24:59,687 | INFO | CADJPY_otc subscription result: True
+2026-10-10 03:25:00,688 | INFO | CADJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:25:00,689 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159910068, 'offset': 2000, 'period': 60, 'time': 1791594000}]
+2026-10-10 03:25:01,433 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791594000, before forming 1791606300)
+2026-10-10 03:25:01,434 | INFO | CADJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:25:01,435 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159910143, 'offset': 2000, 'period': 60, 'time': 1791591960}]
+2026-10-10 03:25:02,049 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791591960, before forming 1791606300)
+2026-10-10 03:25:02,051 | INFO | CADJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:25:02,052 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159910205, 'offset': 2000, 'period': 60, 'time': 1791589920}]
+2026-10-10 03:25:03,091 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791589920, before forming 1791606300)
+2026-10-10 03:25:03,095 | INFO | CADJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:25:03,097 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159910309, 'offset': 2000, 'period': 60, 'time': 1791587880}]
+2026-10-10 03:25:03,717 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791587880, before forming 1791606300)
+2026-10-10 03:25:03,717 | INFO | CADJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:25:03,718 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159910371, 'offset': 2000, 'period': 60, 'time': 1791585840}]
+2026-10-10 03:25:04,318 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791585840, before forming 1791606300)
+2026-10-10 03:25:04,326 | INFO | CADJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:25:04,347 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159910434, 'offset': 2000, 'period': 60, 'time': 1791583800}]
+2026-10-10 03:25:05,015 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791583800, before forming 1791606300)
+2026-10-10 03:25:05,016 | INFO | CADJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:25:05,016 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159910501, 'offset': 2000, 'period': 60, 'time': 1791581760}]
+2026-10-10 03:25:05,599 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791581760, before forming 1791606300)
+2026-10-10 03:25:05,600 | INFO | CADJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:25:05,601 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159910560, 'offset': 2000, 'period': 60, 'time': 1791579720}]
+2026-10-10 03:25:06,246 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791579720, before forming 1791606300)
+2026-10-10 03:25:06,248 | INFO | CADJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:25:06,248 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159910624, 'offset': 2000, 'period': 60, 'time': 1791577680}]
+2026-10-10 03:25:06,833 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791577680, before forming 1791606300)
+2026-10-10 03:25:06,834 | INFO | CADJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:25:06,835 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159910683, 'offset': 2000, 'period': 60, 'time': 1791575640}]
+2026-10-10 03:25:07,480 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791575640, before forming 1791606300)
+2026-10-10 03:25:07,482 | INFO | CADJPY_otc: received 339 unique candles; first=2026-10-09 18:21:00; last=2026-10-09 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:25:07,483 | WARNING | CADJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:25:08,369 | INFO | Pocket Option connection closed.
+2026-10-10 03:33:57,218 | INFO | Report date: 2026-10-08
+2026-10-10 03:33:57,219 | INFO | Timezone: Africa/Lagos
+2026-10-10 03:33:57,219 | INFO | Candle period: 60 seconds
+2026-10-10 03:33:57,220 | INFO | Database: firefly_pocketoption_reports.db
+2026-10-10 03:33:57,469 | INFO | SSID parsed: REAL mode, uid=15748268, session_len=308
+2026-10-10 03:33:57,472 | INFO | Connecting to Pocket Option...
+2026-10-10 03:33:59,346 | INFO | Server latency probe: api-eu.po.market (735ms), api-us-north.po.market (1330ms), api-us2.po.market (1343ms)
+2026-10-10 03:33:59,349 | INFO | Connection attempt 1 to: wss://api-eu.po.market/socket.io/?EIO=4&transport=websocket (REAL)
+2026-10-10 03:34:07,445 | WARNING | Connection error: timed out during opening handshake
+2026-10-10 03:34:08,447 | INFO | Connection attempt 2 to: wss://api-us-north.po.market/socket.io/?EIO=4&transport=websocket (REAL)
+2026-10-10 03:34:10,506 | INFO | Initial time sync from HTTP Date header: Sat, 10 Oct 2026 02:34:10 GMT -> 1791599650
+2026-10-10 03:34:11,017 | INFO | Sending auth: 42["auth", {"session": "a:4:{s:10:\"session_id\";s:32:\"73d0bf4ef01d38a25a5a6881ac18b74e\";s:10:\"ip_address\";s:14:\"15...
+2026-10-10 03:34:11,983 | INFO | Assets catalog loaded: 183 assets
+2026-10-10 03:34:11,984 | INFO | Authentication successful
+2026-10-10 03:34:11,984 | INFO | Authenticated & connected to: wss://api-us-north.po.market/socket.io/?EIO=4&transport=websocket
+2026-10-10 03:34:12,067 | INFO | Connected; server time is synchronized.
+2026-10-10 03:34:12,068 | INFO | USDJPY_otc asset check: symbol=USDJPY_otc, available=True, id=93
+2026-10-10 03:34:12,072 | INFO | Subscribed to USDJPY_otc period=60
+2026-10-10 03:34:12,073 | INFO | USDJPY_otc subscription result: True
+2026-10-10 03:34:13,074 | INFO | USDJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:34:13,088 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159965308, 'offset': 2000, 'period': 60, 'time': 1791500400}]
+2026-10-10 03:34:13,089 | INFO | Detected stream timezone offset: 7200s (+2h from UTC)
+2026-10-10 03:34:13,792 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791500400, before forming 1791606840)
+2026-10-10 03:34:13,794 | INFO | USDJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:34:13,795 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159965379, 'offset': 2000, 'period': 60, 'time': 1791498360}]
+2026-10-10 03:34:14,466 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791498360, before forming 1791606840)
+2026-10-10 03:34:14,468 | INFO | USDJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:34:14,469 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159965446, 'offset': 2000, 'period': 60, 'time': 1791496320}]
+2026-10-10 03:34:15,126 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791496320, before forming 1791606840)
+2026-10-10 03:34:15,129 | INFO | USDJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:34:15,130 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159965513, 'offset': 2000, 'period': 60, 'time': 1791494280}]
+2026-10-10 03:34:16,148 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791494280, before forming 1791606840)
+2026-10-10 03:34:16,149 | INFO | USDJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:34:16,150 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159965615, 'offset': 2000, 'period': 60, 'time': 1791492240}]
+2026-10-10 03:34:16,864 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791492240, before forming 1791606840)
+2026-10-10 03:34:16,865 | INFO | USDJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:34:16,866 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159965686, 'offset': 2000, 'period': 60, 'time': 1791490200}]
+2026-10-10 03:34:17,575 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791490200, before forming 1791606840)
+2026-10-10 03:34:17,576 | INFO | USDJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:34:17,577 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159965757, 'offset': 2000, 'period': 60, 'time': 1791488160}]
+2026-10-10 03:34:18,220 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791488160, before forming 1791606840)
+2026-10-10 03:34:18,224 | INFO | USDJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:34:18,225 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159965822, 'offset': 2000, 'period': 60, 'time': 1791486120}]
+2026-10-10 03:34:18,912 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791486120, before forming 1791606840)
+2026-10-10 03:34:18,913 | INFO | USDJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:34:18,914 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159965891, 'offset': 2000, 'period': 60, 'time': 1791484080}]
+2026-10-10 03:34:19,628 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791484080, before forming 1791606840)
+2026-10-10 03:34:19,629 | INFO | USDJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:34:19,630 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159965962, 'offset': 2000, 'period': 60, 'time': 1791482040}]
+2026-10-10 03:34:20,346 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791482040, before forming 1791606840)
+2026-10-10 03:34:20,348 | INFO | USDJPY_otc: received 339 unique candles; first=2026-10-08 18:21:00; last=2026-10-08 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:34:20,349 | WARNING | USDJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:34:20,889 | INFO | AUDUSD_otc asset check: symbol=AUDUSD_otc, available=True, id=71
+2026-10-10 03:34:20,898 | INFO | Subscribed to AUDUSD_otc period=60
+2026-10-10 03:34:20,900 | INFO | AUDUSD_otc subscription result: True
+2026-10-10 03:34:21,902 | INFO | AUDUSD_otc: requesting history page 1, offset=2000
+2026-10-10 03:34:21,903 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159966190, 'offset': 2000, 'period': 60, 'time': 1791507600}]
+2026-10-10 03:34:22,568 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791507600, before forming 1791606840)
+2026-10-10 03:34:22,590 | INFO | AUDUSD_otc: requesting history page 2, offset=2000
+2026-10-10 03:34:22,591 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159966259, 'offset': 2000, 'period': 60, 'time': 1791505560}]
+2026-10-10 03:34:23,260 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791505560, before forming 1791606840)
+2026-10-10 03:34:23,260 | INFO | AUDUSD_otc: requesting history page 3, offset=2000
+2026-10-10 03:34:23,260 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159966326, 'offset': 2000, 'period': 60, 'time': 1791503520}]
+2026-10-10 03:34:23,924 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791503520, before forming 1791606840)
+2026-10-10 03:34:23,925 | INFO | AUDUSD_otc: requesting history page 4, offset=2000
+2026-10-10 03:34:23,925 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159966392, 'offset': 2000, 'period': 60, 'time': 1791501480}]
+2026-10-10 03:34:24,582 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791501480, before forming 1791606840)
+2026-10-10 03:34:24,582 | INFO | AUDUSD_otc: requesting history page 5, offset=2000
+2026-10-10 03:34:24,583 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159966458, 'offset': 2000, 'period': 60, 'time': 1791499440}]
+2026-10-10 03:34:25,256 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791499440, before forming 1791606840)
+2026-10-10 03:34:25,257 | INFO | AUDUSD_otc: requesting history page 6, offset=2000
+2026-10-10 03:34:25,257 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159966525, 'offset': 2000, 'period': 60, 'time': 1791497400}]
+2026-10-10 03:34:25,972 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791497400, before forming 1791606840)
+2026-10-10 03:34:25,974 | INFO | AUDUSD_otc: requesting history page 7, offset=2000
+2026-10-10 03:34:25,974 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159966597, 'offset': 2000, 'period': 60, 'time': 1791495360}]
+2026-10-10 03:34:26,626 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791495360, before forming 1791606840)
+2026-10-10 03:34:26,627 | INFO | AUDUSD_otc: requesting history page 8, offset=2000
+2026-10-10 03:34:26,628 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159966662, 'offset': 2000, 'period': 60, 'time': 1791493320}]
+2026-10-10 03:34:27,288 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791493320, before forming 1791606840)
+2026-10-10 03:34:27,289 | INFO | AUDUSD_otc: requesting history page 9, offset=2000
+2026-10-10 03:34:27,289 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159966728, 'offset': 2000, 'period': 60, 'time': 1791491280}]
+2026-10-10 03:34:28,019 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791491280, before forming 1791606840)
+2026-10-10 03:34:28,020 | INFO | AUDUSD_otc: requesting history page 10, offset=2000
+2026-10-10 03:34:28,021 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159966802, 'offset': 2000, 'period': 60, 'time': 1791489240}]
+2026-10-10 03:34:28,674 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791489240, before forming 1791606840)
+2026-10-10 03:34:28,675 | INFO | AUDUSD_otc: received 339 unique candles; first=2026-10-08 18:21:00; last=2026-10-08 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:34:28,675 | WARNING | AUDUSD_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:34:28,978 | INFO | EURJPY_otc asset check: symbol=EURJPY_otc, available=True, id=79
+2026-10-10 03:34:28,980 | INFO | Subscribed to EURJPY_otc period=60
+2026-10-10 03:34:28,981 | INFO | EURJPY_otc subscription result: True
+2026-10-10 03:34:29,982 | INFO | EURJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:34:29,982 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159966998, 'offset': 2000, 'period': 60, 'time': 1791507600}]
+2026-10-10 03:34:30,741 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791507600, before forming 1791606840)
+2026-10-10 03:34:30,742 | INFO | EURJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:34:30,742 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159967074, 'offset': 2000, 'period': 60, 'time': 1791505560}]
+2026-10-10 03:34:31,628 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791505560, before forming 1791606840)
+2026-10-10 03:34:31,629 | INFO | EURJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:34:31,630 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159967163, 'offset': 2000, 'period': 60, 'time': 1791503520}]
+2026-10-10 03:34:32,297 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791503520, before forming 1791606840)
+2026-10-10 03:34:32,298 | INFO | EURJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:34:32,298 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159967229, 'offset': 2000, 'period': 60, 'time': 1791501480}]
+2026-10-10 03:34:33,037 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791501480, before forming 1791606840)
+2026-10-10 03:34:33,038 | INFO | EURJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:34:33,038 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159967303, 'offset': 2000, 'period': 60, 'time': 1791499440}]
+2026-10-10 03:34:33,756 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791499440, before forming 1791606840)
+2026-10-10 03:34:33,757 | INFO | EURJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:34:33,758 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159967375, 'offset': 2000, 'period': 60, 'time': 1791497400}]
+2026-10-10 03:34:34,482 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791497400, before forming 1791606840)
+2026-10-10 03:34:34,483 | INFO | EURJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:34:34,483 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159967448, 'offset': 2000, 'period': 60, 'time': 1791495360}]
+2026-10-10 03:34:35,137 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791495360, before forming 1791606840)
+2026-10-10 03:34:35,138 | INFO | EURJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:34:35,138 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159967513, 'offset': 2000, 'period': 60, 'time': 1791493320}]
+2026-10-10 03:34:36,938 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791493320, before forming 1791606840)
+2026-10-10 03:34:36,940 | INFO | EURJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:34:36,940 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159967694, 'offset': 2000, 'period': 60, 'time': 1791491280}]
+2026-10-10 03:34:37,596 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791491280, before forming 1791606840)
+2026-10-10 03:34:37,597 | INFO | EURJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:34:37,597 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159967759, 'offset': 2000, 'period': 60, 'time': 1791489240}]
+2026-10-10 03:34:38,366 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791489240, before forming 1791606840)
+2026-10-10 03:34:38,368 | INFO | EURJPY_otc: received 339 unique candles; first=2026-10-08 18:21:00; last=2026-10-08 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:34:38,369 | WARNING | EURJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:34:39,185 | INFO | AUDJPY_otc asset check: symbol=AUDJPY_otc, available=True, id=69
+2026-10-10 03:34:39,198 | INFO | Subscribed to AUDJPY_otc period=60
+2026-10-10 03:34:39,202 | INFO | AUDJPY_otc subscription result: True
+2026-10-10 03:34:40,203 | INFO | AUDJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:34:40,205 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159968020, 'offset': 2000, 'period': 60, 'time': 1791507600}]
+2026-10-10 03:34:40,930 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791507600, before forming 1791606840)
+2026-10-10 03:34:40,932 | INFO | AUDJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:34:40,933 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159968093, 'offset': 2000, 'period': 60, 'time': 1791505560}]
+2026-10-10 03:34:41,646 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791505560, before forming 1791606840)
+2026-10-10 03:34:41,647 | INFO | AUDJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:34:41,648 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159968164, 'offset': 2000, 'period': 60, 'time': 1791503520}]
+2026-10-10 03:34:42,442 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791503520, before forming 1791606840)
+2026-10-10 03:34:42,443 | INFO | AUDJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:34:42,443 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159968244, 'offset': 2000, 'period': 60, 'time': 1791501480}]
+2026-10-10 03:34:43,110 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791501480, before forming 1791606840)
+2026-10-10 03:34:43,111 | INFO | AUDJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:34:43,112 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159968311, 'offset': 2000, 'period': 60, 'time': 1791499440}]
+2026-10-10 03:34:43,793 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791499440, before forming 1791606840)
+2026-10-10 03:34:43,795 | INFO | AUDJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:34:43,796 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159968379, 'offset': 2000, 'period': 60, 'time': 1791497400}]
+2026-10-10 03:34:44,447 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791497400, before forming 1791606840)
+2026-10-10 03:34:44,450 | INFO | AUDJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:34:44,453 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159968445, 'offset': 2000, 'period': 60, 'time': 1791495360}]
+2026-10-10 03:34:45,133 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791495360, before forming 1791606840)
+2026-10-10 03:34:45,135 | INFO | AUDJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:34:45,136 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159968513, 'offset': 2000, 'period': 60, 'time': 1791493320}]
+2026-10-10 03:34:45,841 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791493320, before forming 1791606840)
+2026-10-10 03:34:45,844 | INFO | AUDJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:34:45,845 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159968584, 'offset': 2000, 'period': 60, 'time': 1791491280}]
+2026-10-10 03:34:46,560 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791491280, before forming 1791606840)
+2026-10-10 03:34:46,562 | INFO | AUDJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:34:46,563 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159968656, 'offset': 2000, 'period': 60, 'time': 1791489240}]
+2026-10-10 03:34:47,280 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791489240, before forming 1791606840)
+2026-10-10 03:34:47,283 | INFO | AUDJPY_otc: received 339 unique candles; first=2026-10-08 18:21:00; last=2026-10-08 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:34:47,284 | WARNING | AUDJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:34:47,761 | INFO | GBPJPY_otc asset check: symbol=GBPJPY_otc, available=True, id=84
+2026-10-10 03:34:47,771 | INFO | Subscribed to GBPJPY_otc period=60
+2026-10-10 03:34:47,773 | INFO | GBPJPY_otc subscription result: True
+2026-10-10 03:34:48,777 | INFO | GBPJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:34:48,779 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159968877, 'offset': 2000, 'period': 60, 'time': 1791507600}]
+2026-10-10 03:34:49,482 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791507600, before forming 1791606840)
+2026-10-10 03:34:49,484 | INFO | GBPJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:34:49,485 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159968948, 'offset': 2000, 'period': 60, 'time': 1791505560}]
+2026-10-10 03:34:50,170 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791505560, before forming 1791606840)
+2026-10-10 03:34:50,173 | INFO | GBPJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:34:50,174 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159969017, 'offset': 2000, 'period': 60, 'time': 1791503520}]
+2026-10-10 03:34:51,168 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791503520, before forming 1791606840)
+2026-10-10 03:34:51,170 | INFO | GBPJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:34:51,171 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159969117, 'offset': 2000, 'period': 60, 'time': 1791501480}]
+2026-10-10 03:34:51,889 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791501480, before forming 1791606840)
+2026-10-10 03:34:51,891 | INFO | GBPJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:34:51,896 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159969189, 'offset': 2000, 'period': 60, 'time': 1791499440}]
+2026-10-10 03:34:52,602 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791499440, before forming 1791606840)
+2026-10-10 03:34:52,604 | INFO | GBPJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:34:52,604 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159969260, 'offset': 2000, 'period': 60, 'time': 1791497400}]
+2026-10-10 03:34:53,320 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791497400, before forming 1791606840)
+2026-10-10 03:34:53,321 | INFO | GBPJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:34:53,322 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159969332, 'offset': 2000, 'period': 60, 'time': 1791495360}]
+2026-10-10 03:34:54,046 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791495360, before forming 1791606840)
+2026-10-10 03:34:54,048 | INFO | GBPJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:34:54,052 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159969405, 'offset': 2000, 'period': 60, 'time': 1791493320}]
+2026-10-10 03:34:54,755 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791493320, before forming 1791606840)
+2026-10-10 03:34:54,757 | INFO | GBPJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:34:54,758 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159969475, 'offset': 2000, 'period': 60, 'time': 1791491280}]
+2026-10-10 03:34:55,466 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791491280, before forming 1791606840)
+2026-10-10 03:34:55,468 | INFO | GBPJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:34:55,469 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159969546, 'offset': 2000, 'period': 60, 'time': 1791489240}]
+2026-10-10 03:34:56,134 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791489240, before forming 1791606840)
+2026-10-10 03:34:56,136 | INFO | GBPJPY_otc: received 339 unique candles; first=2026-10-08 18:21:00; last=2026-10-08 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:34:56,136 | WARNING | GBPJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:34:56,411 | INFO | GBPAUD_otc asset check: symbol=GBPAUD_otc, available=True, id=81
+2026-10-10 03:34:56,414 | INFO | Subscribed to GBPAUD_otc period=60
+2026-10-10 03:34:56,414 | INFO | GBPAUD_otc subscription result: True
+2026-10-10 03:34:57,415 | INFO | GBPAUD_otc: requesting history page 1, offset=2000
+2026-10-10 03:34:57,416 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159969741, 'offset': 2000, 'period': 60, 'time': 1791507600}]
+2026-10-10 03:34:58,132 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791507600, before forming 1791606840)
+2026-10-10 03:34:58,133 | INFO | GBPAUD_otc: requesting history page 2, offset=2000
+2026-10-10 03:34:58,134 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159969813, 'offset': 2000, 'period': 60, 'time': 1791505560}]
+2026-10-10 03:34:58,847 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791505560, before forming 1791606840)
+2026-10-10 03:34:58,848 | INFO | GBPAUD_otc: requesting history page 3, offset=2000
+2026-10-10 03:34:58,849 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159969884, 'offset': 2000, 'period': 60, 'time': 1791503520}]
+2026-10-10 03:34:59,562 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791503520, before forming 1791606840)
+2026-10-10 03:34:59,564 | INFO | GBPAUD_otc: requesting history page 4, offset=2000
+2026-10-10 03:34:59,565 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159969956, 'offset': 2000, 'period': 60, 'time': 1791501480}]
+2026-10-10 03:35:00,277 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791501480, before forming 1791606900)
+2026-10-10 03:35:00,279 | INFO | GBPAUD_otc: requesting history page 5, offset=2000
+2026-10-10 03:35:00,280 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159970028, 'offset': 2000, 'period': 60, 'time': 1791499440}]
+2026-10-10 03:35:00,934 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791499440, before forming 1791606900)
+2026-10-10 03:35:00,936 | INFO | GBPAUD_otc: requesting history page 6, offset=2000
+2026-10-10 03:35:00,937 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159970093, 'offset': 2000, 'period': 60, 'time': 1791497400}]
+2026-10-10 03:35:01,824 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791497400, before forming 1791606900)
+2026-10-10 03:35:01,826 | INFO | GBPAUD_otc: requesting history page 7, offset=2000
+2026-10-10 03:35:01,827 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159970182, 'offset': 2000, 'period': 60, 'time': 1791495360}]
+2026-10-10 03:35:02,510 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791495360, before forming 1791606900)
+2026-10-10 03:35:02,511 | INFO | GBPAUD_otc: requesting history page 8, offset=2000
+2026-10-10 03:35:02,512 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159970251, 'offset': 2000, 'period': 60, 'time': 1791493320}]
+2026-10-10 03:35:03,180 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791493320, before forming 1791606900)
+2026-10-10 03:35:03,182 | INFO | GBPAUD_otc: requesting history page 9, offset=2000
+2026-10-10 03:35:03,184 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159970318, 'offset': 2000, 'period': 60, 'time': 1791491280}]
+2026-10-10 03:35:03,865 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791491280, before forming 1791606900)
+2026-10-10 03:35:03,868 | INFO | GBPAUD_otc: requesting history page 10, offset=2000
+2026-10-10 03:35:03,869 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159970386, 'offset': 2000, 'period': 60, 'time': 1791489240}]
+2026-10-10 03:35:04,538 | INFO | Gap filled: +12 candle(s) from realtime ticks (after 1791489240, before forming 1791606900)
+2026-10-10 03:35:04,540 | INFO | GBPAUD_otc: received 339 unique candles; first=2026-10-08 18:21:00; last=2026-10-08 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:35:04,540 | WARNING | GBPAUD_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:35:04,829 | WARNING | GBPCAD_otc was not found in the asset catalogue. Attempting the history request anyway.
+2026-10-10 03:35:04,842 | INFO | Subscribed to GBPCAD_otc period=60
+2026-10-10 03:35:04,845 | INFO | GBPCAD_otc subscription result: True
+2026-10-10 03:35:05,847 | INFO | GBPCAD_otc: requesting history page 1, offset=2000
+2026-10-10 03:35:05,850 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPCAD_otc', 'index': 179159970584, 'offset': 2000, 'period': 60, 'time': 1791507600}]
+2026-10-10 03:35:12,445 | INFO | Assets catalog loaded: 183 assets
+2026-10-10 03:35:15,856 | ERROR | Timeout waiting for historical data
+2026-10-10 03:35:15,857 | WARNING | GBPCAD_otc: API returned no candles on page 1.
+2026-10-10 03:35:15,858 | WARNING | GBPCAD_otc: no candles fell within 2026-10-08 in timezone Africa/Lagos.
+2026-10-10 03:35:15,860 | INFO | CADJPY_otc asset check: symbol=CADJPY_otc, available=True, id=73
+2026-10-10 03:35:15,866 | INFO | Subscribed to CADJPY_otc period=60
+2026-10-10 03:35:15,867 | INFO | CADJPY_otc subscription result: True
+2026-10-10 03:35:16,868 | INFO | CADJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:35:16,874 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159971687, 'offset': 2000, 'period': 60, 'time': 1791507600}]
+2026-10-10 03:35:17,800 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791507600, before forming 1791606900)
+2026-10-10 03:35:17,803 | INFO | CADJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:35:17,804 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159971780, 'offset': 2000, 'period': 60, 'time': 1791505560}]
+2026-10-10 03:35:18,511 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791505560, before forming 1791606900)
+2026-10-10 03:35:18,514 | INFO | CADJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:35:18,515 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159971851, 'offset': 2000, 'period': 60, 'time': 1791503520}]
+2026-10-10 03:35:19,196 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791503520, before forming 1791606900)
+2026-10-10 03:35:19,199 | INFO | CADJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:35:19,200 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159971919, 'offset': 2000, 'period': 60, 'time': 1791501480}]
+2026-10-10 03:35:19,894 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791501480, before forming 1791606900)
+2026-10-10 03:35:19,897 | INFO | CADJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:35:19,898 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159971989, 'offset': 2000, 'period': 60, 'time': 1791499440}]
+2026-10-10 03:35:20,661 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791499440, before forming 1791606900)
+2026-10-10 03:35:20,662 | INFO | CADJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:35:20,663 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159972066, 'offset': 2000, 'period': 60, 'time': 1791497400}]
+2026-10-10 03:35:21,375 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791497400, before forming 1791606900)
+2026-10-10 03:35:21,377 | INFO | CADJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:35:21,377 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159972137, 'offset': 2000, 'period': 60, 'time': 1791495360}]
+2026-10-10 03:35:22,097 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791495360, before forming 1791606900)
+2026-10-10 03:35:22,101 | INFO | CADJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:35:22,102 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159972210, 'offset': 2000, 'period': 60, 'time': 1791493320}]
+2026-10-10 03:35:22,814 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791493320, before forming 1791606900)
+2026-10-10 03:35:22,817 | INFO | CADJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:35:22,818 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159972281, 'offset': 2000, 'period': 60, 'time': 1791491280}]
+2026-10-10 03:35:23,485 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791491280, before forming 1791606900)
+2026-10-10 03:35:23,487 | INFO | CADJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:35:23,487 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159972348, 'offset': 2000, 'period': 60, 'time': 1791489240}]
+2026-10-10 03:35:24,154 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791489240, before forming 1791606900)
+2026-10-10 03:35:24,156 | INFO | CADJPY_otc: received 339 unique candles; first=2026-10-08 18:21:00; last=2026-10-08 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:35:24,157 | WARNING | CADJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:35:25,056 | INFO | Pocket Option connection closed.
+2026-10-10 03:36:17,824 | INFO | Report date: 2026-10-07
+2026-10-10 03:36:17,825 | INFO | Timezone: Africa/Lagos
+2026-10-10 03:36:17,826 | INFO | Candle period: 60 seconds
+2026-10-10 03:36:17,827 | INFO | Database: firefly_pocketoption_reports.db
+2026-10-10 03:36:18,041 | INFO | SSID parsed: REAL mode, uid=15748268, session_len=308
+2026-10-10 03:36:18,046 | INFO | Connecting to Pocket Option...
+2026-10-10 03:36:19,841 | INFO | Server latency probe: api-eu.po.market (605ms), api-us2.po.market (1306ms), api-us-north.po.market (1309ms)
+2026-10-10 03:36:19,842 | INFO | Connection attempt 1 to: wss://api-eu.po.market/socket.io/?EIO=4&transport=websocket (REAL)
+2026-10-10 03:36:21,190 | INFO | Initial time sync from HTTP Date header: Sat, 10 Oct 2026 02:36:21 GMT -> 1791599781
+2026-10-10 03:36:21,477 | INFO | Sending auth: 42["auth", {"session": "a:4:{s:10:\"session_id\";s:32:\"73d0bf4ef01d38a25a5a6881ac18b74e\";s:10:\"ip_address\";s:14:\"15...
+2026-10-10 03:36:22,407 | INFO | Assets catalog loaded: 183 assets
+2026-10-10 03:36:22,408 | INFO | Authentication successful
+2026-10-10 03:36:22,408 | INFO | Authenticated & connected to: wss://api-eu.po.market/socket.io/?EIO=4&transport=websocket
+2026-10-10 03:36:22,476 | INFO | Connected; server time is synchronized.
+2026-10-10 03:36:22,477 | INFO | USDJPY_otc asset check: symbol=USDJPY_otc, available=True, id=93
+2026-10-10 03:36:22,480 | INFO | Subscribed to USDJPY_otc period=60
+2026-10-10 03:36:22,480 | INFO | USDJPY_otc subscription result: True
+2026-10-10 03:36:23,090 | INFO | Detected stream timezone offset: 7200s (+2h from UTC)
+2026-10-10 03:36:23,482 | INFO | USDJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:36:23,483 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159978348, 'offset': 2000, 'period': 60, 'time': 1791414000}]
+2026-10-10 03:36:23,840 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791414000, before forming 1791606960)
+2026-10-10 03:36:23,841 | INFO | USDJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:36:23,842 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159978384, 'offset': 2000, 'period': 60, 'time': 1791411960}]
+2026-10-10 03:36:24,107 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791411960, before forming 1791606960)
+2026-10-10 03:36:24,109 | INFO | USDJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:36:24,110 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159978410, 'offset': 2000, 'period': 60, 'time': 1791409920}]
+2026-10-10 03:36:24,450 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791409920, before forming 1791606960)
+2026-10-10 03:36:24,451 | INFO | USDJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:36:24,451 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159978445, 'offset': 2000, 'period': 60, 'time': 1791407880}]
+2026-10-10 03:36:24,762 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791407880, before forming 1791606960)
+2026-10-10 03:36:24,764 | INFO | USDJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:36:24,765 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159978476, 'offset': 2000, 'period': 60, 'time': 1791405840}]
+2026-10-10 03:36:25,049 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791405840, before forming 1791606960)
+2026-10-10 03:36:25,051 | INFO | USDJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:36:25,051 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159978505, 'offset': 2000, 'period': 60, 'time': 1791403800}]
+2026-10-10 03:36:26,290 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791403800, before forming 1791606960)
+2026-10-10 03:36:26,293 | INFO | USDJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:36:26,294 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159978629, 'offset': 2000, 'period': 60, 'time': 1791401760}]
+2026-10-10 03:36:26,631 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791401760, before forming 1791606960)
+2026-10-10 03:36:26,633 | INFO | USDJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:36:26,633 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159978663, 'offset': 2000, 'period': 60, 'time': 1791399720}]
+2026-10-10 03:36:26,914 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791399720, before forming 1791606960)
+2026-10-10 03:36:26,914 | INFO | USDJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:36:26,915 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159978691, 'offset': 2000, 'period': 60, 'time': 1791397680}]
+2026-10-10 03:36:27,215 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791397680, before forming 1791606960)
+2026-10-10 03:36:27,215 | INFO | USDJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:36:27,216 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159978721, 'offset': 2000, 'period': 60, 'time': 1791395640}]
+2026-10-10 03:36:27,522 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791395640, before forming 1791606960)
+2026-10-10 03:36:27,523 | INFO | USDJPY_otc: received 339 unique candles; first=2026-10-07 18:21:00; last=2026-10-07 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:36:27,523 | WARNING | USDJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:36:28,058 | INFO | AUDUSD_otc asset check: symbol=AUDUSD_otc, available=True, id=71
+2026-10-10 03:36:28,082 | INFO | Subscribed to AUDUSD_otc period=60
+2026-10-10 03:36:28,083 | INFO | AUDUSD_otc subscription result: True
+2026-10-10 03:36:29,094 | INFO | AUDUSD_otc: requesting history page 1, offset=2000
+2026-10-10 03:36:29,096 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159978909, 'offset': 2000, 'period': 60, 'time': 1791421200}]
+2026-10-10 03:36:29,368 | INFO | Gap filled: +14 candle(s) from realtime ticks (after 1791421200, before forming 1791606960)
+2026-10-10 03:36:29,370 | INFO | AUDUSD_otc: requesting history page 2, offset=2000
+2026-10-10 03:36:29,371 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159978937, 'offset': 2000, 'period': 60, 'time': 1791419160}]
+2026-10-10 03:36:29,883 | INFO | Gap filled: +14 candle(s) from realtime ticks (after 1791419160, before forming 1791606960)
+2026-10-10 03:36:29,885 | INFO | AUDUSD_otc: requesting history page 3, offset=2000
+2026-10-10 03:36:29,886 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159978988, 'offset': 2000, 'period': 60, 'time': 1791417120}]
+2026-10-10 03:36:30,146 | INFO | Gap filled: +14 candle(s) from realtime ticks (after 1791417120, before forming 1791606960)
+2026-10-10 03:36:30,147 | INFO | AUDUSD_otc: requesting history page 4, offset=2000
+2026-10-10 03:36:30,147 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159979014, 'offset': 2000, 'period': 60, 'time': 1791415080}]
+2026-10-10 03:36:30,639 | INFO | Gap filled: +14 candle(s) from realtime ticks (after 1791415080, before forming 1791606960)
+2026-10-10 03:36:30,641 | INFO | AUDUSD_otc: requesting history page 5, offset=2000
+2026-10-10 03:36:30,641 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159979064, 'offset': 2000, 'period': 60, 'time': 1791413040}]
+2026-10-10 03:36:30,911 | INFO | Gap filled: +14 candle(s) from realtime ticks (after 1791413040, before forming 1791606960)
+2026-10-10 03:36:30,913 | INFO | AUDUSD_otc: requesting history page 6, offset=2000
+2026-10-10 03:36:30,914 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159979091, 'offset': 2000, 'period': 60, 'time': 1791411000}]
+2026-10-10 03:36:31,223 | INFO | Gap filled: +14 candle(s) from realtime ticks (after 1791411000, before forming 1791606960)
+2026-10-10 03:36:31,225 | INFO | AUDUSD_otc: requesting history page 7, offset=2000
+2026-10-10 03:36:31,226 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159979122, 'offset': 2000, 'period': 60, 'time': 1791408960}]
+2026-10-10 03:36:31,500 | INFO | Gap filled: +14 candle(s) from realtime ticks (after 1791408960, before forming 1791606960)
+2026-10-10 03:36:31,500 | INFO | AUDUSD_otc: requesting history page 8, offset=2000
+2026-10-10 03:36:31,501 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159979150, 'offset': 2000, 'period': 60, 'time': 1791406920}]
+2026-10-10 03:36:31,828 | INFO | Gap filled: +14 candle(s) from realtime ticks (after 1791406920, before forming 1791606960)
+2026-10-10 03:36:31,830 | INFO | AUDUSD_otc: requesting history page 9, offset=2000
+2026-10-10 03:36:31,831 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159979183, 'offset': 2000, 'period': 60, 'time': 1791404880}]
+2026-10-10 03:36:32,443 | INFO | Gap filled: +14 candle(s) from realtime ticks (after 1791404880, before forming 1791606960)
+2026-10-10 03:36:32,446 | INFO | AUDUSD_otc: requesting history page 10, offset=2000
+2026-10-10 03:36:32,447 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159979244, 'offset': 2000, 'period': 60, 'time': 1791402840}]
+2026-10-10 03:36:32,717 | INFO | Gap filled: +14 candle(s) from realtime ticks (after 1791402840, before forming 1791606960)
+2026-10-10 03:36:32,720 | INFO | AUDUSD_otc: received 339 unique candles; first=2026-10-07 18:21:00; last=2026-10-07 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:36:32,720 | WARNING | AUDUSD_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:36:33,022 | INFO | EURJPY_otc asset check: symbol=EURJPY_otc, available=True, id=79
+2026-10-10 03:36:33,037 | INFO | Subscribed to EURJPY_otc period=60
+2026-10-10 03:36:33,038 | INFO | EURJPY_otc subscription result: True
+2026-10-10 03:36:34,050 | INFO | EURJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:36:34,051 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159979405, 'offset': 2000, 'period': 60, 'time': 1791421200}]
+2026-10-10 03:36:34,389 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791421200, before forming 1791606960)
+2026-10-10 03:36:34,390 | INFO | EURJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:36:34,391 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159979439, 'offset': 2000, 'period': 60, 'time': 1791419160}]
+2026-10-10 03:36:34,652 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791419160, before forming 1791606960)
+2026-10-10 03:36:34,653 | INFO | EURJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:36:34,653 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159979465, 'offset': 2000, 'period': 60, 'time': 1791417120}]
+2026-10-10 03:36:35,002 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791417120, before forming 1791606960)
+2026-10-10 03:36:35,004 | INFO | EURJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:36:35,005 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159979500, 'offset': 2000, 'period': 60, 'time': 1791415080}]
+2026-10-10 03:36:35,276 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791415080, before forming 1791606960)
+2026-10-10 03:36:35,278 | INFO | EURJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:36:35,280 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159979528, 'offset': 2000, 'period': 60, 'time': 1791413040}]
+2026-10-10 03:36:35,622 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791413040, before forming 1791606960)
+2026-10-10 03:36:35,624 | INFO | EURJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:36:35,625 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159979562, 'offset': 2000, 'period': 60, 'time': 1791411000}]
+2026-10-10 03:36:35,927 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791411000, before forming 1791606960)
+2026-10-10 03:36:35,929 | INFO | EURJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:36:35,931 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159979593, 'offset': 2000, 'period': 60, 'time': 1791408960}]
+2026-10-10 03:36:36,200 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791408960, before forming 1791606960)
+2026-10-10 03:36:36,202 | INFO | EURJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:36:36,203 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159979620, 'offset': 2000, 'period': 60, 'time': 1791406920}]
+2026-10-10 03:36:36,538 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791406920, before forming 1791606960)
+2026-10-10 03:36:36,540 | INFO | EURJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:36:36,541 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159979654, 'offset': 2000, 'period': 60, 'time': 1791404880}]
+2026-10-10 03:36:36,846 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791404880, before forming 1791606960)
+2026-10-10 03:36:36,848 | INFO | EURJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:36:36,849 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159979684, 'offset': 2000, 'period': 60, 'time': 1791402840}]
+2026-10-10 03:36:37,152 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791402840, before forming 1791606960)
+2026-10-10 03:36:37,155 | INFO | EURJPY_otc: received 339 unique candles; first=2026-10-07 18:21:00; last=2026-10-07 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:36:37,156 | WARNING | EURJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:36:37,449 | INFO | AUDJPY_otc asset check: symbol=AUDJPY_otc, available=True, id=69
+2026-10-10 03:36:37,474 | INFO | Subscribed to AUDJPY_otc period=60
+2026-10-10 03:36:37,480 | INFO | AUDJPY_otc subscription result: True
+2026-10-10 03:36:38,481 | INFO | AUDJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:36:38,482 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159979848, 'offset': 2000, 'period': 60, 'time': 1791421200}]
+2026-10-10 03:36:38,788 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791421200, before forming 1791606960)
+2026-10-10 03:36:38,789 | INFO | AUDJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:36:38,790 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159979879, 'offset': 2000, 'period': 60, 'time': 1791419160}]
+2026-10-10 03:36:39,097 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791419160, before forming 1791606960)
+2026-10-10 03:36:39,099 | INFO | AUDJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:36:39,100 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159979910, 'offset': 2000, 'period': 60, 'time': 1791417120}]
+2026-10-10 03:36:39,402 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791417120, before forming 1791606960)
+2026-10-10 03:36:39,403 | INFO | AUDJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:36:39,404 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159979940, 'offset': 2000, 'period': 60, 'time': 1791415080}]
+2026-10-10 03:36:39,686 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791415080, before forming 1791606960)
+2026-10-10 03:36:39,687 | INFO | AUDJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:36:39,688 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159979968, 'offset': 2000, 'period': 60, 'time': 1791413040}]
+2026-10-10 03:36:40,028 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791413040, before forming 1791606960)
+2026-10-10 03:36:40,032 | INFO | AUDJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:36:40,034 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159980003, 'offset': 2000, 'period': 60, 'time': 1791411000}]
+2026-10-10 03:36:40,322 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791411000, before forming 1791606960)
+2026-10-10 03:36:40,323 | INFO | AUDJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:36:40,324 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159980032, 'offset': 2000, 'period': 60, 'time': 1791408960}]
+2026-10-10 03:36:40,633 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791408960, before forming 1791606960)
+2026-10-10 03:36:40,634 | INFO | AUDJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:36:40,635 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159980063, 'offset': 2000, 'period': 60, 'time': 1791406920}]
+2026-10-10 03:36:40,938 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791406920, before forming 1791606960)
+2026-10-10 03:36:40,940 | INFO | AUDJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:36:40,941 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159980094, 'offset': 2000, 'period': 60, 'time': 1791404880}]
+2026-10-10 03:36:41,201 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791404880, before forming 1791606960)
+2026-10-10 03:36:41,202 | INFO | AUDJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:36:41,203 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159980120, 'offset': 2000, 'period': 60, 'time': 1791402840}]
+2026-10-10 03:36:41,554 | INFO | Gap filled: +8 candle(s) from realtime ticks (after 1791402840, before forming 1791606960)
+2026-10-10 03:36:41,558 | INFO | AUDJPY_otc: received 339 unique candles; first=2026-10-07 18:21:00; last=2026-10-07 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:36:41,559 | WARNING | AUDJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:36:41,949 | INFO | GBPJPY_otc asset check: symbol=GBPJPY_otc, available=True, id=84
+2026-10-10 03:36:41,954 | INFO | Subscribed to GBPJPY_otc period=60
+2026-10-10 03:36:41,954 | INFO | GBPJPY_otc subscription result: True
+2026-10-10 03:36:42,956 | INFO | GBPJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:36:42,957 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159980295, 'offset': 2000, 'period': 60, 'time': 1791421200}]
+2026-10-10 03:36:43,299 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791421200, before forming 1791606960)
+2026-10-10 03:36:43,301 | INFO | GBPJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:36:43,302 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159980330, 'offset': 2000, 'period': 60, 'time': 1791419160}]
+2026-10-10 03:36:43,606 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791419160, before forming 1791606960)
+2026-10-10 03:36:43,607 | INFO | GBPJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:36:43,608 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159980360, 'offset': 2000, 'period': 60, 'time': 1791417120}]
+2026-10-10 03:36:43,869 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791417120, before forming 1791606960)
+2026-10-10 03:36:43,872 | INFO | GBPJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:36:43,873 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159980387, 'offset': 2000, 'period': 60, 'time': 1791415080}]
+2026-10-10 03:36:44,157 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791415080, before forming 1791606960)
+2026-10-10 03:36:44,158 | INFO | GBPJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:36:44,158 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159980415, 'offset': 2000, 'period': 60, 'time': 1791413040}]
+2026-10-10 03:36:44,423 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791413040, before forming 1791606960)
+2026-10-10 03:36:44,424 | INFO | GBPJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:36:44,425 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159980442, 'offset': 2000, 'period': 60, 'time': 1791411000}]
+2026-10-10 03:36:44,688 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791411000, before forming 1791606960)
+2026-10-10 03:36:44,689 | INFO | GBPJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:36:44,690 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159980469, 'offset': 2000, 'period': 60, 'time': 1791408960}]
+2026-10-10 03:36:44,943 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791408960, before forming 1791606960)
+2026-10-10 03:36:44,945 | INFO | GBPJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:36:44,945 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159980494, 'offset': 2000, 'period': 60, 'time': 1791406920}]
+2026-10-10 03:36:45,215 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791406920, before forming 1791606960)
+2026-10-10 03:36:45,217 | INFO | GBPJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:36:45,217 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159980521, 'offset': 2000, 'period': 60, 'time': 1791404880}]
+2026-10-10 03:36:45,470 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791404880, before forming 1791606960)
+2026-10-10 03:36:45,474 | INFO | GBPJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:36:45,495 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179159980549, 'offset': 2000, 'period': 60, 'time': 1791402840}]
+2026-10-10 03:36:45,857 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791402840, before forming 1791606960)
+2026-10-10 03:36:45,859 | INFO | GBPJPY_otc: received 339 unique candles; first=2026-10-07 18:21:00; last=2026-10-07 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:36:45,859 | WARNING | GBPJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:36:46,315 | INFO | GBPAUD_otc asset check: symbol=GBPAUD_otc, available=True, id=81
+2026-10-10 03:36:46,319 | INFO | Subscribed to GBPAUD_otc period=60
+2026-10-10 03:36:46,320 | INFO | GBPAUD_otc subscription result: True
+2026-10-10 03:36:47,322 | INFO | GBPAUD_otc: requesting history page 1, offset=2000
+2026-10-10 03:36:47,323 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159980732, 'offset': 2000, 'period': 60, 'time': 1791421200}]
+2026-10-10 03:36:47,601 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791421200, before forming 1791606960)
+2026-10-10 03:36:47,603 | INFO | GBPAUD_otc: requesting history page 2, offset=2000
+2026-10-10 03:36:47,607 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159980760, 'offset': 2000, 'period': 60, 'time': 1791419160}]
+2026-10-10 03:36:47,903 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791419160, before forming 1791606960)
+2026-10-10 03:36:47,905 | INFO | GBPAUD_otc: requesting history page 3, offset=2000
+2026-10-10 03:36:47,906 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159980790, 'offset': 2000, 'period': 60, 'time': 1791417120}]
+2026-10-10 03:36:48,213 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791417120, before forming 1791606960)
+2026-10-10 03:36:48,214 | INFO | GBPAUD_otc: requesting history page 4, offset=2000
+2026-10-10 03:36:48,215 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159980821, 'offset': 2000, 'period': 60, 'time': 1791415080}]
+2026-10-10 03:36:48,518 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791415080, before forming 1791606960)
+2026-10-10 03:36:48,520 | INFO | GBPAUD_otc: requesting history page 5, offset=2000
+2026-10-10 03:36:48,521 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159980852, 'offset': 2000, 'period': 60, 'time': 1791413040}]
+2026-10-10 03:36:48,776 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791413040, before forming 1791606960)
+2026-10-10 03:36:48,779 | INFO | GBPAUD_otc: requesting history page 6, offset=2000
+2026-10-10 03:36:48,780 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159980878, 'offset': 2000, 'period': 60, 'time': 1791411000}]
+2026-10-10 03:36:49,031 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791411000, before forming 1791606960)
+2026-10-10 03:36:49,033 | INFO | GBPAUD_otc: requesting history page 7, offset=2000
+2026-10-10 03:36:49,033 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159980903, 'offset': 2000, 'period': 60, 'time': 1791408960}]
+2026-10-10 03:36:49,296 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791408960, before forming 1791606960)
+2026-10-10 03:36:49,297 | INFO | GBPAUD_otc: requesting history page 8, offset=2000
+2026-10-10 03:36:49,298 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159980929, 'offset': 2000, 'period': 60, 'time': 1791406920}]
+2026-10-10 03:36:49,646 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791406920, before forming 1791606960)
+2026-10-10 03:36:49,647 | INFO | GBPAUD_otc: requesting history page 9, offset=2000
+2026-10-10 03:36:49,648 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159980964, 'offset': 2000, 'period': 60, 'time': 1791404880}]
+2026-10-10 03:36:49,952 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791404880, before forming 1791606960)
+2026-10-10 03:36:49,953 | INFO | GBPAUD_otc: requesting history page 10, offset=2000
+2026-10-10 03:36:49,954 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179159980995, 'offset': 2000, 'period': 60, 'time': 1791402840}]
+2026-10-10 03:36:50,212 | INFO | Gap filled: +13 candle(s) from realtime ticks (after 1791402840, before forming 1791606960)
+2026-10-10 03:36:50,215 | INFO | GBPAUD_otc: received 339 unique candles; first=2026-10-07 18:21:00; last=2026-10-07 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:36:50,215 | WARNING | GBPAUD_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:36:50,683 | WARNING | GBPCAD_otc was not found in the asset catalogue. Attempting the history request anyway.
+2026-10-10 03:36:50,704 | INFO | Subscribed to GBPCAD_otc period=60
+2026-10-10 03:36:50,707 | INFO | GBPCAD_otc subscription result: True
+2026-10-10 03:36:51,709 | INFO | GBPCAD_otc: requesting history page 1, offset=2000
+2026-10-10 03:36:51,710 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPCAD_otc', 'index': 179159981171, 'offset': 2000, 'period': 60, 'time': 1791421200}]
+2026-10-10 03:37:01,727 | ERROR | Timeout waiting for historical data
+2026-10-10 03:37:01,728 | WARNING | GBPCAD_otc: API returned no candles on page 1.
+2026-10-10 03:37:01,729 | WARNING | GBPCAD_otc: no candles fell within 2026-10-07 in timezone Africa/Lagos.
+2026-10-10 03:37:01,730 | INFO | CADJPY_otc asset check: symbol=CADJPY_otc, available=True, id=73
+2026-10-10 03:37:01,733 | INFO | Subscribed to CADJPY_otc period=60
+2026-10-10 03:37:01,734 | INFO | CADJPY_otc subscription result: True
+2026-10-10 03:37:02,742 | INFO | CADJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:37:02,743 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159982274, 'offset': 2000, 'period': 60, 'time': 1791421200}]
+2026-10-10 03:37:03,057 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791421200, before forming 1791607020)
+2026-10-10 03:37:03,058 | INFO | CADJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:37:03,059 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159982305, 'offset': 2000, 'period': 60, 'time': 1791419160}]
+2026-10-10 03:37:03,366 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791419160, before forming 1791607020)
+2026-10-10 03:37:03,368 | INFO | CADJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:37:03,368 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159982336, 'offset': 2000, 'period': 60, 'time': 1791417120}]
+2026-10-10 03:37:03,674 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791417120, before forming 1791607020)
+2026-10-10 03:37:03,676 | INFO | CADJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:37:03,677 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159982367, 'offset': 2000, 'period': 60, 'time': 1791415080}]
+2026-10-10 03:37:03,979 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791415080, before forming 1791607020)
+2026-10-10 03:37:03,980 | INFO | CADJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:37:03,981 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159982398, 'offset': 2000, 'period': 60, 'time': 1791413040}]
+2026-10-10 03:37:04,283 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791413040, before forming 1791607020)
+2026-10-10 03:37:04,283 | INFO | CADJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:37:04,283 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159982428, 'offset': 2000, 'period': 60, 'time': 1791411000}]
+2026-10-10 03:37:04,593 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791411000, before forming 1791607020)
+2026-10-10 03:37:04,594 | INFO | CADJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:37:04,595 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159982459, 'offset': 2000, 'period': 60, 'time': 1791408960}]
+2026-10-10 03:37:06,134 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791408960, before forming 1791607020)
+2026-10-10 03:37:06,135 | INFO | CADJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:37:06,136 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159982613, 'offset': 2000, 'period': 60, 'time': 1791406920}]
+2026-10-10 03:37:06,390 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791406920, before forming 1791607020)
+2026-10-10 03:37:06,391 | INFO | CADJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:37:06,392 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159982639, 'offset': 2000, 'period': 60, 'time': 1791404880}]
+2026-10-10 03:37:06,751 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791404880, before forming 1791607020)
+2026-10-10 03:37:06,753 | INFO | CADJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:37:06,754 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179159982675, 'offset': 2000, 'period': 60, 'time': 1791402840}]
+2026-10-10 03:37:07,051 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791402840, before forming 1791607020)
+2026-10-10 03:37:07,053 | INFO | CADJPY_otc: received 339 unique candles; first=2026-10-07 18:21:00; last=2026-10-07 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:37:07,054 | WARNING | CADJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:37:07,749 | INFO | Pocket Option connection closed.
+2026-10-10 03:39:13,095 | INFO | Report date: 2026-10-06
+2026-10-10 03:39:13,096 | INFO | Timezone: Africa/Lagos
+2026-10-10 03:39:13,097 | INFO | Candle period: 60 seconds
+2026-10-10 03:39:13,097 | INFO | Database: firefly_pocketoption_reports.db
+2026-10-10 03:39:13,221 | INFO | SSID parsed: REAL mode, uid=15748268, session_len=308
+2026-10-10 03:39:13,230 | INFO | Connecting to Pocket Option...
+2026-10-10 03:39:14,828 | INFO | Connection attempt 1 to: wss://api-eu.po.market/socket.io/?EIO=4&transport=websocket (REAL)
+2026-10-10 03:39:22,864 | WARNING | Connection error: timed out during opening handshake
+2026-10-10 03:39:23,875 | INFO | Connection attempt 2 to: wss://api-eu2.po.market/socket.io/?EIO=4&transport=websocket (REAL)
+2026-10-10 03:39:24,023 | WARNING | Connection error: [Errno 11001] getaddrinfo failed
+2026-10-10 03:39:26,035 | INFO | Connection attempt 3 to: wss://api-us-north.po.market/socket.io/?EIO=4&transport=websocket (REAL)
+2026-10-10 03:39:28,565 | INFO | Initial time sync from HTTP Date header: Sat, 10 Oct 2026 02:39:28 GMT -> 1791599968
+2026-10-10 03:39:28,975 | INFO | Sending auth: 42["auth", {"session": "a:4:{s:10:\"session_id\";s:32:\"73d0bf4ef01d38a25a5a6881ac18b74e\";s:10:\"ip_address\";s:14:\"15...
+2026-10-10 03:39:29,675 | INFO | Assets catalog loaded: 183 assets
+2026-10-10 03:39:29,676 | INFO | Authentication successful
+2026-10-10 03:39:29,677 | INFO | Authenticated & connected to: wss://api-us-north.po.market/socket.io/?EIO=4&transport=websocket
+2026-10-10 03:39:29,756 | INFO | Connected; server time is synchronized.
+2026-10-10 03:39:29,758 | INFO | USDJPY_otc asset check: symbol=USDJPY_otc, available=True, id=93
+2026-10-10 03:39:29,770 | INFO | Subscribed to USDJPY_otc period=60
+2026-10-10 03:39:29,771 | INFO | USDJPY_otc subscription result: True
+2026-10-10 03:39:30,306 | INFO | Detected stream timezone offset: 7200s (+2h from UTC)
+2026-10-10 03:39:30,772 | INFO | USDJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:39:30,772 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159997077, 'offset': 2000, 'period': 60, 'time': 1791327600}]
+2026-10-10 03:39:31,503 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791327600, before forming 1791607140)
+2026-10-10 03:39:31,505 | INFO | USDJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:39:31,505 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159997150, 'offset': 2000, 'period': 60, 'time': 1791325560}]
+2026-10-10 03:39:32,116 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791325560, before forming 1791607140)
+2026-10-10 03:39:32,118 | INFO | USDJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:39:32,119 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159997211, 'offset': 2000, 'period': 60, 'time': 1791323520}]
+2026-10-10 03:39:32,731 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791323520, before forming 1791607140)
+2026-10-10 03:39:32,732 | INFO | USDJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:39:32,733 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159997273, 'offset': 2000, 'period': 60, 'time': 1791321480}]
+2026-10-10 03:39:33,317 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791321480, before forming 1791607140)
+2026-10-10 03:39:33,318 | INFO | USDJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:39:33,319 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159997331, 'offset': 2000, 'period': 60, 'time': 1791319440}]
+2026-10-10 03:39:33,888 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791319440, before forming 1791607140)
+2026-10-10 03:39:33,890 | INFO | USDJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:39:33,891 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159997389, 'offset': 2000, 'period': 60, 'time': 1791317400}]
+2026-10-10 03:39:34,511 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791317400, before forming 1791607140)
+2026-10-10 03:39:34,512 | INFO | USDJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:39:34,513 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159997451, 'offset': 2000, 'period': 60, 'time': 1791315360}]
+2026-10-10 03:39:35,125 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791315360, before forming 1791607140)
+2026-10-10 03:39:35,127 | INFO | USDJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:39:35,129 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159997512, 'offset': 2000, 'period': 60, 'time': 1791313320}]
+2026-10-10 03:39:35,740 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791313320, before forming 1791607140)
+2026-10-10 03:39:35,742 | INFO | USDJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:39:35,743 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159997574, 'offset': 2000, 'period': 60, 'time': 1791311280}]
+2026-10-10 03:39:36,331 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791311280, before forming 1791607140)
+2026-10-10 03:39:36,332 | INFO | USDJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:39:36,333 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179159997633, 'offset': 2000, 'period': 60, 'time': 1791309240}]
+2026-10-10 03:39:36,968 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791309240, before forming 1791607140)
+2026-10-10 03:39:36,970 | INFO | USDJPY_otc: received 339 unique candles; first=2026-10-06 18:21:00; last=2026-10-06 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:39:36,970 | WARNING | USDJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:39:37,411 | INFO | AUDUSD_otc asset check: symbol=AUDUSD_otc, available=True, id=71
+2026-10-10 03:39:37,423 | INFO | Subscribed to AUDUSD_otc period=60
+2026-10-10 03:39:37,427 | INFO | AUDUSD_otc subscription result: True
+2026-10-10 03:39:38,447 | INFO | AUDUSD_otc: requesting history page 1, offset=2000
+2026-10-10 03:39:38,448 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159997844, 'offset': 2000, 'period': 60, 'time': 1791334800}]
+2026-10-10 03:39:39,113 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791334800, before forming 1791607140)
+2026-10-10 03:39:39,114 | INFO | AUDUSD_otc: requesting history page 2, offset=2000
+2026-10-10 03:39:39,115 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159997911, 'offset': 2000, 'period': 60, 'time': 1791332760}]
+2026-10-10 03:39:39,939 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791332760, before forming 1791607140)
+2026-10-10 03:39:39,941 | INFO | AUDUSD_otc: requesting history page 3, offset=2000
+2026-10-10 03:39:39,941 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159997994, 'offset': 2000, 'period': 60, 'time': 1791330720}]
+2026-10-10 03:39:40,554 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791330720, before forming 1791607140)
+2026-10-10 03:39:40,555 | INFO | AUDUSD_otc: requesting history page 4, offset=2000
+2026-10-10 03:39:40,556 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159998055, 'offset': 2000, 'period': 60, 'time': 1791328680}]
+2026-10-10 03:39:41,144 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791328680, before forming 1791607140)
+2026-10-10 03:39:41,145 | INFO | AUDUSD_otc: requesting history page 5, offset=2000
+2026-10-10 03:39:41,146 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159998114, 'offset': 2000, 'period': 60, 'time': 1791326640}]
+2026-10-10 03:39:41,783 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791326640, before forming 1791607140)
+2026-10-10 03:39:41,785 | INFO | AUDUSD_otc: requesting history page 6, offset=2000
+2026-10-10 03:39:41,786 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159998178, 'offset': 2000, 'period': 60, 'time': 1791324600}]
+2026-10-10 03:39:42,381 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791324600, before forming 1791607140)
+2026-10-10 03:39:42,383 | INFO | AUDUSD_otc: requesting history page 7, offset=2000
+2026-10-10 03:39:42,384 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159998238, 'offset': 2000, 'period': 60, 'time': 1791322560}]
+2026-10-10 03:39:43,010 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791322560, before forming 1791607140)
+2026-10-10 03:39:43,011 | INFO | AUDUSD_otc: requesting history page 8, offset=2000
+2026-10-10 03:39:43,012 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159998301, 'offset': 2000, 'period': 60, 'time': 1791320520}]
+2026-10-10 03:39:43,625 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791320520, before forming 1791607140)
+2026-10-10 03:39:43,626 | INFO | AUDUSD_otc: requesting history page 9, offset=2000
+2026-10-10 03:39:43,627 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159998362, 'offset': 2000, 'period': 60, 'time': 1791318480}]
+2026-10-10 03:39:44,238 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791318480, before forming 1791607140)
+2026-10-10 03:39:44,240 | INFO | AUDUSD_otc: requesting history page 10, offset=2000
+2026-10-10 03:39:44,241 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179159998424, 'offset': 2000, 'period': 60, 'time': 1791316440}]
+2026-10-10 03:39:44,849 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791316440, before forming 1791607140)
+2026-10-10 03:39:44,850 | INFO | AUDUSD_otc: received 339 unique candles; first=2026-10-06 18:21:00; last=2026-10-06 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:39:44,851 | WARNING | AUDUSD_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:39:45,126 | INFO | EURJPY_otc asset check: symbol=EURJPY_otc, available=True, id=79
+2026-10-10 03:39:45,136 | INFO | Subscribed to EURJPY_otc period=60
+2026-10-10 03:39:45,143 | INFO | EURJPY_otc subscription result: True
+2026-10-10 03:39:46,145 | INFO | EURJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:39:46,146 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159998614, 'offset': 2000, 'period': 60, 'time': 1791334800}]
+2026-10-10 03:39:46,793 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791334800, before forming 1791607140)
+2026-10-10 03:39:46,794 | INFO | EURJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:39:46,794 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159998679, 'offset': 2000, 'period': 60, 'time': 1791332760}]
+2026-10-10 03:39:47,365 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791332760, before forming 1791607140)
+2026-10-10 03:39:47,367 | INFO | EURJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:39:47,368 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159998736, 'offset': 2000, 'period': 60, 'time': 1791330720}]
+2026-10-10 03:39:48,028 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791330720, before forming 1791607140)
+2026-10-10 03:39:48,030 | INFO | EURJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:39:48,030 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159998803, 'offset': 2000, 'period': 60, 'time': 1791328680}]
+2026-10-10 03:39:48,642 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791328680, before forming 1791607140)
+2026-10-10 03:39:48,644 | INFO | EURJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:39:48,645 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159998864, 'offset': 2000, 'period': 60, 'time': 1791326640}]
+2026-10-10 03:39:49,220 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791326640, before forming 1791607140)
+2026-10-10 03:39:49,222 | INFO | EURJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:39:49,224 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159998922, 'offset': 2000, 'period': 60, 'time': 1791324600}]
+2026-10-10 03:39:49,872 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791324600, before forming 1791607140)
+2026-10-10 03:39:49,874 | INFO | EURJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:39:49,874 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159998987, 'offset': 2000, 'period': 60, 'time': 1791322560}]
+2026-10-10 03:39:50,468 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791322560, before forming 1791607140)
+2026-10-10 03:39:50,469 | INFO | EURJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:39:50,470 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159999047, 'offset': 2000, 'period': 60, 'time': 1791320520}]
+2026-10-10 03:39:51,099 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791320520, before forming 1791607140)
+2026-10-10 03:39:51,101 | INFO | EURJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:39:51,101 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159999110, 'offset': 2000, 'period': 60, 'time': 1791318480}]
+2026-10-10 03:39:51,711 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791318480, before forming 1791607140)
+2026-10-10 03:39:51,712 | INFO | EURJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:39:51,713 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179159999171, 'offset': 2000, 'period': 60, 'time': 1791316440}]
+2026-10-10 03:39:52,328 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791316440, before forming 1791607140)
+2026-10-10 03:39:52,330 | INFO | EURJPY_otc: received 339 unique candles; first=2026-10-06 18:21:00; last=2026-10-06 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:39:52,331 | WARNING | EURJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:39:52,721 | INFO | AUDJPY_otc asset check: symbol=AUDJPY_otc, available=True, id=69
+2026-10-10 03:39:52,733 | INFO | Subscribed to AUDJPY_otc period=60
+2026-10-10 03:39:52,758 | INFO | AUDJPY_otc subscription result: True
+2026-10-10 03:39:53,764 | INFO | AUDJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:39:53,765 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159999376, 'offset': 2000, 'period': 60, 'time': 1791334800}]
+2026-10-10 03:39:54,380 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791334800, before forming 1791607140)
+2026-10-10 03:39:54,382 | INFO | AUDJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:39:54,383 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159999438, 'offset': 2000, 'period': 60, 'time': 1791332760}]
+2026-10-10 03:39:54,950 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791332760, before forming 1791607140)
+2026-10-10 03:39:54,952 | INFO | AUDJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:39:54,952 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159999495, 'offset': 2000, 'period': 60, 'time': 1791330720}]
+2026-10-10 03:39:55,607 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791330720, before forming 1791607140)
+2026-10-10 03:39:55,608 | INFO | AUDJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:39:55,609 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159999560, 'offset': 2000, 'period': 60, 'time': 1791328680}]
+2026-10-10 03:39:56,221 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791328680, before forming 1791607140)
+2026-10-10 03:39:56,223 | INFO | AUDJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:39:56,223 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159999622, 'offset': 2000, 'period': 60, 'time': 1791326640}]
+2026-10-10 03:39:56,796 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791326640, before forming 1791607140)
+2026-10-10 03:39:56,798 | INFO | AUDJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:39:56,798 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159999679, 'offset': 2000, 'period': 60, 'time': 1791324600}]
+2026-10-10 03:39:57,380 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791324600, before forming 1791607140)
+2026-10-10 03:39:57,382 | INFO | AUDJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:39:57,383 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159999738, 'offset': 2000, 'period': 60, 'time': 1791322560}]
+2026-10-10 03:39:57,972 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791322560, before forming 1791607140)
+2026-10-10 03:39:57,973 | INFO | AUDJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:39:57,974 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159999797, 'offset': 2000, 'period': 60, 'time': 1791320520}]
+2026-10-10 03:39:58,581 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791320520, before forming 1791607140)
+2026-10-10 03:39:58,584 | INFO | AUDJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:39:58,585 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159999858, 'offset': 2000, 'period': 60, 'time': 1791318480}]
+2026-10-10 03:39:59,174 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791318480, before forming 1791607140)
+2026-10-10 03:39:59,176 | INFO | AUDJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:39:59,177 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179159999917, 'offset': 2000, 'period': 60, 'time': 1791316440}]
+2026-10-10 03:39:59,805 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791316440, before forming 1791607140)
+2026-10-10 03:39:59,808 | INFO | AUDJPY_otc: received 339 unique candles; first=2026-10-06 18:21:00; last=2026-10-06 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:39:59,809 | WARNING | AUDJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:40:00,358 | INFO | GBPJPY_otc asset check: symbol=GBPJPY_otc, available=True, id=84
+2026-10-10 03:40:00,371 | INFO | Subscribed to GBPJPY_otc period=60
+2026-10-10 03:40:00,372 | INFO | GBPJPY_otc subscription result: True
+2026-10-10 03:40:01,374 | INFO | GBPJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:40:01,375 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179160000137, 'offset': 2000, 'period': 60, 'time': 1791334800}]
+2026-10-10 03:40:01,959 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791334800, before forming 1791607200)
+2026-10-10 03:40:01,960 | INFO | GBPJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:40:01,961 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179160000196, 'offset': 2000, 'period': 60, 'time': 1791332760}]
+2026-10-10 03:40:02,597 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791332760, before forming 1791607200)
+2026-10-10 03:40:02,607 | INFO | GBPJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:40:02,613 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179160000261, 'offset': 2000, 'period': 60, 'time': 1791330720}]
+2026-10-10 03:40:03,244 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791330720, before forming 1791607200)
+2026-10-10 03:40:03,246 | INFO | GBPJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:40:03,247 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179160000324, 'offset': 2000, 'period': 60, 'time': 1791328680}]
+2026-10-10 03:40:03,901 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791328680, before forming 1791607200)
+2026-10-10 03:40:03,903 | INFO | GBPJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:40:03,903 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179160000390, 'offset': 2000, 'period': 60, 'time': 1791326640}]
+2026-10-10 03:40:04,516 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791326640, before forming 1791607200)
+2026-10-10 03:40:04,518 | INFO | GBPJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:40:04,518 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179160000451, 'offset': 2000, 'period': 60, 'time': 1791324600}]
+2026-10-10 03:40:05,129 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791324600, before forming 1791607200)
+2026-10-10 03:40:05,131 | INFO | GBPJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:40:05,131 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179160000513, 'offset': 2000, 'period': 60, 'time': 1791322560}]
+2026-10-10 03:40:05,700 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791322560, before forming 1791607200)
+2026-10-10 03:40:05,701 | INFO | GBPJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:40:05,701 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179160000570, 'offset': 2000, 'period': 60, 'time': 1791320520}]
+2026-10-10 03:40:06,282 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791320520, before forming 1791607200)
+2026-10-10 03:40:06,283 | INFO | GBPJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:40:06,284 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179160000628, 'offset': 2000, 'period': 60, 'time': 1791318480}]
+2026-10-10 03:40:06,977 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791318480, before forming 1791607200)
+2026-10-10 03:40:06,979 | INFO | GBPJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:40:06,980 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179160000698, 'offset': 2000, 'period': 60, 'time': 1791316440}]
+2026-10-10 03:40:07,589 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791316440, before forming 1791607200)
+2026-10-10 03:40:07,591 | INFO | GBPJPY_otc: received 339 unique candles; first=2026-10-06 18:21:00; last=2026-10-06 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:40:07,592 | WARNING | GBPJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:40:07,874 | INFO | GBPAUD_otc asset check: symbol=GBPAUD_otc, available=True, id=81
+2026-10-10 03:40:07,887 | INFO | Subscribed to GBPAUD_otc period=60
+2026-10-10 03:40:07,889 | INFO | GBPAUD_otc subscription result: True
+2026-10-10 03:40:08,898 | INFO | GBPAUD_otc: requesting history page 1, offset=2000
+2026-10-10 03:40:08,899 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179160000889, 'offset': 2000, 'period': 60, 'time': 1791334800}]
+2026-10-10 03:40:09,748 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791334800, before forming 1791607200)
+2026-10-10 03:40:09,751 | INFO | GBPAUD_otc: requesting history page 2, offset=2000
+2026-10-10 03:40:09,752 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179160000975, 'offset': 2000, 'period': 60, 'time': 1791332760}]
+2026-10-10 03:40:10,351 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791332760, before forming 1791607200)
+2026-10-10 03:40:10,352 | INFO | GBPAUD_otc: requesting history page 3, offset=2000
+2026-10-10 03:40:10,353 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179160001035, 'offset': 2000, 'period': 60, 'time': 1791330720}]
+2026-10-10 03:40:10,967 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791330720, before forming 1791607200)
+2026-10-10 03:40:10,968 | INFO | GBPAUD_otc: requesting history page 4, offset=2000
+2026-10-10 03:40:10,969 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179160001096, 'offset': 2000, 'period': 60, 'time': 1791328680}]
+2026-10-10 03:40:11,558 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791328680, before forming 1791607200)
+2026-10-10 03:40:11,560 | INFO | GBPAUD_otc: requesting history page 5, offset=2000
+2026-10-10 03:40:11,560 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179160001156, 'offset': 2000, 'period': 60, 'time': 1791326640}]
+2026-10-10 03:40:12,153 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791326640, before forming 1791607200)
+2026-10-10 03:40:12,154 | INFO | GBPAUD_otc: requesting history page 6, offset=2000
+2026-10-10 03:40:12,155 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179160001215, 'offset': 2000, 'period': 60, 'time': 1791324600}]
+2026-10-10 03:40:12,919 | INFO | Assets catalog loaded: 183 assets
+2026-10-10 03:40:12,926 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791324600, before forming 1791607200)
+2026-10-10 03:40:12,930 | INFO | GBPAUD_otc: requesting history page 7, offset=2000
+2026-10-10 03:40:12,932 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179160001293, 'offset': 2000, 'period': 60, 'time': 1791322560}]
+2026-10-10 03:40:13,526 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791322560, before forming 1791607200)
+2026-10-10 03:40:13,528 | INFO | GBPAUD_otc: requesting history page 8, offset=2000
+2026-10-10 03:40:13,529 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179160001352, 'offset': 2000, 'period': 60, 'time': 1791320520}]
+2026-10-10 03:40:14,142 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791320520, before forming 1791607200)
+2026-10-10 03:40:14,144 | INFO | GBPAUD_otc: requesting history page 9, offset=2000
+2026-10-10 03:40:14,145 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179160001414, 'offset': 2000, 'period': 60, 'time': 1791318480}]
+2026-10-10 03:40:14,761 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791318480, before forming 1791607200)
+2026-10-10 03:40:14,763 | INFO | GBPAUD_otc: requesting history page 10, offset=2000
+2026-10-10 03:40:14,764 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179160001476, 'offset': 2000, 'period': 60, 'time': 1791316440}]
+2026-10-10 03:40:15,372 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791316440, before forming 1791607200)
+2026-10-10 03:40:15,374 | INFO | GBPAUD_otc: received 339 unique candles; first=2026-10-06 18:21:00; last=2026-10-06 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:40:15,376 | WARNING | GBPAUD_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:40:15,718 | WARNING | GBPCAD_otc was not found in the asset catalogue. Attempting the history request anyway.
+2026-10-10 03:40:15,736 | INFO | Subscribed to GBPCAD_otc period=60
+2026-10-10 03:40:15,737 | INFO | GBPCAD_otc subscription result: True
+2026-10-10 03:40:16,738 | INFO | GBPCAD_otc: requesting history page 1, offset=2000
+2026-10-10 03:40:16,739 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPCAD_otc', 'index': 179160001673, 'offset': 2000, 'period': 60, 'time': 1791334800}]
+2026-10-10 03:40:26,748 | ERROR | Timeout waiting for historical data
+2026-10-10 03:40:26,750 | WARNING | GBPCAD_otc: API returned no candles on page 1.
+2026-10-10 03:40:26,753 | WARNING | GBPCAD_otc: no candles fell within 2026-10-06 in timezone Africa/Lagos.
+2026-10-10 03:40:26,755 | INFO | CADJPY_otc asset check: symbol=CADJPY_otc, available=True, id=73
+2026-10-10 03:40:26,765 | INFO | Subscribed to CADJPY_otc period=60
+2026-10-10 03:40:26,768 | INFO | CADJPY_otc subscription result: True
+2026-10-10 03:40:27,773 | INFO | CADJPY_otc: requesting history page 1, offset=2000
+2026-10-10 03:40:27,774 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179160002777, 'offset': 2000, 'period': 60, 'time': 1791334800}]
+2026-10-10 03:40:28,476 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791334800, before forming 1791607200)
+2026-10-10 03:40:28,477 | INFO | CADJPY_otc: requesting history page 2, offset=2000
+2026-10-10 03:40:28,478 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179160002847, 'offset': 2000, 'period': 60, 'time': 1791332760}]
+2026-10-10 03:40:29,123 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791332760, before forming 1791607200)
+2026-10-10 03:40:29,125 | INFO | CADJPY_otc: requesting history page 3, offset=2000
+2026-10-10 03:40:29,126 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179160002912, 'offset': 2000, 'period': 60, 'time': 1791330720}]
+2026-10-10 03:40:29,809 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791330720, before forming 1791607200)
+2026-10-10 03:40:29,811 | INFO | CADJPY_otc: requesting history page 4, offset=2000
+2026-10-10 03:40:29,811 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179160002981, 'offset': 2000, 'period': 60, 'time': 1791328680}]
+2026-10-10 03:40:30,425 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791328680, before forming 1791607200)
+2026-10-10 03:40:30,428 | INFO | CADJPY_otc: requesting history page 5, offset=2000
+2026-10-10 03:40:30,429 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179160003042, 'offset': 2000, 'period': 60, 'time': 1791326640}]
+2026-10-10 03:40:30,999 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791326640, before forming 1791607200)
+2026-10-10 03:40:31,001 | INFO | CADJPY_otc: requesting history page 6, offset=2000
+2026-10-10 03:40:31,002 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179160003100, 'offset': 2000, 'period': 60, 'time': 1791324600}]
+2026-10-10 03:40:31,654 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791324600, before forming 1791607200)
+2026-10-10 03:40:31,655 | INFO | CADJPY_otc: requesting history page 7, offset=2000
+2026-10-10 03:40:31,656 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179160003165, 'offset': 2000, 'period': 60, 'time': 1791322560}]
+2026-10-10 03:40:32,265 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791322560, before forming 1791607200)
+2026-10-10 03:40:32,268 | INFO | CADJPY_otc: requesting history page 8, offset=2000
+2026-10-10 03:40:32,268 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179160003226, 'offset': 2000, 'period': 60, 'time': 1791320520}]
+2026-10-10 03:40:32,880 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791320520, before forming 1791607200)
+2026-10-10 03:40:32,882 | INFO | CADJPY_otc: requesting history page 9, offset=2000
+2026-10-10 03:40:32,882 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179160003288, 'offset': 2000, 'period': 60, 'time': 1791318480}]
+2026-10-10 03:40:33,445 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791318480, before forming 1791607200)
+2026-10-10 03:40:33,446 | INFO | CADJPY_otc: requesting history page 10, offset=2000
+2026-10-10 03:40:33,446 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179160003344, 'offset': 2000, 'period': 60, 'time': 1791316440}]
+2026-10-10 03:40:34,031 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791316440, before forming 1791607200)
+2026-10-10 03:40:34,034 | INFO | CADJPY_otc: received 339 unique candles; first=2026-10-06 18:21:00; last=2026-10-06 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 03:40:34,035 | WARNING | CADJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 03:40:34,924 | INFO | Pocket Option connection closed.
+2026-10-10 06:39:30,616 | INFO | Report date: 2026-10-05
+2026-10-10 06:39:30,617 | INFO | Timezone: Africa/Lagos
+2026-10-10 06:39:30,617 | INFO | Candle period: 60 seconds
+2026-10-10 06:39:30,618 | INFO | Database: firefly_pocketoption_reports.db
+2026-10-10 06:39:30,858 | INFO | SSID parsed: REAL mode, uid=15748268, session_len=308
+2026-10-10 06:39:30,969 | INFO | Connecting to Pocket Option...
+2026-10-10 06:39:33,025 | INFO | Server latency probe: api-eu.po.market (626ms), api-us-north.po.market (1214ms), api-us2.po.market (1464ms)
+2026-10-10 06:39:33,026 | INFO | Connection attempt 1 to: wss://api-eu.po.market/socket.io/?EIO=4&transport=websocket (REAL)
+2026-10-10 06:39:41,075 | WARNING | Connection error: timed out during opening handshake
+2026-10-10 06:39:42,091 | INFO | Connection attempt 2 to: wss://api-us-north.po.market/socket.io/?EIO=4&transport=websocket (REAL)
+2026-10-10 06:39:50,101 | WARNING | Connection error: timed out during opening handshake
+2026-10-10 06:39:52,110 | INFO | Connection attempt 3 to: wss://api-us2.po.market/socket.io/?EIO=4&transport=websocket (REAL)
+2026-10-10 06:39:53,902 | INFO | Initial time sync from HTTP Date header: Sat, 10 Oct 2026 05:39:54 GMT -> 1791610794
+2026-10-10 06:39:54,338 | INFO | Sending auth: 42["auth", {"session": "a:4:{s:10:\"session_id\";s:32:\"73d0bf4ef01d38a25a5a6881ac18b74e\";s:10:\"ip_address\";s:14:\"15...
+2026-10-10 06:39:55,171 | INFO | Assets catalog loaded: 183 assets
+2026-10-10 06:39:55,173 | INFO | Authentication successful
+2026-10-10 06:39:55,174 | INFO | Authenticated & connected to: wss://api-us2.po.market/socket.io/?EIO=4&transport=websocket
+2026-10-10 06:39:55,271 | INFO | Connected; server time is synchronized.
+2026-10-10 06:39:55,272 | INFO | USDJPY_otc asset check: symbol=USDJPY_otc, available=True, id=93
+2026-10-10 06:39:55,278 | INFO | Subscribed to USDJPY_otc period=60
+2026-10-10 06:39:55,278 | INFO | USDJPY_otc subscription result: True
+2026-10-10 06:39:56,280 | INFO | USDJPY_otc: requesting history page 1, offset=2000
+2026-10-10 06:39:56,281 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179161079628, 'offset': 2000, 'period': 60, 'time': 1791241200}]
+2026-10-10 06:39:56,343 | INFO | Detected stream timezone offset: 7200s (+2h from UTC)
+2026-10-10 06:39:56,952 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791241200, before forming 1791617940)
+2026-10-10 06:39:56,953 | INFO | USDJPY_otc: requesting history page 2, offset=2000
+2026-10-10 06:39:56,955 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179161079695, 'offset': 2000, 'period': 60, 'time': 1791239160}]
+2026-10-10 06:39:57,616 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791239160, before forming 1791617940)
+2026-10-10 06:39:57,617 | INFO | USDJPY_otc: requesting history page 3, offset=2000
+2026-10-10 06:39:57,617 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179161079761, 'offset': 2000, 'period': 60, 'time': 1791237120}]
+2026-10-10 06:39:58,285 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791237120, before forming 1791617940)
+2026-10-10 06:39:58,285 | INFO | USDJPY_otc: requesting history page 4, offset=2000
+2026-10-10 06:39:58,286 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179161079828, 'offset': 2000, 'period': 60, 'time': 1791235080}]
+2026-10-10 06:39:58,940 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791235080, before forming 1791617940)
+2026-10-10 06:39:58,941 | INFO | USDJPY_otc: requesting history page 5, offset=2000
+2026-10-10 06:39:58,941 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179161079894, 'offset': 2000, 'period': 60, 'time': 1791233040}]
+2026-10-10 06:39:59,597 | INFO | Gap filled: +9 candle(s) from realtime ticks (after 1791233040, before forming 1791617940)
+2026-10-10 06:39:59,598 | INFO | USDJPY_otc: requesting history page 6, offset=2000
+2026-10-10 06:39:59,598 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179161079959, 'offset': 2000, 'period': 60, 'time': 1791231000}]
+2026-10-10 06:40:00,265 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791231000, before forming 1791618000)
+2026-10-10 06:40:00,266 | INFO | USDJPY_otc: requesting history page 7, offset=2000
+2026-10-10 06:40:00,267 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179161080026, 'offset': 2000, 'period': 60, 'time': 1791228960}]
+2026-10-10 06:40:01,034 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791228960, before forming 1791618000)
+2026-10-10 06:40:01,036 | INFO | USDJPY_otc: requesting history page 8, offset=2000
+2026-10-10 06:40:01,037 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179161080103, 'offset': 2000, 'period': 60, 'time': 1791226920}]
+2026-10-10 06:40:01,688 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791226920, before forming 1791618000)
+2026-10-10 06:40:01,690 | INFO | USDJPY_otc: requesting history page 9, offset=2000
+2026-10-10 06:40:01,691 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179161080169, 'offset': 2000, 'period': 60, 'time': 1791224880}]
+2026-10-10 06:40:02,346 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791224880, before forming 1791618000)
+2026-10-10 06:40:02,347 | INFO | USDJPY_otc: requesting history page 10, offset=2000
+2026-10-10 06:40:02,347 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'USDJPY_otc', 'index': 179161080234, 'offset': 2000, 'period': 60, 'time': 1791222840}]
+2026-10-10 06:40:02,996 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791222840, before forming 1791618000)
+2026-10-10 06:40:02,997 | INFO | USDJPY_otc: received 339 unique candles; first=2026-10-05 18:21:00; last=2026-10-05 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 06:40:02,997 | WARNING | USDJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 06:40:03,404 | INFO | AUDUSD_otc asset check: symbol=AUDUSD_otc, available=True, id=71
+2026-10-10 06:40:03,429 | INFO | Subscribed to AUDUSD_otc period=60
+2026-10-10 06:40:03,430 | INFO | AUDUSD_otc subscription result: True
+2026-10-10 06:40:04,432 | INFO | AUDUSD_otc: requesting history page 1, offset=2000
+2026-10-10 06:40:04,433 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179161080443, 'offset': 2000, 'period': 60, 'time': 1791248400}]
+2026-10-10 06:40:05,096 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791248400, before forming 1791618000)
+2026-10-10 06:40:05,098 | INFO | AUDUSD_otc: requesting history page 2, offset=2000
+2026-10-10 06:40:05,099 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179161080509, 'offset': 2000, 'period': 60, 'time': 1791246360}]
+2026-10-10 06:40:05,768 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791246360, before forming 1791618000)
+2026-10-10 06:40:05,769 | INFO | AUDUSD_otc: requesting history page 3, offset=2000
+2026-10-10 06:40:05,770 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179161080577, 'offset': 2000, 'period': 60, 'time': 1791244320}]
+2026-10-10 06:40:06,432 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791244320, before forming 1791618000)
+2026-10-10 06:40:06,432 | INFO | AUDUSD_otc: requesting history page 4, offset=2000
+2026-10-10 06:40:06,433 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179161080643, 'offset': 2000, 'period': 60, 'time': 1791242280}]
+2026-10-10 06:40:07,088 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791242280, before forming 1791618000)
+2026-10-10 06:40:07,090 | INFO | AUDUSD_otc: requesting history page 5, offset=2000
+2026-10-10 06:40:07,091 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179161080709, 'offset': 2000, 'period': 60, 'time': 1791240240}]
+2026-10-10 06:40:07,759 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791240240, before forming 1791618000)
+2026-10-10 06:40:07,761 | INFO | AUDUSD_otc: requesting history page 6, offset=2000
+2026-10-10 06:40:07,762 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179161080776, 'offset': 2000, 'period': 60, 'time': 1791238200}]
+2026-10-10 06:40:08,416 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791238200, before forming 1791618000)
+2026-10-10 06:40:08,416 | INFO | AUDUSD_otc: requesting history page 7, offset=2000
+2026-10-10 06:40:08,417 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179161080841, 'offset': 2000, 'period': 60, 'time': 1791236160}]
+2026-10-10 06:40:09,078 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791236160, before forming 1791618000)
+2026-10-10 06:40:09,079 | INFO | AUDUSD_otc: requesting history page 8, offset=2000
+2026-10-10 06:40:09,080 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179161080908, 'offset': 2000, 'period': 60, 'time': 1791234120}]
+2026-10-10 06:40:09,748 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791234120, before forming 1791618000)
+2026-10-10 06:40:09,748 | INFO | AUDUSD_otc: requesting history page 9, offset=2000
+2026-10-10 06:40:09,749 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179161080974, 'offset': 2000, 'period': 60, 'time': 1791232080}]
+2026-10-10 06:40:10,413 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791232080, before forming 1791618000)
+2026-10-10 06:40:10,413 | INFO | AUDUSD_otc: requesting history page 10, offset=2000
+2026-10-10 06:40:10,413 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDUSD_otc', 'index': 179161081041, 'offset': 2000, 'period': 60, 'time': 1791230040}]
+2026-10-10 06:40:11,075 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791230040, before forming 1791618000)
+2026-10-10 06:40:11,076 | INFO | AUDUSD_otc: received 339 unique candles; first=2026-10-05 18:21:00; last=2026-10-05 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 06:40:11,080 | WARNING | AUDUSD_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 06:40:11,277 | INFO | EURJPY_otc asset check: symbol=EURJPY_otc, available=True, id=79
+2026-10-10 06:40:11,279 | INFO | Subscribed to EURJPY_otc period=60
+2026-10-10 06:40:11,280 | INFO | EURJPY_otc subscription result: True
+2026-10-10 06:40:12,281 | INFO | EURJPY_otc: requesting history page 1, offset=2000
+2026-10-10 06:40:12,282 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179161081228, 'offset': 2000, 'period': 60, 'time': 1791248400}]
+2026-10-10 06:40:12,956 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791248400, before forming 1791618000)
+2026-10-10 06:40:12,957 | INFO | EURJPY_otc: requesting history page 2, offset=2000
+2026-10-10 06:40:12,959 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179161081295, 'offset': 2000, 'period': 60, 'time': 1791246360}]
+2026-10-10 06:40:13,236 | INFO | Assets catalog loaded: 183 assets
+2026-10-10 06:40:13,653 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791246360, before forming 1791618000)
+2026-10-10 06:40:13,656 | INFO | EURJPY_otc: requesting history page 3, offset=2000
+2026-10-10 06:40:13,657 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179161081365, 'offset': 2000, 'period': 60, 'time': 1791244320}]
+2026-10-10 06:40:14,319 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791244320, before forming 1791618000)
+2026-10-10 06:40:14,321 | INFO | EURJPY_otc: requesting history page 4, offset=2000
+2026-10-10 06:40:14,322 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179161081432, 'offset': 2000, 'period': 60, 'time': 1791242280}]
+2026-10-10 06:40:14,981 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791242280, before forming 1791618000)
+2026-10-10 06:40:14,983 | INFO | EURJPY_otc: requesting history page 5, offset=2000
+2026-10-10 06:40:14,983 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179161081498, 'offset': 2000, 'period': 60, 'time': 1791240240}]
+2026-10-10 06:40:15,642 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791240240, before forming 1791618000)
+2026-10-10 06:40:15,644 | INFO | EURJPY_otc: requesting history page 6, offset=2000
+2026-10-10 06:40:15,645 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179161081564, 'offset': 2000, 'period': 60, 'time': 1791238200}]
+2026-10-10 06:40:16,318 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791238200, before forming 1791618000)
+2026-10-10 06:40:16,320 | INFO | EURJPY_otc: requesting history page 7, offset=2000
+2026-10-10 06:40:16,321 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179161081632, 'offset': 2000, 'period': 60, 'time': 1791236160}]
+2026-10-10 06:40:17,002 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791236160, before forming 1791618000)
+2026-10-10 06:40:17,003 | INFO | EURJPY_otc: requesting history page 8, offset=2000
+2026-10-10 06:40:17,003 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179161081700, 'offset': 2000, 'period': 60, 'time': 1791234120}]
+2026-10-10 06:40:18,054 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791234120, before forming 1791618000)
+2026-10-10 06:40:18,054 | INFO | EURJPY_otc: requesting history page 9, offset=2000
+2026-10-10 06:40:18,054 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179161081805, 'offset': 2000, 'period': 60, 'time': 1791232080}]
+2026-10-10 06:40:18,692 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791232080, before forming 1791618000)
+2026-10-10 06:40:18,692 | INFO | EURJPY_otc: requesting history page 10, offset=2000
+2026-10-10 06:40:18,692 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'EURJPY_otc', 'index': 179161081869, 'offset': 2000, 'period': 60, 'time': 1791230040}]
+2026-10-10 06:40:19,431 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791230040, before forming 1791618000)
+2026-10-10 06:40:19,433 | INFO | EURJPY_otc: received 339 unique candles; first=2026-10-05 18:21:00; last=2026-10-05 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 06:40:19,433 | WARNING | EURJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 06:40:19,806 | INFO | AUDJPY_otc asset check: symbol=AUDJPY_otc, available=True, id=69
+2026-10-10 06:40:19,822 | INFO | Subscribed to AUDJPY_otc period=60
+2026-10-10 06:40:19,823 | INFO | AUDJPY_otc subscription result: True
+2026-10-10 06:40:20,824 | INFO | AUDJPY_otc: requesting history page 1, offset=2000
+2026-10-10 06:40:20,824 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179161082082, 'offset': 2000, 'period': 60, 'time': 1791248400}]
+2026-10-10 06:40:21,488 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791248400, before forming 1791618000)
+2026-10-10 06:40:21,490 | INFO | AUDJPY_otc: requesting history page 2, offset=2000
+2026-10-10 06:40:21,490 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179161082149, 'offset': 2000, 'period': 60, 'time': 1791246360}]
+2026-10-10 06:40:22,154 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791246360, before forming 1791618000)
+2026-10-10 06:40:22,156 | INFO | AUDJPY_otc: requesting history page 3, offset=2000
+2026-10-10 06:40:22,157 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179161082215, 'offset': 2000, 'period': 60, 'time': 1791244320}]
+2026-10-10 06:40:22,801 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791244320, before forming 1791618000)
+2026-10-10 06:40:22,802 | INFO | AUDJPY_otc: requesting history page 4, offset=2000
+2026-10-10 06:40:22,802 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179161082280, 'offset': 2000, 'period': 60, 'time': 1791242280}]
+2026-10-10 06:40:23,489 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791242280, before forming 1791618000)
+2026-10-10 06:40:23,491 | INFO | AUDJPY_otc: requesting history page 5, offset=2000
+2026-10-10 06:40:23,492 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179161082349, 'offset': 2000, 'period': 60, 'time': 1791240240}]
+2026-10-10 06:40:24,175 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791240240, before forming 1791618000)
+2026-10-10 06:40:24,177 | INFO | AUDJPY_otc: requesting history page 6, offset=2000
+2026-10-10 06:40:24,178 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179161082417, 'offset': 2000, 'period': 60, 'time': 1791238200}]
+2026-10-10 06:40:24,859 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791238200, before forming 1791618000)
+2026-10-10 06:40:24,861 | INFO | AUDJPY_otc: requesting history page 7, offset=2000
+2026-10-10 06:40:24,862 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179161082486, 'offset': 2000, 'period': 60, 'time': 1791236160}]
+2026-10-10 06:40:25,523 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791236160, before forming 1791618000)
+2026-10-10 06:40:25,525 | INFO | AUDJPY_otc: requesting history page 8, offset=2000
+2026-10-10 06:40:25,525 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179161082552, 'offset': 2000, 'period': 60, 'time': 1791234120}]
+2026-10-10 06:40:26,218 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791234120, before forming 1791618000)
+2026-10-10 06:40:26,219 | INFO | AUDJPY_otc: requesting history page 9, offset=2000
+2026-10-10 06:40:26,219 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179161082621, 'offset': 2000, 'period': 60, 'time': 1791232080}]
+2026-10-10 06:40:26,879 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791232080, before forming 1791618000)
+2026-10-10 06:40:26,880 | INFO | AUDJPY_otc: requesting history page 10, offset=2000
+2026-10-10 06:40:26,882 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'AUDJPY_otc', 'index': 179161082688, 'offset': 2000, 'period': 60, 'time': 1791230040}]
+2026-10-10 06:40:27,552 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791230040, before forming 1791618000)
+2026-10-10 06:40:27,553 | INFO | AUDJPY_otc: received 339 unique candles; first=2026-10-05 18:21:00; last=2026-10-05 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 06:40:27,554 | WARNING | AUDJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 06:40:27,965 | INFO | GBPJPY_otc asset check: symbol=GBPJPY_otc, available=True, id=84
+2026-10-10 06:40:27,972 | INFO | Subscribed to GBPJPY_otc period=60
+2026-10-10 06:40:27,972 | INFO | GBPJPY_otc subscription result: True
+2026-10-10 06:40:28,973 | INFO | GBPJPY_otc: requesting history page 1, offset=2000
+2026-10-10 06:40:28,974 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179161082897, 'offset': 2000, 'period': 60, 'time': 1791248400}]
+2026-10-10 06:40:29,637 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791248400, before forming 1791618000)
+2026-10-10 06:40:29,639 | INFO | GBPJPY_otc: requesting history page 2, offset=2000
+2026-10-10 06:40:29,640 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179161082963, 'offset': 2000, 'period': 60, 'time': 1791246360}]
+2026-10-10 06:40:30,307 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791246360, before forming 1791618000)
+2026-10-10 06:40:30,309 | INFO | GBPJPY_otc: requesting history page 3, offset=2000
+2026-10-10 06:40:30,310 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179161083031, 'offset': 2000, 'period': 60, 'time': 1791244320}]
+2026-10-10 06:40:30,985 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791244320, before forming 1791618000)
+2026-10-10 06:40:30,986 | INFO | GBPJPY_otc: requesting history page 4, offset=2000
+2026-10-10 06:40:30,987 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179161083098, 'offset': 2000, 'period': 60, 'time': 1791242280}]
+2026-10-10 06:40:31,647 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791242280, before forming 1791618000)
+2026-10-10 06:40:31,648 | INFO | GBPJPY_otc: requesting history page 5, offset=2000
+2026-10-10 06:40:31,648 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179161083164, 'offset': 2000, 'period': 60, 'time': 1791240240}]
+2026-10-10 06:40:32,477 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791240240, before forming 1791618000)
+2026-10-10 06:40:32,479 | INFO | GBPJPY_otc: requesting history page 6, offset=2000
+2026-10-10 06:40:32,479 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179161083247, 'offset': 2000, 'period': 60, 'time': 1791238200}]
+2026-10-10 06:40:33,147 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791238200, before forming 1791618000)
+2026-10-10 06:40:33,148 | INFO | GBPJPY_otc: requesting history page 7, offset=2000
+2026-10-10 06:40:33,149 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179161083314, 'offset': 2000, 'period': 60, 'time': 1791236160}]
+2026-10-10 06:40:33,815 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791236160, before forming 1791618000)
+2026-10-10 06:40:33,816 | INFO | GBPJPY_otc: requesting history page 8, offset=2000
+2026-10-10 06:40:33,816 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179161083381, 'offset': 2000, 'period': 60, 'time': 1791234120}]
+2026-10-10 06:40:34,562 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791234120, before forming 1791618000)
+2026-10-10 06:40:34,564 | INFO | GBPJPY_otc: requesting history page 9, offset=2000
+2026-10-10 06:40:34,564 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179161083456, 'offset': 2000, 'period': 60, 'time': 1791232080}]
+2026-10-10 06:40:35,365 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791232080, before forming 1791618000)
+2026-10-10 06:40:35,365 | INFO | GBPJPY_otc: requesting history page 10, offset=2000
+2026-10-10 06:40:35,365 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPJPY_otc', 'index': 179161083536, 'offset': 2000, 'period': 60, 'time': 1791230040}]
+2026-10-10 06:40:36,017 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791230040, before forming 1791618000)
+2026-10-10 06:40:36,017 | INFO | GBPJPY_otc: received 339 unique candles; first=2026-10-05 18:21:00; last=2026-10-05 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 06:40:36,018 | WARNING | GBPJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 06:40:36,356 | INFO | GBPAUD_otc asset check: symbol=GBPAUD_otc, available=True, id=81
+2026-10-10 06:40:36,368 | INFO | Subscribed to GBPAUD_otc period=60
+2026-10-10 06:40:36,370 | INFO | GBPAUD_otc subscription result: True
+2026-10-10 06:40:37,371 | INFO | GBPAUD_otc: requesting history page 1, offset=2000
+2026-10-10 06:40:37,373 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179161083737, 'offset': 2000, 'period': 60, 'time': 1791248400}]
+2026-10-10 06:40:38,035 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791248400, before forming 1791618000)
+2026-10-10 06:40:38,037 | INFO | GBPAUD_otc: requesting history page 2, offset=2000
+2026-10-10 06:40:38,038 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179161083803, 'offset': 2000, 'period': 60, 'time': 1791246360}]
+2026-10-10 06:40:38,715 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791246360, before forming 1791618000)
+2026-10-10 06:40:38,716 | INFO | GBPAUD_otc: requesting history page 3, offset=2000
+2026-10-10 06:40:38,716 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179161083871, 'offset': 2000, 'period': 60, 'time': 1791244320}]
+2026-10-10 06:40:39,388 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791244320, before forming 1791618000)
+2026-10-10 06:40:39,389 | INFO | GBPAUD_otc: requesting history page 4, offset=2000
+2026-10-10 06:40:39,390 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179161083939, 'offset': 2000, 'period': 60, 'time': 1791242280}]
+2026-10-10 06:40:40,042 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791242280, before forming 1791618000)
+2026-10-10 06:40:40,043 | INFO | GBPAUD_otc: requesting history page 5, offset=2000
+2026-10-10 06:40:40,043 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179161084004, 'offset': 2000, 'period': 60, 'time': 1791240240}]
+2026-10-10 06:40:40,843 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791240240, before forming 1791618000)
+2026-10-10 06:40:40,843 | INFO | GBPAUD_otc: requesting history page 6, offset=2000
+2026-10-10 06:40:40,844 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179161084084, 'offset': 2000, 'period': 60, 'time': 1791238200}]
+2026-10-10 06:40:41,509 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791238200, before forming 1791618000)
+2026-10-10 06:40:41,511 | INFO | GBPAUD_otc: requesting history page 7, offset=2000
+2026-10-10 06:40:41,511 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179161084151, 'offset': 2000, 'period': 60, 'time': 1791236160}]
+2026-10-10 06:40:42,182 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791236160, before forming 1791618000)
+2026-10-10 06:40:42,184 | INFO | GBPAUD_otc: requesting history page 8, offset=2000
+2026-10-10 06:40:42,185 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179161084218, 'offset': 2000, 'period': 60, 'time': 1791234120}]
+2026-10-10 06:40:42,837 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791234120, before forming 1791618000)
+2026-10-10 06:40:42,838 | INFO | GBPAUD_otc: requesting history page 9, offset=2000
+2026-10-10 06:40:42,838 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179161084283, 'offset': 2000, 'period': 60, 'time': 1791232080}]
+2026-10-10 06:40:43,487 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791232080, before forming 1791618000)
+2026-10-10 06:40:43,487 | INFO | GBPAUD_otc: requesting history page 10, offset=2000
+2026-10-10 06:40:43,487 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPAUD_otc', 'index': 179161084348, 'offset': 2000, 'period': 60, 'time': 1791230040}]
+2026-10-10 06:40:44,149 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791230040, before forming 1791618000)
+2026-10-10 06:40:44,149 | INFO | GBPAUD_otc: received 339 unique candles; first=2026-10-05 18:21:00; last=2026-10-05 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 06:40:44,150 | WARNING | GBPAUD_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 06:40:44,451 | WARNING | GBPCAD_otc was not found in the asset catalogue. Attempting the history request anyway.
+2026-10-10 06:40:44,453 | INFO | Subscribed to GBPCAD_otc period=60
+2026-10-10 06:40:44,453 | INFO | GBPCAD_otc subscription result: True
+2026-10-10 06:40:45,454 | INFO | GBPCAD_otc: requesting history page 1, offset=2000
+2026-10-10 06:40:45,455 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'GBPCAD_otc', 'index': 179161084545, 'offset': 2000, 'period': 60, 'time': 1791248400}]
+2026-10-10 06:40:55,466 | ERROR | Timeout waiting for historical data
+2026-10-10 06:40:55,468 | WARNING | GBPCAD_otc: API returned no candles on page 1.
+2026-10-10 06:40:55,469 | WARNING | GBPCAD_otc: no candles fell within 2026-10-05 in timezone Africa/Lagos.
+2026-10-10 06:40:55,470 | INFO | CADJPY_otc asset check: symbol=CADJPY_otc, available=True, id=73
+2026-10-10 06:40:55,476 | INFO | Subscribed to CADJPY_otc period=60
+2026-10-10 06:40:55,477 | INFO | CADJPY_otc subscription result: True
+2026-10-10 06:40:56,479 | INFO | CADJPY_otc: requesting history page 1, offset=2000
+2026-10-10 06:40:56,480 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179161085647, 'offset': 2000, 'period': 60, 'time': 1791248400}]
+2026-10-10 06:40:57,163 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791248400, before forming 1791618000)
+2026-10-10 06:40:57,165 | INFO | CADJPY_otc: requesting history page 2, offset=2000
+2026-10-10 06:40:57,166 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179161085716, 'offset': 2000, 'period': 60, 'time': 1791246360}]
+2026-10-10 06:40:57,805 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791246360, before forming 1791618000)
+2026-10-10 06:40:57,806 | INFO | CADJPY_otc: requesting history page 3, offset=2000
+2026-10-10 06:40:57,807 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179161085780, 'offset': 2000, 'period': 60, 'time': 1791244320}]
+2026-10-10 06:40:58,462 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791244320, before forming 1791618000)
+2026-10-10 06:40:58,463 | INFO | CADJPY_otc: requesting history page 4, offset=2000
+2026-10-10 06:40:58,463 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179161085846, 'offset': 2000, 'period': 60, 'time': 1791242280}]
+2026-10-10 06:40:59,205 | INFO | Gap filled: +10 candle(s) from realtime ticks (after 1791242280, before forming 1791618000)
+2026-10-10 06:40:59,206 | INFO | CADJPY_otc: requesting history page 5, offset=2000
+2026-10-10 06:40:59,206 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179161085920, 'offset': 2000, 'period': 60, 'time': 1791240240}]
+2026-10-10 06:40:59,864 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791240240, before forming 1791618060)
+2026-10-10 06:40:59,866 | INFO | CADJPY_otc: requesting history page 6, offset=2000
+2026-10-10 06:40:59,867 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179161085986, 'offset': 2000, 'period': 60, 'time': 1791238200}]
+2026-10-10 06:41:00,633 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791238200, before forming 1791618060)
+2026-10-10 06:41:00,635 | INFO | CADJPY_otc: requesting history page 7, offset=2000
+2026-10-10 06:41:00,636 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179161086063, 'offset': 2000, 'period': 60, 'time': 1791236160}]
+2026-10-10 06:41:01,516 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791236160, before forming 1791618060)
+2026-10-10 06:41:01,517 | INFO | CADJPY_otc: requesting history page 8, offset=2000
+2026-10-10 06:41:01,517 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179161086151, 'offset': 2000, 'period': 60, 'time': 1791234120}]
+2026-10-10 06:41:02,177 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791234120, before forming 1791618060)
+2026-10-10 06:41:02,177 | INFO | CADJPY_otc: requesting history page 9, offset=2000
+2026-10-10 06:41:02,177 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179161086217, 'offset': 2000, 'period': 60, 'time': 1791232080}]
+2026-10-10 06:41:02,832 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791232080, before forming 1791618060)
+2026-10-10 06:41:02,833 | INFO | CADJPY_otc: requesting history page 10, offset=2000
+2026-10-10 06:41:02,834 | INFO | GetCandles > ['loadHistoryPeriod', {'asset': 'CADJPY_otc', 'index': 179161086283, 'offset': 2000, 'period': 60, 'time': 1791230040}]
+2026-10-10 06:41:03,493 | INFO | Gap filled: +11 candle(s) from realtime ticks (after 1791230040, before forming 1791618060)
+2026-10-10 06:41:03,494 | INFO | CADJPY_otc: received 339 unique candles; first=2026-10-05 18:21:00; last=2026-10-05 23:59:00; expected approximately 1440; missing=1101
+2026-10-10 06:41:03,494 | WARNING | CADJPY_otc: incomplete candle coverage. This may be due to API history limits, unavailable history, or gaps.
+2026-10-10 06:41:04,292 | INFO | Pocket Option connection closed.
