@@ -146,6 +146,36 @@ FOREX_PAIRS = [
 
 
 # ============================================================
+# CURRENCY COUNTRY FLAGS
+# ============================================================
+
+CURRENCY_FLAGS = {
+    "USD": "🇺🇸",
+    "JPY": "🇯🇵",
+    "AUD": "🇦🇺",
+    "EUR": "🇪🇺",
+    "GBP": "🇬🇧",
+    "CAD": "🇨🇦",
+}
+
+
+def format_pair_with_flags(pair):
+    """Display both currency flags beside the Forex pair."""
+
+    base_currency = pair[:3]
+    quote_currency = pair[3:6]
+
+    base_flag = CURRENCY_FLAGS.get(base_currency, "")
+    quote_flag = CURRENCY_FLAGS.get(quote_currency, "")
+
+    return (
+        f"{base_flag} {base_currency} / "
+        f"{quote_flag} {quote_currency} "
+        f"(<b>{pair}</b>)"
+    )
+
+
+# ============================================================
 # VALIDATION
 # ============================================================
 
@@ -1052,6 +1082,8 @@ def build_signal(
     message = (
         "🚨 <b>REAL FOREX BINARY SIGNAL</b>\n"
         "\n"
+        f"💱 <b>{format_pair_with_flags(pair)}</b>\n"
+        "\n"
         f"📊 <b>Pair:</b> {pair}\n"
         f"💱 <b>Market:</b> REAL FOREX\n"
         f"📜 <b>Contract:</b> BINARY\n"
@@ -1072,7 +1104,6 @@ def build_signal(
         "\n"
         "⚠️ <b>Mode:</b> SIGNAL ONLY"
     )
-
     return message
 
 
