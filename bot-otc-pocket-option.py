@@ -1,39 +1,3 @@
-"""
-Firefly AI - Pocket Option OTC Market Scanner
-
-Data source:
-    Pocket Option unofficial WebSocket client
-
-Strategy:
-    - 1-minute candles
-    - 15 completed candles requested
-    - 7 consecutive GREEN candles -> REVERSAL DOWN
-    - 7 consecutive RED candles -> REVERSAL UP
-    - DOJI breaks the streak
-    - Signal only - NO TRADE EXECUTION
-
-OTC pairs:
-    USDJPY_otc
-    AUDUSD_otc
-    EURJPY_otc
-    AUDJPY_otc
-    GBPJPY_otc
-    GBPAUD_otc
-    GBPCAD_otc
-    CADJPY_otc
-
-Telegram:
-    HTML formatted notifications
-    Country flags for both currencies
-
-Timezone:
-    Africa/Lagos / WAT (UTC+1)
-
-IMPORTANT:
-    This uses an unofficial Pocket Option WebSocket client.
-    It is not an official Pocket Option API.
-"""
-
 import logging
 import os
 import signal
@@ -44,7 +8,6 @@ from typing import Dict, List, Optional, Tuple
 
 import requests
 from dotenv import load_dotenv
-
 from pocketoptionapi import PocketOption
 
 
@@ -54,9 +17,7 @@ from pocketoptionapi import PocketOption
 
 load_dotenv()
 
-
 PO_SSID = os.getenv("PO_SSID", "").strip()
-
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 
@@ -67,8 +28,8 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 
 TIMEFRAME = 60                  # 1-minute candles
 CANDLE_COUNT = 15               # Candles requested
-MIN_STREAK = 7                   # Signal after 7 same-color candles
-POLL_INTERVAL = 15               # Scan every 15 seconds
+MIN_STREAK = 9                  # Signal after 9 same-color candles
+POLL_INTERVAL = 15              # Scan every 15 seconds
 
 # Large offset recommended by the current PocketOptionApi
 HISTORY_OFFSET = 9000
@@ -121,7 +82,6 @@ WAT = timezone(timedelta(hours=1), name="WAT")
 # ============================================================
 
 api: Optional[PocketOption] = None
-
 running = True
 
 # Prevent the same candle from generating the same signal repeatedly.
@@ -154,7 +114,6 @@ def validate_environment() -> None:
     """
     Validate required environment variables.
     """
-
     missing = []
 
     if not PO_SSID:
@@ -179,9 +138,8 @@ def validate_environment() -> None:
 
 def send_telegram(message: str) -> bool:
     """
-    Send an HTML formatted Telegram message.
+    Send an HTML-formatted Telegram message.
     """
-
     url = (
         f"https://api.telegram.org/bot"
         f"{TELEGRAM_BOT_TOKEN}/sendMessage"
@@ -226,10 +184,14 @@ def normalize_pair(pair: str) -> str:
     """
     Convert Pocket Option OTC symbol to display form.
 
-    EURUSD_otc -> EUR/USD OTC
+    Example:
+        EURUSD_otc -> EUR/USD OTC
     """
-
-    clean = pair.upper().replace("_OTC", "").replace("-OTC", "")
+    clean = (
+        pair.upper()
+        .replace("_OTC", "")
+        .replace("-OTC", "")
+    )
 
     if len(clean) >= 6:
         return f"{clean[:3]}/{clean[3:6]} OTC"
@@ -241,7 +203,6 @@ def get_currencies(pair: str) -> Tuple[str, str]:
     """
     Extract base and quote currencies.
     """
-
     clean = (
         pair.upper()
         .replace("_OTC", "")
@@ -258,7 +219,6 @@ def get_pair_flags(pair: str) -> str:
     """
     Return the two respective country/currency flags.
     """
-
     base, quote = get_currencies(pair)
 
     base_flag = CURRENCY_FLAGS.get(base, "🏳️")
@@ -284,10 +244,10 @@ def candle_color(candle: dict) -> str:
     DOJI:
         close == open
     """
-
     try:
         candle_open = float(candle["open"])
         candle_close = float(candle["close"])
+
     except (KeyError, TypeError, ValueError):
         return "DOJI"
 
@@ -304,7 +264,6 @@ def get_candle_timestamp(candle: dict) -> int:
     """
     Get normalized candle timestamp.
     """
-
     value = candle.get("time")
 
     if value is None:
@@ -315,6 +274,7 @@ def get_candle_timestamp(candle: dict) -> int:
 
     try:
         return int(float(value))
+
     except (TypeError, ValueError):
         return 0
 
@@ -325,13 +285,12 @@ def get_completed_candles(
     """
     Return only completed 1-minute candles.
 
-    The current PocketOptionApi already reconciles historical
-    candles against realtime data and removes the forming candle.
+    The current PocketOptionApi reconciles historical candles
+    against realtime data and removes the forming candle.
 
-    This second defensive check makes sure we never accidentally
-    use a candle whose close time is still in the future.
+    This defensive check avoids using a candle whose close
+    time has not yet passed.
     """
-
     if not candles:
         return []
 
@@ -342,18 +301,15 @@ def get_completed_candles(
     )
 
     now = int(time.time())
-
     completed = []
 
     for candle in sorted_candles:
-
         timestamp = get_candle_timestamp(candle)
 
         if timestamp <= 0:
             continue
 
-        # A 60-second candle beginning at timestamp is completed
-        # only after timestamp + TIMEFRAME.
+        # A 60-second candle is complete after timestamp + TIMEFRAME.
         if timestamp + TIMEFRAME <= now:
             completed.append(candle)
 
@@ -371,7 +327,6 @@ def analyze_streak(
     Analyze the most recent candle streak.
 
     Returns:
-
         signal_direction:
             REVERSAL DOWN
             REVERSAL UP
@@ -383,7 +338,6 @@ def analyze_streak(
         signal_candle:
             Candle responsible for the signal
     """
-
     if len(candles) < MIN_STREAK:
         return None, 0, None
 
@@ -398,7 +352,7 @@ def analyze_streak(
     if "DOJI" in colors:
         return None, 0, None
 
-    # Seven GREEN candles.
+    # Nine GREEN candles -> reversal down.
     if all(color == "GREEN" for color in colors):
         return (
             "REVERSAL DOWN",
@@ -406,7 +360,7 @@ def analyze_streak(
             recent[-1],
         )
 
-    # Seven RED candles.
+    # Nine RED candles -> reversal up.
     if all(color == "RED" for color in colors):
         return (
             "REVERSAL UP",
@@ -414,7 +368,7 @@ def analyze_streak(
             recent[-1],
         )
 
-    # Calculate current streak for logging.
+    # Calculate the current streak for logging.
     latest_color = colors[-1]
     streak = 0
 
@@ -440,7 +394,6 @@ def build_signal_message(
     """
     Build Telegram signal message.
     """
-
     pair_display = normalize_pair(asset)
     flags = get_pair_flags(asset)
 
@@ -451,6 +404,7 @@ def build_signal_message(
             timestamp,
             tz=WAT,
         ).strftime("%Y-%m-%d %H:%M:%S")
+
     else:
         candle_time = datetime.now(WAT).strftime(
             "%Y-%m-%d %H:%M:%S"
@@ -462,6 +416,7 @@ def build_signal_message(
     if signal == "REVERSAL DOWN":
         action = "SELL / LOWER"
         emoji = "🔴"
+
     else:
         action = "BUY / HIGHER"
         emoji = "🟢"
@@ -470,7 +425,7 @@ def build_signal_message(
         f"🚨 <b>FIREFLY AI OTC SIGNAL</b>\n"
         f"━━━━━━━━━━━━━━━━━━\n"
         f"{flags} <b>{pair_display}</b>\n\n"
-        f"📊 <b>Strategy:</b> 7-Candle Reversal\n"
+        f"📊 <b>Strategy:</b> 9-Candle Reversal\n"
         f"🕯️ <b>Timeframe:</b> 1 Minute\n"
         f"🔥 <b>Streak:</b> {streak} consecutive candles\n"
         f"📈 <b>Signal:</b> {signal}\n"
@@ -492,7 +447,6 @@ def connect_pocket_option() -> PocketOption:
     """
     Create and connect a Pocket Option WebSocket client.
     """
-
     global api
 
     logger.info("=" * 70)
@@ -516,7 +470,6 @@ def connect_pocket_option() -> PocketOption:
     deadline = time.time() + 30
 
     while time.time() < deadline:
-
         if client.check_connect() and client.is_time_synced():
             break
 
@@ -558,10 +511,8 @@ def resolve_assets(client: PocketOption) -> Dict[str, str]:
     Resolve requested OTC assets against Pocket Option's
     live asset catalog.
 
-    We deliberately use the live catalog rather than hardcoding
-    broker asset IDs.
+    Uses the live catalog instead of hardcoded broker asset IDs.
     """
-
     logger.info("=" * 70)
     logger.info("DISCOVERING POCKET OPTION OTC ASSETS")
     logger.info("=" * 70)
@@ -586,10 +537,7 @@ def resolve_assets(client: PocketOption) -> Dict[str, str]:
     }
 
     for requested in OTC_PAIRS:
-
-        actual = available_symbols.get(
-            requested.upper()
-        )
+        actual = available_symbols.get(requested.upper())
 
         if actual:
             info = assets.get(actual, {})
@@ -599,9 +547,7 @@ def resolve_assets(client: PocketOption) -> Dict[str, str]:
                 True,
             )
 
-            payout = info.get(
-                "payout"
-            )
+            payout = info.get("payout")
 
             if is_available:
                 resolved[requested] = actual
@@ -612,6 +558,7 @@ def resolve_assets(client: PocketOption) -> Dict[str, str]:
                     actual,
                     payout,
                 )
+
             else:
                 logger.warning(
                     "✗ %-12s exists but is unavailable.",
@@ -638,18 +585,14 @@ def subscribe_assets(
     """
     Subscribe to realtime stream data for each OTC asset.
 
-    Historical candle reconciliation uses these realtime
-    ticks to improve the most recent bars.
+    Historical candle reconciliation uses realtime ticks.
     """
-
     logger.info("=" * 70)
     logger.info("SUBSCRIBING TO OTC STREAMS")
     logger.info("=" * 70)
 
     for requested, actual in assets.items():
-
         try:
-
             success = client.subscribe(
                 actual,
                 period=TIMEFRAME,
@@ -660,6 +603,7 @@ def subscribe_assets(
                     "✓ Subscribed: %s",
                     actual,
                 )
+
             else:
                 logger.warning(
                     "✗ Subscription failed: %s",
@@ -670,7 +614,6 @@ def subscribe_assets(
             time.sleep(0.25)
 
         except Exception as exc:
-
             logger.error(
                 "Subscription error for %s: %s",
                 actual,
@@ -689,12 +632,10 @@ def fetch_candles(
     """
     Retrieve recent Pocket Option OTC candles.
 
-    The current unofficial client returns candle dictionaries
+    The client is expected to return candle dictionaries
     containing time/open/high/low/close/volume.
     """
-
     try:
-
         candles = client.get_historical_candles(
             asset,
             period=TIMEFRAME,
@@ -711,7 +652,6 @@ def fetch_candles(
         return completed[-CANDLE_COUNT:]
 
     except Exception as exc:
-
         logger.error(
             "Candle request failed for %s: %s",
             asset,
@@ -722,7 +662,7 @@ def fetch_candles(
 
 
 # ============================================================
-# CANDLE DISPLAY
+# CANDLE DISPLAY — REFACTORED LOGGING
 # ============================================================
 
 def log_candle_state(
@@ -730,44 +670,37 @@ def log_candle_state(
     candles: List[dict],
 ) -> None:
     """
-    Log current candle streak.
-    """
+    Display the current streak in the same concise format
+    as the IQ Option scanner.
 
+    Examples:
+        USDJPY_otc   | GREEN streak = 4
+        AUDUSD_otc   | RED streak = 6
+
+    Raw candle prices and timestamps are not logged here.
+    """
     if not candles:
         return
 
-    colors = [
-        candle_color(candle)
-        for candle in candles
-    ]
+    latest_color = candle_color(candles[-1])
 
-    latest_color = colors[-1]
+    # Only report GREEN or RED streaks.
+    if latest_color not in ("GREEN", "RED"):
+        return
 
     streak = 0
 
-    for color in reversed(colors):
-
-        if color == latest_color:
-            streak += 1
-
-        else:
+    for candle in reversed(candles):
+        if candle_color(candle) != latest_color:
             break
 
-    latest = candles[-1]
-
-    timestamp = get_candle_timestamp(latest)
-
-    candle_time = datetime.fromtimestamp(
-        timestamp,
-        tz=WAT,
-    ).strftime("%H:%M:%S")
+        streak += 1
 
     logger.info(
-        "%-12s | latest=%s | streak=%d | candle=%s",
-        normalize_pair(asset),
+        "%-12s | %s streak = %d",
+        asset,
         latest_color,
         streak,
-        candle_time,
     )
 
 
@@ -783,7 +716,6 @@ def process_asset(
     """
     Fetch candles and process the strategy for one asset.
     """
-
     candles = fetch_candles(
         client,
         actual_asset,
@@ -804,6 +736,7 @@ def process_asset(
         )
         return
 
+    # Concise streak logging.
     log_candle_state(
         requested_asset,
         candles,
@@ -835,22 +768,18 @@ def process_asset(
     )
 
     if previous_signal_timestamp == signal_timestamp:
-
         logger.debug(
             "Duplicate signal ignored: %s candle=%s",
             requested_asset,
             signal_timestamp,
         )
-
         return
 
     # --------------------------------------------------------
     # SAVE SIGNAL CANDLE
     # --------------------------------------------------------
 
-    LAST_SIGNAL_CANDLE[
-        requested_asset
-    ] = signal_timestamp
+    LAST_SIGNAL_CANDLE[requested_asset] = signal_timestamp
 
     # --------------------------------------------------------
     # SEND TELEGRAM
@@ -865,11 +794,11 @@ def process_asset(
 
     send_telegram(message)
 
-    logger.warning(
-        "SIGNAL: %s | %s | %s",
+    logger.info(
+        "SIGNAL GENERATED: %s | %s | streak=%d",
         requested_asset,
-        signal_direction,
-        signal_timestamp,
+        "GREEN" if signal_direction == "REVERSAL DOWN" else "RED",
+        streak,
     )
 
 
@@ -881,12 +810,9 @@ def ensure_connection(
     client: PocketOption,
 ) -> bool:
     """
-    Check whether the WebSocket is still connected and
-    synchronized.
+    Check whether the WebSocket is connected and synchronized.
     """
-
     try:
-
         if not client.check_connect():
             return False
 
@@ -896,7 +822,6 @@ def ensure_connection(
         return True
 
     except Exception as exc:
-
         logger.error(
             "Connection health check failed: %s",
             exc,
@@ -915,7 +840,6 @@ def send_startup_message(
     """
     Notify Telegram that the scanner has started.
     """
-
     pairs = "\n".join(
         f"• {get_pair_flags(asset)} "
         f"{normalize_pair(asset)}"
@@ -928,7 +852,7 @@ def send_startup_message(
         f"🟣 <b>Broker:</b> Pocket Option\n"
         f"📡 <b>Data:</b> Direct OTC WebSocket\n"
         f"🕯️ <b>Timeframe:</b> 1 Minute\n"
-        f"🔥 <b>Strategy:</b> 7-Candle Reversal\n"
+        f"🔥 <b>Strategy:</b> 9-Candle Reversal\n"
         f"📊 <b>Mode:</b> SIGNAL ONLY\n\n"
         f"<b>OTC PAIRS</b>\n"
         f"{pairs}\n\n"
@@ -947,12 +871,9 @@ def stop_bot(signum=None, frame=None):
     """
     Graceful shutdown.
     """
-
     global running
 
-    logger.info(
-        "Shutdown signal received."
-    )
+    logger.info("Shutdown signal received.")
 
     running = False
 
@@ -965,15 +886,12 @@ def run_scanner() -> None:
     """
     Main scanner loop.
     """
-
     global api
 
     while running:
-
         client = None
 
         try:
-
             # ------------------------------------------------
             # CONNECT
             # ------------------------------------------------
@@ -984,12 +902,9 @@ def run_scanner() -> None:
             # DISCOVER ASSETS
             # ------------------------------------------------
 
-            assets = resolve_assets(
-                client
-            )
+            assets = resolve_assets(client)
 
             if not assets:
-
                 raise RuntimeError(
                     "None of the configured OTC pairs "
                     "are currently available."
@@ -1018,22 +933,17 @@ def run_scanner() -> None:
             # TELEGRAM STARTUP
             # ------------------------------------------------
 
-            send_startup_message(
-                assets
-            )
+            send_startup_message(assets)
 
             # ------------------------------------------------
             # SCANNER LOOP
             # ------------------------------------------------
 
             logger.info("=" * 70)
-            logger.info(
-                "POCKET OPTION OTC SCANNER STARTED"
-            )
+            logger.info("POCKET OPTION OTC SCANNER STARTED")
             logger.info("=" * 70)
 
             while running:
-
                 cycle_start = time.time()
 
                 # --------------------------------------------
@@ -1041,11 +951,9 @@ def run_scanner() -> None:
                 # --------------------------------------------
 
                 if not ensure_connection(client):
-
                     logger.warning(
                         "Pocket Option WebSocket connection lost."
                     )
-
                     break
 
                 # --------------------------------------------
@@ -1055,12 +963,10 @@ def run_scanner() -> None:
                 for requested_asset, actual_asset in list(
                     assets.items()
                 ):
-
                     if not running:
                         break
 
                     try:
-
                         process_asset(
                             client,
                             requested_asset,
@@ -1068,7 +974,6 @@ def run_scanner() -> None:
                         )
 
                     except Exception as exc:
-
                         logger.exception(
                             "Unhandled error processing %s: %s",
                             requested_asset,
@@ -1096,38 +1001,30 @@ def run_scanner() -> None:
                 time.sleep(sleep_time)
 
         except KeyboardInterrupt:
-
             logger.info(
                 "Keyboard interrupt received."
             )
-
             break
 
         except Exception as exc:
-
             logger.exception(
                 "Scanner error: %s",
                 exc,
             )
 
             if running:
-
                 logger.info(
                     "Reconnecting in 10 seconds..."
                 )
-
                 time.sleep(10)
 
         finally:
-
             # ----------------------------------------------
             # CLOSE CURRENT WEBSOCKET
             # ----------------------------------------------
 
             if client is not None:
-
                 try:
-
                     client.disconnect_websocket()
 
                     logger.info(
@@ -1135,7 +1032,6 @@ def run_scanner() -> None:
                     )
 
                 except Exception as exc:
-
                     logger.debug(
                         "WebSocket cleanup error: %s",
                         exc,
@@ -1156,27 +1052,23 @@ def main() -> None:
     """
     Application entry point.
     """
-
     print()
     print("=" * 70)
     print("FIREFLY AI - POCKET OPTION OTC SCANNER")
     print("=" * 70)
     print("Data source : Pocket Option WebSocket")
     print("Timeframe   : 1 minute")
-    print("Strategy    : 7-candle reversal")
+    print("Strategy    : 9-candle reversal")
     print("Pairs       : 8 OTC pairs")
     print("Mode        : SIGNAL ONLY")
     print("=" * 70)
     print()
 
     try:
-
         validate_environment()
 
     except RuntimeError as exc:
-
         logger.error(str(exc))
-
         sys.exit(1)
 
     # ----------------------------------------------
@@ -1188,10 +1080,7 @@ def main() -> None:
         stop_bot,
     )
 
-    if hasattr(
-        signal,
-        "SIGTERM",
-    ):
+    if hasattr(signal, "SIGTERM"):
         signal.signal(
             signal.SIGTERM,
             stop_bot,

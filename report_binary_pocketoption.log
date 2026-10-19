@@ -514,3 +514,738 @@
 2026-10-13 16:08:19,517 | INFO | Binary report completed successfully.
 2026-10-13 16:08:19,657 | INFO | Pocket Option connection closed.
 2026-10-13 16:08:19,658 | INFO | Database connection closed.
+2026-10-17 14:14:19,872 | INFO | ========================================================================
+2026-10-17 14:14:19,897 | INFO | Starting Pocket Option binary historical report
+2026-10-17 14:14:19,898 | INFO | Report date: 2026-10-16
+2026-10-17 14:14:19,898 | INFO | Timezone: Africa/Lagos
+2026-10-17 14:14:19,899 | INFO | Database: C:\Users\OMASHOLA\Documents\sandboxes\firefly-ai\firefly_pocketoption_binary_reports.db
+2026-10-17 14:14:19,899 | INFO | ========================================================================
+2026-10-17 14:14:19,899 | INFO | Connecting to Pocket Option...
+2026-10-17 14:14:22,745 | INFO | Pocket Option connection established.
+2026-10-17 14:14:22,784 | INFO | ------------------------------------------------------------
+2026-10-17 14:14:22,865 | INFO | Processing USDJPY
+2026-10-17 14:14:22,917 | INFO | USDJPY asset check: matched symbol=USDJPY, available=True
+2026-10-17 14:14:23,008 | INFO | USDJPY: fetching historical candles for 2026-10-16
+2026-10-17 14:14:23,036 | INFO | USDJPY subscription requested: period=60
+2026-10-17 14:14:23,696 | INFO | USDJPY page 1: received=34, oldest=2026-10-16T23:27:00+01:00
+2026-10-17 14:14:23,917 | INFO | USDJPY page 2: received=52, oldest=2026-10-16T22:54:00+01:00
+2026-10-17 14:14:24,603 | INFO | USDJPY page 3: received=52, oldest=2026-10-16T22:21:00+01:00
+2026-10-17 14:14:24,782 | INFO | USDJPY page 4: received=52, oldest=2026-10-16T21:48:00+01:00
+2026-10-17 14:14:24,981 | INFO | USDJPY page 5: received=52, oldest=2026-10-16T21:15:00+01:00
+2026-10-17 14:14:25,170 | INFO | USDJPY page 6: received=52, oldest=2026-10-16T20:42:00+01:00
+2026-10-17 14:14:25,354 | INFO | USDJPY page 7: received=52, oldest=2026-10-16T20:09:00+01:00
+2026-10-17 14:14:25,562 | INFO | USDJPY page 8: received=52, oldest=2026-10-16T19:36:00+01:00
+2026-10-17 14:14:25,743 | INFO | USDJPY page 9: received=52, oldest=2026-10-16T19:03:00+01:00
+2026-10-17 14:14:25,919 | INFO | USDJPY page 10: received=52, oldest=2026-10-16T18:30:00+01:00
+2026-10-17 14:14:25,919 | INFO | USDJPY: collected 330 candles for 2026-10-16
+2026-10-17 14:14:27,000 | INFO | USDJPY complete: candles=330, max GREEN=6, max RED=7
+2026-10-17 14:14:27,034 | INFO | ------------------------------------------------------------
+2026-10-17 14:14:27,092 | INFO | Processing AUDUSD
+2026-10-17 14:14:27,120 | INFO | AUDUSD asset check: matched symbol=AUDUSD, available=True
+2026-10-17 14:14:27,195 | INFO | AUDUSD: fetching historical candles for 2026-10-16
+2026-10-17 14:14:27,454 | INFO | AUDUSD subscription requested: period=60
+2026-10-17 14:14:28,129 | INFO | AUDUSD page 1: received=63, oldest=2026-10-16T23:27:00+01:00
+2026-10-17 14:14:28,315 | INFO | AUDUSD page 2: received=62, oldest=2026-10-16T22:54:00+01:00
+2026-10-17 14:14:28,500 | INFO | AUDUSD page 3: received=62, oldest=2026-10-16T22:21:00+01:00
+2026-10-17 14:14:28,689 | INFO | AUDUSD page 4: received=62, oldest=2026-10-16T21:48:00+01:00
+2026-10-17 14:14:28,867 | INFO | AUDUSD page 5: received=62, oldest=2026-10-16T21:15:00+01:00
+2026-10-17 14:14:29,060 | INFO | AUDUSD page 6: received=62, oldest=2026-10-16T20:42:00+01:00
+2026-10-17 14:14:29,304 | INFO | AUDUSD page 7: received=62, oldest=2026-10-16T20:09:00+01:00
+2026-10-17 14:14:29,481 | INFO | AUDUSD page 8: received=62, oldest=2026-10-16T19:36:00+01:00
+2026-10-17 14:14:29,667 | INFO | AUDUSD page 9: received=62, oldest=2026-10-16T19:03:00+01:00
+2026-10-17 14:14:29,848 | INFO | AUDUSD page 10: received=62, oldest=2026-10-16T18:30:00+01:00
+2026-10-17 14:14:29,851 | INFO | AUDUSD: collected 330 candles for 2026-10-16
+2026-10-17 14:14:30,184 | INFO | AUDUSD complete: candles=330, max GREEN=8, max RED=9
+2026-10-17 14:14:30,185 | INFO | ------------------------------------------------------------
+2026-10-17 14:14:30,185 | INFO | Processing EURJPY
+2026-10-17 14:14:30,186 | INFO | EURJPY asset check: matched symbol=EURJPY, available=True
+2026-10-17 14:14:30,187 | INFO | EURJPY: fetching historical candles for 2026-10-16
+2026-10-17 14:14:30,191 | INFO | EURJPY subscription requested: period=60
+2026-10-17 14:14:30,574 | INFO | EURJPY page 1: received=55, oldest=2026-10-16T23:27:00+01:00
+2026-10-17 14:14:30,808 | INFO | EURJPY page 2: received=54, oldest=2026-10-16T22:54:00+01:00
+2026-10-17 14:14:30,992 | INFO | EURJPY page 3: received=54, oldest=2026-10-16T22:21:00+01:00
+2026-10-17 14:14:31,169 | INFO | EURJPY page 4: received=54, oldest=2026-10-16T21:48:00+01:00
+2026-10-17 14:14:31,350 | INFO | EURJPY page 5: received=54, oldest=2026-10-16T21:15:00+01:00
+2026-10-17 14:14:31,532 | INFO | EURJPY page 6: received=54, oldest=2026-10-16T20:42:00+01:00
+2026-10-17 14:14:31,803 | INFO | EURJPY page 7: received=54, oldest=2026-10-16T20:09:00+01:00
+2026-10-17 14:14:31,978 | INFO | EURJPY page 8: received=54, oldest=2026-10-16T19:36:00+01:00
+2026-10-17 14:14:32,154 | INFO | EURJPY page 9: received=54, oldest=2026-10-16T19:03:00+01:00
+2026-10-17 14:14:32,335 | INFO | EURJPY page 10: received=54, oldest=2026-10-16T18:30:00+01:00
+2026-10-17 14:14:32,335 | INFO | EURJPY: collected 330 candles for 2026-10-16
+2026-10-17 14:14:32,662 | INFO | EURJPY complete: candles=330, max GREEN=7, max RED=10
+2026-10-17 14:14:32,662 | INFO | ------------------------------------------------------------
+2026-10-17 14:14:32,665 | INFO | Processing AUDJPY
+2026-10-17 14:14:32,669 | INFO | AUDJPY asset check: matched symbol=AUDJPY, available=True
+2026-10-17 14:14:32,679 | INFO | AUDJPY: fetching historical candles for 2026-10-16
+2026-10-17 14:14:32,696 | INFO | AUDJPY subscription requested: period=60
+2026-10-17 14:14:33,677 | INFO | AUDJPY page 1: received=60, oldest=2026-10-16T23:27:00+01:00
+2026-10-17 14:14:33,878 | INFO | AUDJPY page 2: received=59, oldest=2026-10-16T22:54:00+01:00
+2026-10-17 14:14:34,067 | INFO | AUDJPY page 3: received=59, oldest=2026-10-16T22:21:00+01:00
+2026-10-17 14:14:34,323 | INFO | AUDJPY page 4: received=59, oldest=2026-10-16T21:48:00+01:00
+2026-10-17 14:14:34,552 | INFO | AUDJPY page 5: received=59, oldest=2026-10-16T21:15:00+01:00
+2026-10-17 14:14:34,816 | INFO | AUDJPY page 6: received=59, oldest=2026-10-16T20:42:00+01:00
+2026-10-17 14:14:35,016 | INFO | AUDJPY page 7: received=59, oldest=2026-10-16T20:09:00+01:00
+2026-10-17 14:14:35,210 | INFO | AUDJPY page 8: received=59, oldest=2026-10-16T19:36:00+01:00
+2026-10-17 14:14:35,402 | INFO | AUDJPY page 9: received=59, oldest=2026-10-16T19:03:00+01:00
+2026-10-17 14:14:35,598 | INFO | AUDJPY page 10: received=59, oldest=2026-10-16T18:30:00+01:00
+2026-10-17 14:14:35,599 | INFO | AUDJPY: collected 330 candles for 2026-10-16
+2026-10-17 14:14:36,216 | INFO | AUDJPY complete: candles=330, max GREEN=8, max RED=13
+2026-10-17 14:14:36,217 | INFO | ------------------------------------------------------------
+2026-10-17 14:14:36,218 | INFO | Processing GBPJPY
+2026-10-17 14:14:36,220 | INFO | GBPJPY asset check: matched symbol=GBPJPY, available=True
+2026-10-17 14:14:36,221 | INFO | GBPJPY: fetching historical candles for 2026-10-16
+2026-10-17 14:14:36,224 | INFO | GBPJPY subscription requested: period=60
+2026-10-17 14:14:36,842 | INFO | GBPJPY page 1: received=55, oldest=2026-10-16T23:27:00+01:00
+2026-10-17 14:14:37,050 | INFO | GBPJPY page 2: received=54, oldest=2026-10-16T22:54:00+01:00
+2026-10-17 14:14:37,332 | INFO | GBPJPY page 3: received=54, oldest=2026-10-16T22:21:00+01:00
+2026-10-17 14:14:37,615 | INFO | GBPJPY page 4: received=54, oldest=2026-10-16T21:48:00+01:00
+2026-10-17 14:14:37,815 | INFO | GBPJPY page 5: received=54, oldest=2026-10-16T21:15:00+01:00
+2026-10-17 14:14:38,015 | INFO | GBPJPY page 6: received=54, oldest=2026-10-16T20:42:00+01:00
+2026-10-17 14:14:38,219 | INFO | GBPJPY page 7: received=54, oldest=2026-10-16T20:09:00+01:00
+2026-10-17 14:14:38,415 | INFO | GBPJPY page 8: received=54, oldest=2026-10-16T19:36:00+01:00
+2026-10-17 14:14:38,617 | INFO | GBPJPY page 9: received=54, oldest=2026-10-16T19:03:00+01:00
+2026-10-17 14:14:39,285 | INFO | GBPJPY page 10: received=54, oldest=2026-10-16T18:30:00+01:00
+2026-10-17 14:14:39,285 | INFO | GBPJPY: collected 330 candles for 2026-10-16
+2026-10-17 14:14:39,926 | INFO | GBPJPY complete: candles=330, max GREEN=8, max RED=12
+2026-10-17 14:14:39,980 | INFO | ------------------------------------------------------------
+2026-10-17 14:14:39,984 | INFO | Processing GBPAUD
+2026-10-17 14:14:40,017 | INFO | GBPAUD asset check: matched symbol=GBPAUD, available=True
+2026-10-17 14:14:40,018 | INFO | GBPAUD: fetching historical candles for 2026-10-16
+2026-10-17 14:14:40,022 | INFO | GBPAUD subscription requested: period=60
+2026-10-17 14:14:43,199 | INFO | GBPAUD page 1: received=57, oldest=2026-10-16T23:27:00+01:00
+2026-10-17 14:14:48,587 | INFO | GBPAUD page 2: received=56, oldest=2026-10-16T22:54:00+01:00
+2026-10-17 14:14:48,872 | INFO | GBPAUD page 3: received=56, oldest=2026-10-16T22:21:00+01:00
+2026-10-17 14:14:49,085 | INFO | GBPAUD page 4: received=56, oldest=2026-10-16T21:48:00+01:00
+2026-10-17 14:14:49,332 | INFO | GBPAUD page 5: received=56, oldest=2026-10-16T21:15:00+01:00
+2026-10-17 14:14:49,675 | INFO | GBPAUD page 6: received=56, oldest=2026-10-16T20:42:00+01:00
+2026-10-17 14:14:49,894 | INFO | GBPAUD page 7: received=56, oldest=2026-10-16T20:09:00+01:00
+2026-10-17 14:14:52,862 | INFO | GBPAUD page 8: received=56, oldest=2026-10-16T19:36:00+01:00
+2026-10-17 14:14:53,091 | INFO | GBPAUD page 9: received=56, oldest=2026-10-16T19:03:00+01:00
+2026-10-17 14:14:53,370 | INFO | GBPAUD page 10: received=56, oldest=2026-10-16T18:30:00+01:00
+2026-10-17 14:14:53,371 | INFO | GBPAUD: collected 330 candles for 2026-10-16
+2026-10-17 14:15:04,114 | INFO | GBPAUD complete: candles=330, max GREEN=7, max RED=8
+2026-10-17 14:15:04,119 | INFO | ------------------------------------------------------------
+2026-10-17 14:15:04,122 | INFO | Processing GBPCAD
+2026-10-17 14:15:04,124 | INFO | GBPCAD asset check: matched symbol=GBPCAD, available=True
+2026-10-17 14:15:04,133 | INFO | GBPCAD: fetching historical candles for 2026-10-16
+2026-10-17 14:15:04,148 | INFO | GBPCAD subscription requested: period=60
+2026-10-17 14:15:05,395 | INFO | GBPCAD page 1: received=59, oldest=2026-10-16T23:27:00+01:00
+2026-10-17 14:15:05,649 | INFO | GBPCAD page 2: received=58, oldest=2026-10-16T22:54:00+01:00
+2026-10-17 14:15:05,911 | INFO | GBPCAD page 3: received=58, oldest=2026-10-16T22:21:00+01:00
+2026-10-17 14:15:06,129 | INFO | GBPCAD page 4: received=58, oldest=2026-10-16T21:48:00+01:00
+2026-10-17 14:15:06,388 | INFO | GBPCAD page 5: received=58, oldest=2026-10-16T21:15:00+01:00
+2026-10-17 14:15:06,606 | INFO | GBPCAD page 6: received=58, oldest=2026-10-16T20:42:00+01:00
+2026-10-17 14:15:06,895 | INFO | GBPCAD page 7: received=58, oldest=2026-10-16T20:09:00+01:00
+2026-10-17 14:15:25,829 | INFO | GBPCAD page 8: received=58, oldest=2026-10-16T19:36:00+01:00
+2026-10-17 14:15:26,060 | INFO | GBPCAD page 9: received=58, oldest=2026-10-16T19:03:00+01:00
+2026-10-17 14:15:26,264 | INFO | GBPCAD page 10: received=58, oldest=2026-10-16T18:30:00+01:00
+2026-10-17 14:15:26,265 | INFO | GBPCAD: collected 330 candles for 2026-10-16
+2026-10-17 14:15:28,906 | INFO | GBPCAD complete: candles=330, max GREEN=5, max RED=6
+2026-10-17 14:15:28,914 | INFO | ------------------------------------------------------------
+2026-10-17 14:15:28,915 | INFO | Processing CADJPY
+2026-10-17 14:15:28,916 | INFO | CADJPY asset check: matched symbol=CADJPY, available=True
+2026-10-17 14:15:28,918 | INFO | CADJPY: fetching historical candles for 2026-10-16
+2026-10-17 14:15:28,921 | INFO | CADJPY subscription requested: period=60
+2026-10-17 14:15:29,581 | INFO | CADJPY page 1: received=54, oldest=2026-10-16T23:27:00+01:00
+2026-10-17 14:15:29,807 | INFO | CADJPY page 2: received=53, oldest=2026-10-16T22:54:00+01:00
+2026-10-17 14:15:30,006 | INFO | CADJPY page 3: received=53, oldest=2026-10-16T22:21:00+01:00
+2026-10-17 14:15:30,205 | INFO | CADJPY page 4: received=53, oldest=2026-10-16T21:48:00+01:00
+2026-10-17 14:15:30,409 | INFO | CADJPY page 5: received=53, oldest=2026-10-16T21:15:00+01:00
+2026-10-17 14:15:30,617 | INFO | CADJPY page 6: received=53, oldest=2026-10-16T20:42:00+01:00
+2026-10-17 14:15:30,858 | INFO | CADJPY page 7: received=53, oldest=2026-10-16T20:09:00+01:00
+2026-10-17 14:15:38,250 | INFO | CADJPY page 8: received=53, oldest=2026-10-16T19:36:00+01:00
+2026-10-17 14:15:38,441 | INFO | CADJPY page 9: received=53, oldest=2026-10-16T19:03:00+01:00
+2026-10-17 14:15:38,638 | INFO | CADJPY page 10: received=53, oldest=2026-10-16T18:30:00+01:00
+2026-10-17 14:15:38,639 | INFO | CADJPY: collected 330 candles for 2026-10-16
+2026-10-17 14:15:41,090 | INFO | CADJPY complete: candles=330, max GREEN=7, max RED=10
+2026-10-17 14:15:50,203 | INFO | Binary report completed successfully.
+2026-10-17 14:15:50,429 | INFO | Pocket Option connection closed.
+2026-10-17 14:15:50,436 | INFO | Database connection closed.
+2026-10-17 14:25:15,293 | INFO | ========================================================================
+2026-10-17 14:25:15,302 | INFO | Starting Pocket Option binary historical report
+2026-10-17 14:25:15,305 | INFO | Report date: 2026-10-15
+2026-10-17 14:25:15,306 | INFO | Timezone: Africa/Lagos
+2026-10-17 14:25:15,311 | INFO | Database: C:\Users\OMASHOLA\Documents\sandboxes\firefly-ai\firefly_pocketoption_binary_reports.db
+2026-10-17 14:25:15,320 | INFO | ========================================================================
+2026-10-17 14:25:15,320 | INFO | Connecting to Pocket Option...
+2026-10-17 14:25:18,048 | INFO | Pocket Option connection established.
+2026-10-17 14:25:18,317 | INFO | ------------------------------------------------------------
+2026-10-17 14:25:18,387 | INFO | Processing USDJPY
+2026-10-17 14:25:18,509 | INFO | USDJPY asset check: matched symbol=USDJPY, available=True
+2026-10-17 14:25:18,731 | INFO | USDJPY: fetching historical candles for 2026-10-15
+2026-10-17 14:25:18,790 | INFO | USDJPY subscription requested: period=60
+2026-10-17 14:25:19,401 | INFO | USDJPY page 1: received=34, oldest=2026-10-15T23:27:00+01:00
+2026-10-17 14:25:19,985 | INFO | USDJPY page 2: received=49, oldest=2026-10-15T22:54:00+01:00
+2026-10-17 14:25:20,154 | INFO | USDJPY page 3: received=49, oldest=2026-10-15T22:21:00+01:00
+2026-10-17 14:25:20,381 | INFO | USDJPY page 4: received=49, oldest=2026-10-15T21:48:00+01:00
+2026-10-17 14:25:20,576 | INFO | USDJPY page 5: received=49, oldest=2026-10-15T21:15:00+01:00
+2026-10-17 14:25:28,881 | INFO | USDJPY page 6: received=49, oldest=2026-10-15T20:42:00+01:00
+2026-10-17 14:25:29,660 | INFO | USDJPY page 7: received=49, oldest=2026-10-15T20:09:00+01:00
+2026-10-17 14:25:29,830 | INFO | USDJPY page 8: received=49, oldest=2026-10-15T19:36:00+01:00
+2026-10-17 14:25:29,996 | INFO | USDJPY page 9: received=49, oldest=2026-10-15T19:03:00+01:00
+2026-10-17 14:25:30,164 | INFO | USDJPY page 10: received=49, oldest=2026-10-15T18:30:00+01:00
+2026-10-17 14:25:30,165 | INFO | USDJPY: collected 330 candles for 2026-10-15
+2026-10-17 14:25:30,654 | INFO | USDJPY complete: candles=330, max GREEN=6, max RED=7
+2026-10-17 14:25:30,655 | INFO | ------------------------------------------------------------
+2026-10-17 14:25:30,655 | INFO | Processing AUDUSD
+2026-10-17 14:25:30,655 | INFO | AUDUSD asset check: matched symbol=AUDUSD, available=True
+2026-10-17 14:25:30,656 | INFO | AUDUSD: fetching historical candles for 2026-10-15
+2026-10-17 14:25:30,659 | INFO | AUDUSD subscription requested: period=60
+2026-10-17 14:25:30,992 | INFO | AUDUSD page 1: received=60, oldest=2026-10-15T23:27:00+01:00
+2026-10-17 14:25:31,161 | INFO | AUDUSD page 2: received=59, oldest=2026-10-15T22:54:00+01:00
+2026-10-17 14:25:31,326 | INFO | AUDUSD page 3: received=59, oldest=2026-10-15T22:21:00+01:00
+2026-10-17 14:25:31,496 | INFO | AUDUSD page 4: received=59, oldest=2026-10-15T21:48:00+01:00
+2026-10-17 14:25:31,671 | INFO | AUDUSD page 5: received=59, oldest=2026-10-15T21:15:00+01:00
+2026-10-17 14:25:31,849 | INFO | AUDUSD page 6: received=59, oldest=2026-10-15T20:42:00+01:00
+2026-10-17 14:25:32,021 | INFO | AUDUSD page 7: received=59, oldest=2026-10-15T20:09:00+01:00
+2026-10-17 14:25:32,197 | INFO | AUDUSD page 8: received=59, oldest=2026-10-15T19:36:00+01:00
+2026-10-17 14:25:32,423 | INFO | AUDUSD page 9: received=59, oldest=2026-10-15T19:03:00+01:00
+2026-10-17 14:25:32,604 | INFO | AUDUSD page 10: received=59, oldest=2026-10-15T18:30:00+01:00
+2026-10-17 14:25:32,605 | INFO | AUDUSD: collected 330 candles for 2026-10-15
+2026-10-17 14:25:46,706 | INFO | AUDUSD complete: candles=330, max GREEN=6, max RED=7
+2026-10-17 14:25:46,707 | INFO | ------------------------------------------------------------
+2026-10-17 14:25:46,708 | INFO | Processing EURJPY
+2026-10-17 14:25:46,708 | INFO | EURJPY asset check: matched symbol=EURJPY, available=True
+2026-10-17 14:25:46,708 | INFO | EURJPY: fetching historical candles for 2026-10-15
+2026-10-17 14:25:46,711 | INFO | EURJPY subscription requested: period=60
+2026-10-17 14:25:46,927 | INFO | EURJPY page 1: received=50, oldest=2026-10-15T23:27:00+01:00
+2026-10-17 14:25:47,089 | INFO | EURJPY page 2: received=49, oldest=2026-10-15T22:54:00+01:00
+2026-10-17 14:25:47,253 | INFO | EURJPY page 3: received=49, oldest=2026-10-15T22:21:00+01:00
+2026-10-17 14:25:47,428 | INFO | EURJPY page 4: received=49, oldest=2026-10-15T21:48:00+01:00
+2026-10-17 14:25:47,606 | INFO | EURJPY page 5: received=49, oldest=2026-10-15T21:15:00+01:00
+2026-10-17 14:25:47,776 | INFO | EURJPY page 6: received=49, oldest=2026-10-15T20:42:00+01:00
+2026-10-17 14:25:47,940 | INFO | EURJPY page 7: received=49, oldest=2026-10-15T20:09:00+01:00
+2026-10-17 14:25:48,106 | INFO | EURJPY page 8: received=49, oldest=2026-10-15T19:36:00+01:00
+2026-10-17 14:25:48,275 | INFO | EURJPY page 9: received=49, oldest=2026-10-15T19:03:00+01:00
+2026-10-17 14:25:48,448 | INFO | EURJPY page 10: received=49, oldest=2026-10-15T18:30:00+01:00
+2026-10-17 14:25:48,448 | INFO | EURJPY: collected 330 candles for 2026-10-15
+2026-10-17 14:25:49,239 | INFO | EURJPY complete: candles=330, max GREEN=7, max RED=5
+2026-10-17 14:25:49,247 | INFO | ------------------------------------------------------------
+2026-10-17 14:25:49,263 | INFO | Processing AUDJPY
+2026-10-17 14:25:49,306 | INFO | AUDJPY asset check: matched symbol=AUDJPY, available=True
+2026-10-17 14:25:49,312 | INFO | AUDJPY: fetching historical candles for 2026-10-15
+2026-10-17 14:25:49,322 | INFO | AUDJPY subscription requested: period=60
+2026-10-17 14:25:49,657 | INFO | AUDJPY page 1: received=57, oldest=2026-10-15T23:27:00+01:00
+2026-10-17 14:25:49,834 | INFO | AUDJPY page 2: received=56, oldest=2026-10-15T22:54:00+01:00
+2026-10-17 14:25:50,006 | INFO | AUDJPY page 3: received=56, oldest=2026-10-15T22:21:00+01:00
+2026-10-17 14:25:50,172 | INFO | AUDJPY page 4: received=56, oldest=2026-10-15T21:48:00+01:00
+2026-10-17 14:25:50,406 | INFO | AUDJPY page 5: received=56, oldest=2026-10-15T21:15:00+01:00
+2026-10-17 14:25:50,583 | INFO | AUDJPY page 6: received=56, oldest=2026-10-15T20:42:00+01:00
+2026-10-17 14:25:50,757 | INFO | AUDJPY page 7: received=56, oldest=2026-10-15T20:09:00+01:00
+2026-10-17 14:25:50,954 | INFO | AUDJPY page 8: received=56, oldest=2026-10-15T19:36:00+01:00
+2026-10-17 14:25:51,121 | INFO | AUDJPY page 9: received=56, oldest=2026-10-15T19:03:00+01:00
+2026-10-17 14:25:51,291 | INFO | AUDJPY page 10: received=56, oldest=2026-10-15T18:30:00+01:00
+2026-10-17 14:25:51,292 | INFO | AUDJPY: collected 330 candles for 2026-10-15
+2026-10-17 14:25:59,897 | INFO | AUDJPY complete: candles=330, max GREEN=5, max RED=8
+2026-10-17 14:25:59,898 | INFO | ------------------------------------------------------------
+2026-10-17 14:25:59,898 | INFO | Processing GBPJPY
+2026-10-17 14:25:59,899 | INFO | GBPJPY asset check: matched symbol=GBPJPY, available=True
+2026-10-17 14:25:59,899 | INFO | GBPJPY: fetching historical candles for 2026-10-15
+2026-10-17 14:25:59,919 | INFO | GBPJPY subscription requested: period=60
+2026-10-17 14:26:00,202 | INFO | GBPJPY page 1: received=52, oldest=2026-10-15T23:27:00+01:00
+2026-10-17 14:26:00,431 | INFO | GBPJPY page 2: received=51, oldest=2026-10-15T22:54:00+01:00
+2026-10-17 14:26:00,613 | INFO | GBPJPY page 3: received=51, oldest=2026-10-15T22:21:00+01:00
+2026-10-17 14:26:00,793 | INFO | GBPJPY page 4: received=51, oldest=2026-10-15T21:48:00+01:00
+2026-10-17 14:26:00,960 | INFO | GBPJPY page 5: received=51, oldest=2026-10-15T21:15:00+01:00
+2026-10-17 14:26:01,133 | INFO | GBPJPY page 6: received=51, oldest=2026-10-15T20:42:00+01:00
+2026-10-17 14:26:01,313 | INFO | GBPJPY page 7: received=51, oldest=2026-10-15T20:09:00+01:00
+2026-10-17 14:26:01,482 | INFO | GBPJPY page 8: received=51, oldest=2026-10-15T19:36:00+01:00
+2026-10-17 14:26:01,797 | INFO | GBPJPY page 9: received=51, oldest=2026-10-15T19:03:00+01:00
+2026-10-17 14:26:02,205 | INFO | GBPJPY page 10: received=51, oldest=2026-10-15T18:30:00+01:00
+2026-10-17 14:26:02,209 | INFO | GBPJPY: collected 330 candles for 2026-10-15
+2026-10-17 14:26:02,711 | INFO | GBPJPY complete: candles=330, max GREEN=7, max RED=5
+2026-10-17 14:26:02,714 | INFO | ------------------------------------------------------------
+2026-10-17 14:26:02,714 | INFO | Processing GBPAUD
+2026-10-17 14:26:02,715 | INFO | GBPAUD asset check: matched symbol=GBPAUD, available=True
+2026-10-17 14:26:02,716 | INFO | GBPAUD: fetching historical candles for 2026-10-15
+2026-10-17 14:26:02,718 | INFO | GBPAUD subscription requested: period=60
+2026-10-17 14:26:03,055 | INFO | GBPAUD page 1: received=53, oldest=2026-10-15T23:27:00+01:00
+2026-10-17 14:26:03,227 | INFO | GBPAUD page 2: received=52, oldest=2026-10-15T22:54:00+01:00
+2026-10-17 14:26:03,492 | INFO | GBPAUD page 3: received=52, oldest=2026-10-15T22:21:00+01:00
+2026-10-17 14:26:03,792 | INFO | GBPAUD page 4: received=52, oldest=2026-10-15T21:48:00+01:00
+2026-10-17 14:26:03,981 | INFO | GBPAUD page 5: received=52, oldest=2026-10-15T21:15:00+01:00
+2026-10-17 14:26:04,150 | INFO | GBPAUD page 6: received=52, oldest=2026-10-15T20:42:00+01:00
+2026-10-17 14:26:04,327 | INFO | GBPAUD page 7: received=52, oldest=2026-10-15T20:09:00+01:00
+2026-10-17 14:26:04,496 | INFO | GBPAUD page 8: received=52, oldest=2026-10-15T19:36:00+01:00
+2026-10-17 14:26:04,673 | INFO | GBPAUD page 9: received=52, oldest=2026-10-15T19:03:00+01:00
+2026-10-17 14:26:04,843 | INFO | GBPAUD page 10: received=52, oldest=2026-10-15T18:30:00+01:00
+2026-10-17 14:26:04,844 | INFO | GBPAUD: collected 330 candles for 2026-10-15
+2026-10-17 14:26:25,838 | INFO | GBPAUD complete: candles=330, max GREEN=10, max RED=5
+2026-10-17 14:26:25,839 | INFO | ------------------------------------------------------------
+2026-10-17 14:26:25,839 | INFO | Processing GBPCAD
+2026-10-17 14:26:25,840 | INFO | GBPCAD asset check: matched symbol=GBPCAD, available=True
+2026-10-17 14:26:25,841 | INFO | GBPCAD: fetching historical candles for 2026-10-15
+2026-10-17 14:26:25,843 | INFO | GBPCAD subscription requested: period=60
+2026-10-17 14:26:26,184 | INFO | GBPCAD page 1: received=55, oldest=2026-10-15T23:27:00+01:00
+2026-10-17 14:26:26,390 | INFO | GBPCAD page 2: received=54, oldest=2026-10-15T22:54:00+01:00
+2026-10-17 14:26:26,554 | INFO | GBPCAD page 3: received=54, oldest=2026-10-15T22:21:00+01:00
+2026-10-17 14:26:26,723 | INFO | GBPCAD page 4: received=54, oldest=2026-10-15T21:48:00+01:00
+2026-10-17 14:26:26,904 | INFO | GBPCAD page 5: received=54, oldest=2026-10-15T21:15:00+01:00
+2026-10-17 14:26:27,077 | INFO | GBPCAD page 6: received=54, oldest=2026-10-15T20:42:00+01:00
+2026-10-17 14:26:27,256 | INFO | GBPCAD page 7: received=54, oldest=2026-10-15T20:09:00+01:00
+2026-10-17 14:26:27,429 | INFO | GBPCAD page 8: received=54, oldest=2026-10-15T19:36:00+01:00
+2026-10-17 14:26:35,920 | INFO | GBPCAD page 9: received=54, oldest=2026-10-15T19:03:00+01:00
+2026-10-17 14:26:36,097 | INFO | GBPCAD page 10: received=54, oldest=2026-10-15T18:30:00+01:00
+2026-10-17 14:26:36,098 | INFO | GBPCAD: collected 330 candles for 2026-10-15
+2026-10-17 14:26:36,478 | INFO | GBPCAD complete: candles=330, max GREEN=8, max RED=6
+2026-10-17 14:26:36,479 | INFO | ------------------------------------------------------------
+2026-10-17 14:26:36,480 | INFO | Processing CADJPY
+2026-10-17 14:26:36,481 | INFO | CADJPY asset check: matched symbol=CADJPY, available=True
+2026-10-17 14:26:36,481 | INFO | CADJPY: fetching historical candles for 2026-10-15
+2026-10-17 14:26:36,484 | INFO | CADJPY subscription requested: period=60
+2026-10-17 14:26:36,697 | INFO | CADJPY page 1: received=49, oldest=2026-10-15T23:27:00+01:00
+2026-10-17 14:26:37,232 | INFO | CADJPY page 2: received=48, oldest=2026-10-15T22:54:00+01:00
+2026-10-17 14:26:37,410 | INFO | CADJPY page 3: received=48, oldest=2026-10-15T22:21:00+01:00
+2026-10-17 14:26:37,668 | INFO | CADJPY page 4: received=48, oldest=2026-10-15T21:48:00+01:00
+2026-10-17 14:26:37,845 | INFO | CADJPY page 5: received=48, oldest=2026-10-15T21:15:00+01:00
+2026-10-17 14:26:38,030 | INFO | CADJPY page 6: received=48, oldest=2026-10-15T20:42:00+01:00
+2026-10-17 14:26:38,278 | INFO | CADJPY page 7: received=48, oldest=2026-10-15T20:09:00+01:00
+2026-10-17 14:26:38,481 | INFO | CADJPY page 8: received=48, oldest=2026-10-15T19:36:00+01:00
+2026-10-17 14:26:38,799 | INFO | CADJPY page 9: received=48, oldest=2026-10-15T19:03:00+01:00
+2026-10-17 14:26:38,978 | INFO | CADJPY page 10: received=48, oldest=2026-10-15T18:30:00+01:00
+2026-10-17 14:26:38,978 | INFO | CADJPY: collected 330 candles for 2026-10-15
+2026-10-17 14:26:46,997 | INFO | CADJPY complete: candles=330, max GREEN=6, max RED=7
+2026-10-17 14:26:57,076 | INFO | Binary report completed successfully.
+2026-10-17 14:26:57,314 | INFO | Pocket Option connection closed.
+2026-10-17 14:26:57,315 | INFO | Database connection closed.
+2026-10-17 14:43:42,449 | INFO | ========================================================================
+2026-10-17 14:43:42,451 | INFO | Starting Pocket Option binary historical report
+2026-10-17 14:43:42,455 | INFO | Report date: 2026-10-14
+2026-10-17 14:43:42,457 | INFO | Timezone: Africa/Lagos
+2026-10-17 14:43:42,458 | INFO | Database: C:\Users\OMASHOLA\Documents\sandboxes\firefly-ai\firefly_pocketoption_binary_reports.db
+2026-10-17 14:43:42,461 | INFO | ========================================================================
+2026-10-17 14:43:42,465 | INFO | Connecting to Pocket Option...
+2026-10-17 14:43:45,218 | INFO | Pocket Option connection established.
+2026-10-17 14:43:45,219 | INFO | ------------------------------------------------------------
+2026-10-17 14:43:45,220 | INFO | Processing USDJPY
+2026-10-17 14:43:45,221 | INFO | USDJPY asset check: matched symbol=USDJPY, available=True
+2026-10-17 14:43:45,222 | INFO | USDJPY: fetching historical candles for 2026-10-14
+2026-10-17 14:43:45,233 | INFO | USDJPY subscription requested: period=60
+2026-10-17 14:43:45,523 | INFO | USDJPY page 1: received=34, oldest=2026-10-14T23:27:00+01:00
+2026-10-17 14:43:45,683 | INFO | USDJPY page 2: received=33, oldest=2026-10-14T22:54:00+01:00
+2026-10-17 14:43:45,849 | INFO | USDJPY page 3: received=51, oldest=2026-10-14T22:21:00+01:00
+2026-10-17 14:43:46,011 | INFO | USDJPY page 4: received=51, oldest=2026-10-14T21:48:00+01:00
+2026-10-17 14:43:46,175 | INFO | USDJPY page 5: received=51, oldest=2026-10-14T21:15:00+01:00
+2026-10-17 14:43:46,358 | INFO | USDJPY page 6: received=51, oldest=2026-10-14T20:42:00+01:00
+2026-10-17 14:43:46,563 | INFO | USDJPY page 7: received=51, oldest=2026-10-14T20:09:00+01:00
+2026-10-17 14:43:46,749 | INFO | USDJPY page 8: received=51, oldest=2026-10-14T19:36:00+01:00
+2026-10-17 14:43:46,911 | INFO | USDJPY page 9: received=51, oldest=2026-10-14T19:03:00+01:00
+2026-10-17 14:43:47,069 | INFO | USDJPY page 10: received=51, oldest=2026-10-14T18:30:00+01:00
+2026-10-17 14:43:47,069 | INFO | USDJPY: collected 330 candles for 2026-10-14
+2026-10-17 14:43:47,504 | INFO | USDJPY complete: candles=330, max GREEN=9, max RED=8
+2026-10-17 14:43:47,505 | INFO | ------------------------------------------------------------
+2026-10-17 14:43:47,512 | INFO | Processing AUDUSD
+2026-10-17 14:43:47,514 | INFO | AUDUSD asset check: matched symbol=AUDUSD, available=True
+2026-10-17 14:43:47,515 | INFO | AUDUSD: fetching historical candles for 2026-10-14
+2026-10-17 14:43:47,519 | INFO | AUDUSD subscription requested: period=60
+2026-10-17 14:43:47,847 | INFO | AUDUSD page 1: received=62, oldest=2026-10-14T23:27:00+01:00
+2026-10-17 14:43:48,021 | INFO | AUDUSD page 2: received=61, oldest=2026-10-14T22:54:00+01:00
+2026-10-17 14:43:48,192 | INFO | AUDUSD page 3: received=61, oldest=2026-10-14T22:21:00+01:00
+2026-10-17 14:43:48,360 | INFO | AUDUSD page 4: received=61, oldest=2026-10-14T21:48:00+01:00
+2026-10-17 14:43:48,526 | INFO | AUDUSD page 5: received=61, oldest=2026-10-14T21:15:00+01:00
+2026-10-17 14:43:48,695 | INFO | AUDUSD page 6: received=61, oldest=2026-10-14T20:42:00+01:00
+2026-10-17 14:43:48,877 | INFO | AUDUSD page 7: received=61, oldest=2026-10-14T20:09:00+01:00
+2026-10-17 14:43:49,040 | INFO | AUDUSD page 8: received=61, oldest=2026-10-14T19:36:00+01:00
+2026-10-17 14:43:49,211 | INFO | AUDUSD page 9: received=61, oldest=2026-10-14T19:03:00+01:00
+2026-10-17 14:43:49,391 | INFO | AUDUSD page 10: received=61, oldest=2026-10-14T18:30:00+01:00
+2026-10-17 14:43:49,392 | INFO | AUDUSD: collected 330 candles for 2026-10-14
+2026-10-17 14:43:49,727 | INFO | AUDUSD complete: candles=330, max GREEN=7, max RED=6
+2026-10-17 14:43:49,728 | INFO | ------------------------------------------------------------
+2026-10-17 14:43:49,728 | INFO | Processing EURJPY
+2026-10-17 14:43:49,729 | INFO | EURJPY asset check: matched symbol=EURJPY, available=True
+2026-10-17 14:43:49,729 | INFO | EURJPY: fetching historical candles for 2026-10-14
+2026-10-17 14:43:49,731 | INFO | EURJPY subscription requested: period=60
+2026-10-17 14:43:50,042 | INFO | EURJPY page 1: received=54, oldest=2026-10-14T23:27:00+01:00
+2026-10-17 14:43:50,207 | INFO | EURJPY page 2: received=53, oldest=2026-10-14T22:54:00+01:00
+2026-10-17 14:43:50,375 | INFO | EURJPY page 3: received=53, oldest=2026-10-14T22:21:00+01:00
+2026-10-17 14:43:50,543 | INFO | EURJPY page 4: received=53, oldest=2026-10-14T21:48:00+01:00
+2026-10-17 14:43:50,721 | INFO | EURJPY page 5: received=53, oldest=2026-10-14T21:15:00+01:00
+2026-10-17 14:43:50,892 | INFO | EURJPY page 6: received=53, oldest=2026-10-14T20:42:00+01:00
+2026-10-17 14:43:51,052 | INFO | EURJPY page 7: received=53, oldest=2026-10-14T20:09:00+01:00
+2026-10-17 14:43:51,217 | INFO | EURJPY page 8: received=53, oldest=2026-10-14T19:36:00+01:00
+2026-10-17 14:43:51,406 | INFO | EURJPY page 9: received=53, oldest=2026-10-14T19:03:00+01:00
+2026-10-17 14:43:51,569 | INFO | EURJPY page 10: received=53, oldest=2026-10-14T18:30:00+01:00
+2026-10-17 14:43:51,573 | INFO | EURJPY: collected 330 candles for 2026-10-14
+2026-10-17 14:43:51,832 | INFO | EURJPY complete: candles=330, max GREEN=7, max RED=8
+2026-10-17 14:43:51,833 | INFO | ------------------------------------------------------------
+2026-10-17 14:43:51,834 | INFO | Processing AUDJPY
+2026-10-17 14:43:51,834 | INFO | AUDJPY asset check: matched symbol=AUDJPY, available=True
+2026-10-17 14:43:51,835 | INFO | AUDJPY: fetching historical candles for 2026-10-14
+2026-10-17 14:43:51,837 | INFO | AUDJPY subscription requested: period=60
+2026-10-17 14:43:52,173 | INFO | AUDJPY page 1: received=60, oldest=2026-10-14T23:27:00+01:00
+2026-10-17 14:43:52,346 | INFO | AUDJPY page 2: received=59, oldest=2026-10-14T22:54:00+01:00
+2026-10-17 14:43:52,512 | INFO | AUDJPY page 3: received=59, oldest=2026-10-14T22:21:00+01:00
+2026-10-17 14:43:52,682 | INFO | AUDJPY page 4: received=59, oldest=2026-10-14T21:48:00+01:00
+2026-10-17 14:43:52,857 | INFO | AUDJPY page 5: received=59, oldest=2026-10-14T21:15:00+01:00
+2026-10-17 14:43:53,029 | INFO | AUDJPY page 6: received=59, oldest=2026-10-14T20:42:00+01:00
+2026-10-17 14:43:53,188 | INFO | AUDJPY page 7: received=59, oldest=2026-10-14T20:09:00+01:00
+2026-10-17 14:43:53,355 | INFO | AUDJPY page 8: received=59, oldest=2026-10-14T19:36:00+01:00
+2026-10-17 14:43:53,522 | INFO | AUDJPY page 9: received=59, oldest=2026-10-14T19:03:00+01:00
+2026-10-17 14:43:53,715 | INFO | AUDJPY page 10: received=59, oldest=2026-10-14T18:30:00+01:00
+2026-10-17 14:43:53,715 | INFO | AUDJPY: collected 330 candles for 2026-10-14
+2026-10-17 14:43:54,076 | INFO | AUDJPY complete: candles=330, max GREEN=8, max RED=8
+2026-10-17 14:43:54,077 | INFO | ------------------------------------------------------------
+2026-10-17 14:43:54,078 | INFO | Processing GBPJPY
+2026-10-17 14:43:54,078 | INFO | GBPJPY asset check: matched symbol=GBPJPY, available=True
+2026-10-17 14:43:54,078 | INFO | GBPJPY: fetching historical candles for 2026-10-14
+2026-10-17 14:43:54,081 | INFO | GBPJPY subscription requested: period=60
+2026-10-17 14:43:54,408 | INFO | GBPJPY page 1: received=54, oldest=2026-10-14T23:27:00+01:00
+2026-10-17 14:43:54,575 | INFO | GBPJPY page 2: received=53, oldest=2026-10-14T22:54:00+01:00
+2026-10-17 14:43:54,740 | INFO | GBPJPY page 3: received=53, oldest=2026-10-14T22:21:00+01:00
+2026-10-17 14:43:54,904 | INFO | GBPJPY page 4: received=53, oldest=2026-10-14T21:48:00+01:00
+2026-10-17 14:43:55,069 | INFO | GBPJPY page 5: received=53, oldest=2026-10-14T21:15:00+01:00
+2026-10-17 14:43:55,381 | INFO | GBPJPY page 6: received=53, oldest=2026-10-14T20:42:00+01:00
+2026-10-17 14:43:55,551 | INFO | GBPJPY page 7: received=53, oldest=2026-10-14T20:09:00+01:00
+2026-10-17 14:43:55,709 | INFO | GBPJPY page 8: received=53, oldest=2026-10-14T19:36:00+01:00
+2026-10-17 14:43:55,867 | INFO | GBPJPY page 9: received=53, oldest=2026-10-14T19:03:00+01:00
+2026-10-17 14:43:56,027 | INFO | GBPJPY page 10: received=53, oldest=2026-10-14T18:30:00+01:00
+2026-10-17 14:43:56,027 | INFO | GBPJPY: collected 330 candles for 2026-10-14
+2026-10-17 14:43:56,289 | INFO | GBPJPY complete: candles=330, max GREEN=9, max RED=8
+2026-10-17 14:43:56,290 | INFO | ------------------------------------------------------------
+2026-10-17 14:43:56,290 | INFO | Processing GBPAUD
+2026-10-17 14:43:56,290 | INFO | GBPAUD asset check: matched symbol=GBPAUD, available=True
+2026-10-17 14:43:56,291 | INFO | GBPAUD: fetching historical candles for 2026-10-14
+2026-10-17 14:43:56,293 | INFO | GBPAUD subscription requested: period=60
+2026-10-17 14:43:56,605 | INFO | GBPAUD page 1: received=55, oldest=2026-10-14T23:27:00+01:00
+2026-10-17 14:43:56,766 | INFO | GBPAUD page 2: received=54, oldest=2026-10-14T22:54:00+01:00
+2026-10-17 14:43:56,927 | INFO | GBPAUD page 3: received=54, oldest=2026-10-14T22:21:00+01:00
+2026-10-17 14:43:57,086 | INFO | GBPAUD page 4: received=54, oldest=2026-10-14T21:48:00+01:00
+2026-10-17 14:43:57,245 | INFO | GBPAUD page 5: received=54, oldest=2026-10-14T21:15:00+01:00
+2026-10-17 14:43:57,406 | INFO | GBPAUD page 6: received=54, oldest=2026-10-14T20:42:00+01:00
+2026-10-17 14:43:57,569 | INFO | GBPAUD page 7: received=54, oldest=2026-10-14T20:09:00+01:00
+2026-10-17 14:43:57,733 | INFO | GBPAUD page 8: received=54, oldest=2026-10-14T19:36:00+01:00
+2026-10-17 14:43:57,899 | INFO | GBPAUD page 9: received=54, oldest=2026-10-14T19:03:00+01:00
+2026-10-17 14:43:58,060 | INFO | GBPAUD page 10: received=54, oldest=2026-10-14T18:30:00+01:00
+2026-10-17 14:43:58,061 | INFO | GBPAUD: collected 330 candles for 2026-10-14
+2026-10-17 14:43:58,505 | INFO | GBPAUD complete: candles=330, max GREEN=6, max RED=7
+2026-10-17 14:43:58,506 | INFO | ------------------------------------------------------------
+2026-10-17 14:43:58,506 | INFO | Processing GBPCAD
+2026-10-17 14:43:58,506 | INFO | GBPCAD asset check: matched symbol=GBPCAD, available=True
+2026-10-17 14:43:58,507 | INFO | GBPCAD: fetching historical candles for 2026-10-14
+2026-10-17 14:43:58,509 | INFO | GBPCAD subscription requested: period=60
+2026-10-17 14:43:58,832 | INFO | GBPCAD page 1: received=58, oldest=2026-10-14T23:27:00+01:00
+2026-10-17 14:43:58,994 | INFO | GBPCAD page 2: received=57, oldest=2026-10-14T22:54:00+01:00
+2026-10-17 14:43:59,164 | INFO | GBPCAD page 3: received=57, oldest=2026-10-14T22:21:00+01:00
+2026-10-17 14:43:59,379 | INFO | GBPCAD page 4: received=57, oldest=2026-10-14T21:48:00+01:00
+2026-10-17 14:43:59,538 | INFO | GBPCAD page 5: received=57, oldest=2026-10-14T21:15:00+01:00
+2026-10-17 14:43:59,698 | INFO | GBPCAD page 6: received=57, oldest=2026-10-14T20:42:00+01:00
+2026-10-17 14:43:59,866 | INFO | GBPCAD page 7: received=57, oldest=2026-10-14T20:09:00+01:00
+2026-10-17 14:44:00,130 | INFO | GBPCAD page 8: received=57, oldest=2026-10-14T19:36:00+01:00
+2026-10-17 14:44:00,362 | INFO | GBPCAD page 9: received=57, oldest=2026-10-14T19:03:00+01:00
+2026-10-17 14:44:00,525 | INFO | GBPCAD page 10: received=57, oldest=2026-10-14T18:30:00+01:00
+2026-10-17 14:44:00,525 | INFO | GBPCAD: collected 330 candles for 2026-10-14
+2026-10-17 14:44:00,803 | INFO | GBPCAD complete: candles=330, max GREEN=7, max RED=6
+2026-10-17 14:44:00,803 | INFO | ------------------------------------------------------------
+2026-10-17 14:44:00,806 | INFO | Processing CADJPY
+2026-10-17 14:44:00,807 | INFO | CADJPY asset check: matched symbol=CADJPY, available=True
+2026-10-17 14:44:00,811 | INFO | CADJPY: fetching historical candles for 2026-10-14
+2026-10-17 14:44:00,814 | INFO | CADJPY subscription requested: period=60
+2026-10-17 14:44:01,131 | INFO | CADJPY page 1: received=53, oldest=2026-10-14T23:27:00+01:00
+2026-10-17 14:44:01,332 | INFO | CADJPY page 2: received=52, oldest=2026-10-14T22:54:00+01:00
+2026-10-17 14:44:01,497 | INFO | CADJPY page 3: received=52, oldest=2026-10-14T22:21:00+01:00
+2026-10-17 14:44:01,669 | INFO | CADJPY page 4: received=52, oldest=2026-10-14T21:48:00+01:00
+2026-10-17 14:44:01,830 | INFO | CADJPY page 5: received=52, oldest=2026-10-14T21:15:00+01:00
+2026-10-17 14:44:01,993 | INFO | CADJPY page 6: received=52, oldest=2026-10-14T20:42:00+01:00
+2026-10-17 14:44:02,161 | INFO | CADJPY page 7: received=52, oldest=2026-10-14T20:09:00+01:00
+2026-10-17 14:44:02,355 | INFO | CADJPY page 8: received=52, oldest=2026-10-14T19:36:00+01:00
+2026-10-17 14:44:02,514 | INFO | CADJPY page 9: received=52, oldest=2026-10-14T19:03:00+01:00
+2026-10-17 14:44:02,687 | INFO | CADJPY page 10: received=52, oldest=2026-10-14T18:30:00+01:00
+2026-10-17 14:44:02,688 | INFO | CADJPY: collected 330 candles for 2026-10-14
+2026-10-17 14:44:02,969 | INFO | CADJPY complete: candles=330, max GREEN=7, max RED=8
+2026-10-17 14:44:03,647 | INFO | Binary report completed successfully.
+2026-10-17 14:44:03,794 | INFO | Pocket Option connection closed.
+2026-10-17 14:44:03,795 | INFO | Database connection closed.
+2026-10-17 14:47:33,130 | INFO | ========================================================================
+2026-10-17 14:47:33,134 | INFO | Starting Pocket Option binary historical report
+2026-10-17 14:47:33,135 | INFO | Report date: 2026-10-13
+2026-10-17 14:47:33,138 | INFO | Timezone: Africa/Lagos
+2026-10-17 14:47:33,142 | INFO | Database: C:\Users\OMASHOLA\Documents\sandboxes\firefly-ai\firefly_pocketoption_binary_reports.db
+2026-10-17 14:47:33,143 | INFO | ========================================================================
+2026-10-17 14:47:33,146 | INFO | Connecting to Pocket Option...
+2026-10-17 14:47:35,415 | INFO | Pocket Option connection established.
+2026-10-17 14:47:35,420 | INFO | ------------------------------------------------------------
+2026-10-17 14:47:35,437 | INFO | Processing USDJPY
+2026-10-17 14:47:35,460 | INFO | USDJPY asset check: matched symbol=USDJPY, available=True
+2026-10-17 14:47:35,495 | INFO | USDJPY: fetching historical candles for 2026-10-13
+2026-10-17 14:47:35,526 | INFO | USDJPY subscription requested: period=60
+2026-10-17 14:47:35,774 | INFO | USDJPY page 1: received=34, oldest=2026-10-13T23:27:00+01:00
+2026-10-17 14:47:35,932 | INFO | USDJPY page 2: received=33, oldest=2026-10-13T22:54:00+01:00
+2026-10-17 14:47:36,095 | INFO | USDJPY page 3: received=33, oldest=2026-10-13T22:21:00+01:00
+2026-10-17 14:47:36,260 | INFO | USDJPY page 4: received=33, oldest=2026-10-13T21:48:00+01:00
+2026-10-17 14:47:36,428 | INFO | USDJPY page 5: received=33, oldest=2026-10-13T21:15:00+01:00
+2026-10-17 14:47:36,638 | INFO | USDJPY page 6: received=33, oldest=2026-10-13T20:42:00+01:00
+2026-10-17 14:47:37,074 | INFO | USDJPY page 7: received=55, oldest=2026-10-13T20:09:00+01:00
+2026-10-17 14:47:37,267 | INFO | USDJPY page 8: received=55, oldest=2026-10-13T19:36:00+01:00
+2026-10-17 14:47:37,434 | INFO | USDJPY page 9: received=55, oldest=2026-10-13T19:03:00+01:00
+2026-10-17 14:47:37,611 | INFO | USDJPY page 10: received=55, oldest=2026-10-13T18:30:00+01:00
+2026-10-17 14:47:37,612 | INFO | USDJPY: collected 330 candles for 2026-10-13
+2026-10-17 14:47:37,971 | INFO | USDJPY complete: candles=330, max GREEN=5, max RED=6
+2026-10-17 14:47:37,981 | INFO | ------------------------------------------------------------
+2026-10-17 14:47:37,989 | INFO | Processing AUDUSD
+2026-10-17 14:47:38,012 | INFO | AUDUSD asset check: matched symbol=AUDUSD, available=True
+2026-10-17 14:47:38,016 | INFO | AUDUSD: fetching historical candles for 2026-10-13
+2026-10-17 14:47:38,022 | INFO | AUDUSD subscription requested: period=60
+2026-10-17 14:47:38,367 | INFO | AUDUSD page 1: received=51, oldest=2026-10-13T23:27:00+01:00
+2026-10-17 14:47:38,543 | INFO | AUDUSD page 2: received=50, oldest=2026-10-13T22:54:00+01:00
+2026-10-17 14:47:38,783 | INFO | AUDUSD page 3: received=50, oldest=2026-10-13T22:21:00+01:00
+2026-10-17 14:47:38,956 | INFO | AUDUSD page 4: received=50, oldest=2026-10-13T21:48:00+01:00
+2026-10-17 14:47:39,118 | INFO | AUDUSD page 5: received=50, oldest=2026-10-13T21:15:00+01:00
+2026-10-17 14:47:39,281 | INFO | AUDUSD page 6: received=50, oldest=2026-10-13T20:42:00+01:00
+2026-10-17 14:47:39,455 | INFO | AUDUSD page 7: received=50, oldest=2026-10-13T20:09:00+01:00
+2026-10-17 14:47:39,618 | INFO | AUDUSD page 8: received=50, oldest=2026-10-13T19:36:00+01:00
+2026-10-17 14:47:39,786 | INFO | AUDUSD page 9: received=50, oldest=2026-10-13T19:03:00+01:00
+2026-10-17 14:47:39,958 | INFO | AUDUSD page 10: received=50, oldest=2026-10-13T18:30:00+01:00
+2026-10-17 14:47:39,962 | INFO | AUDUSD: collected 330 candles for 2026-10-13
+2026-10-17 14:47:40,380 | INFO | AUDUSD complete: candles=330, max GREEN=8, max RED=5
+2026-10-17 14:47:40,380 | INFO | ------------------------------------------------------------
+2026-10-17 14:47:40,381 | INFO | Processing EURJPY
+2026-10-17 14:47:40,382 | INFO | EURJPY asset check: matched symbol=EURJPY, available=True
+2026-10-17 14:47:40,382 | INFO | EURJPY: fetching historical candles for 2026-10-13
+2026-10-17 14:47:40,384 | INFO | EURJPY subscription requested: period=60
+2026-10-17 14:47:40,727 | INFO | EURJPY page 1: received=58, oldest=2026-10-13T23:27:00+01:00
+2026-10-17 14:47:40,889 | INFO | EURJPY page 2: received=57, oldest=2026-10-13T22:54:00+01:00
+2026-10-17 14:47:41,072 | INFO | EURJPY page 3: received=57, oldest=2026-10-13T22:21:00+01:00
+2026-10-17 14:47:41,290 | INFO | EURJPY page 4: received=57, oldest=2026-10-13T21:48:00+01:00
+2026-10-17 14:47:41,452 | INFO | EURJPY page 5: received=57, oldest=2026-10-13T21:15:00+01:00
+2026-10-17 14:47:41,615 | INFO | EURJPY page 6: received=57, oldest=2026-10-13T20:42:00+01:00
+2026-10-17 14:47:41,800 | INFO | EURJPY page 7: received=57, oldest=2026-10-13T20:09:00+01:00
+2026-10-17 14:47:41,964 | INFO | EURJPY page 8: received=57, oldest=2026-10-13T19:36:00+01:00
+2026-10-17 14:47:42,130 | INFO | EURJPY page 9: received=57, oldest=2026-10-13T19:03:00+01:00
+2026-10-17 14:47:42,325 | INFO | EURJPY page 10: received=57, oldest=2026-10-13T18:30:00+01:00
+2026-10-17 14:47:42,325 | INFO | EURJPY: collected 330 candles for 2026-10-13
+2026-10-17 14:47:42,584 | INFO | EURJPY complete: candles=330, max GREEN=5, max RED=6
+2026-10-17 14:47:42,587 | INFO | ------------------------------------------------------------
+2026-10-17 14:47:42,590 | INFO | Processing AUDJPY
+2026-10-17 14:47:42,594 | INFO | AUDJPY asset check: matched symbol=AUDJPY, available=True
+2026-10-17 14:47:42,598 | INFO | AUDJPY: fetching historical candles for 2026-10-13
+2026-10-17 14:47:42,617 | INFO | AUDJPY subscription requested: period=60
+2026-10-17 14:47:42,918 | INFO | AUDJPY page 1: received=64, oldest=2026-10-13T23:27:00+01:00
+2026-10-17 14:47:43,085 | INFO | AUDJPY page 2: received=63, oldest=2026-10-13T22:54:00+01:00
+2026-10-17 14:47:43,275 | INFO | AUDJPY page 3: received=63, oldest=2026-10-13T22:21:00+01:00
+2026-10-17 14:47:43,439 | INFO | AUDJPY page 4: received=63, oldest=2026-10-13T21:48:00+01:00
+2026-10-17 14:47:43,636 | INFO | AUDJPY page 5: received=63, oldest=2026-10-13T21:15:00+01:00
+2026-10-17 14:47:44,014 | INFO | AUDJPY page 6: received=63, oldest=2026-10-13T20:42:00+01:00
+2026-10-17 14:47:44,180 | INFO | AUDJPY page 7: received=63, oldest=2026-10-13T20:09:00+01:00
+2026-10-17 14:47:44,351 | INFO | AUDJPY page 8: received=63, oldest=2026-10-13T19:36:00+01:00
+2026-10-17 14:47:44,534 | INFO | AUDJPY page 9: received=63, oldest=2026-10-13T19:03:00+01:00
+2026-10-17 14:47:44,695 | INFO | AUDJPY page 10: received=63, oldest=2026-10-13T18:30:00+01:00
+2026-10-17 14:47:44,695 | INFO | AUDJPY: collected 330 candles for 2026-10-13
+2026-10-17 14:47:44,967 | INFO | AUDJPY complete: candles=330, max GREEN=5, max RED=6
+2026-10-17 14:47:44,968 | INFO | ------------------------------------------------------------
+2026-10-17 14:47:44,968 | INFO | Processing GBPJPY
+2026-10-17 14:47:44,969 | INFO | GBPJPY asset check: matched symbol=GBPJPY, available=True
+2026-10-17 14:47:44,969 | INFO | GBPJPY: fetching historical candles for 2026-10-13
+2026-10-17 14:47:44,972 | INFO | GBPJPY subscription requested: period=60
+2026-10-17 14:47:45,296 | INFO | GBPJPY page 1: received=58, oldest=2026-10-13T23:27:00+01:00
+2026-10-17 14:47:45,469 | INFO | GBPJPY page 2: received=57, oldest=2026-10-13T22:54:00+01:00
+2026-10-17 14:47:45,643 | INFO | GBPJPY page 3: received=57, oldest=2026-10-13T22:21:00+01:00
+2026-10-17 14:47:45,824 | INFO | GBPJPY page 4: received=57, oldest=2026-10-13T21:48:00+01:00
+2026-10-17 14:47:45,999 | INFO | GBPJPY page 5: received=57, oldest=2026-10-13T21:15:00+01:00
+2026-10-17 14:47:46,169 | INFO | GBPJPY page 6: received=57, oldest=2026-10-13T20:42:00+01:00
+2026-10-17 14:47:46,334 | INFO | GBPJPY page 7: received=57, oldest=2026-10-13T20:09:00+01:00
+2026-10-17 14:47:46,498 | INFO | GBPJPY page 8: received=57, oldest=2026-10-13T19:36:00+01:00
+2026-10-17 14:47:46,659 | INFO | GBPJPY page 9: received=57, oldest=2026-10-13T19:03:00+01:00
+2026-10-17 14:47:46,829 | INFO | GBPJPY page 10: received=57, oldest=2026-10-13T18:30:00+01:00
+2026-10-17 14:47:46,830 | INFO | GBPJPY: collected 330 candles for 2026-10-13
+2026-10-17 14:47:47,135 | INFO | GBPJPY complete: candles=330, max GREEN=6, max RED=5
+2026-10-17 14:47:47,135 | INFO | ------------------------------------------------------------
+2026-10-17 14:47:47,135 | INFO | Processing GBPAUD
+2026-10-17 14:47:47,136 | INFO | GBPAUD asset check: matched symbol=GBPAUD, available=True
+2026-10-17 14:47:47,136 | INFO | GBPAUD: fetching historical candles for 2026-10-13
+2026-10-17 14:47:47,138 | INFO | GBPAUD subscription requested: period=60
+2026-10-17 14:47:47,474 | INFO | GBPAUD page 1: received=60, oldest=2026-10-13T23:27:00+01:00
+2026-10-17 14:47:47,636 | INFO | GBPAUD page 2: received=59, oldest=2026-10-13T22:54:00+01:00
+2026-10-17 14:47:47,805 | INFO | GBPAUD page 3: received=59, oldest=2026-10-13T22:21:00+01:00
+2026-10-17 14:47:47,999 | INFO | GBPAUD page 4: received=59, oldest=2026-10-13T21:48:00+01:00
+2026-10-17 14:47:48,183 | INFO | GBPAUD page 5: received=59, oldest=2026-10-13T21:15:00+01:00
+2026-10-17 14:47:48,349 | INFO | GBPAUD page 6: received=59, oldest=2026-10-13T20:42:00+01:00
+2026-10-17 14:47:48,518 | INFO | GBPAUD page 7: received=59, oldest=2026-10-13T20:09:00+01:00
+2026-10-17 14:47:48,698 | INFO | GBPAUD page 8: received=59, oldest=2026-10-13T19:36:00+01:00
+2026-10-17 14:47:48,864 | INFO | GBPAUD page 9: received=59, oldest=2026-10-13T19:03:00+01:00
+2026-10-17 14:47:49,033 | INFO | GBPAUD page 10: received=59, oldest=2026-10-13T18:30:00+01:00
+2026-10-17 14:47:49,034 | INFO | GBPAUD: collected 330 candles for 2026-10-13
+2026-10-17 14:47:49,294 | INFO | GBPAUD complete: candles=330, max GREEN=6, max RED=6
+2026-10-17 14:47:49,294 | INFO | ------------------------------------------------------------
+2026-10-17 14:47:49,295 | INFO | Processing GBPCAD
+2026-10-17 14:47:49,296 | INFO | GBPCAD asset check: matched symbol=GBPCAD, available=True
+2026-10-17 14:47:49,297 | INFO | GBPCAD: fetching historical candles for 2026-10-13
+2026-10-17 14:47:49,299 | INFO | GBPCAD subscription requested: period=60
+2026-10-17 14:47:49,626 | INFO | GBPCAD page 1: received=62, oldest=2026-10-13T23:27:00+01:00
+2026-10-17 14:47:49,800 | INFO | GBPCAD page 2: received=61, oldest=2026-10-13T22:54:00+01:00
+2026-10-17 14:47:49,966 | INFO | GBPCAD page 3: received=61, oldest=2026-10-13T22:21:00+01:00
+2026-10-17 14:47:50,126 | INFO | GBPCAD page 4: received=61, oldest=2026-10-13T21:48:00+01:00
+2026-10-17 14:47:50,297 | INFO | GBPCAD page 5: received=61, oldest=2026-10-13T21:15:00+01:00
+2026-10-17 14:47:50,461 | INFO | GBPCAD page 6: received=61, oldest=2026-10-13T20:42:00+01:00
+2026-10-17 14:47:50,621 | INFO | GBPCAD page 7: received=61, oldest=2026-10-13T20:09:00+01:00
+2026-10-17 14:47:50,791 | INFO | GBPCAD page 8: received=61, oldest=2026-10-13T19:36:00+01:00
+2026-10-17 14:47:50,956 | INFO | GBPCAD page 9: received=61, oldest=2026-10-13T19:03:00+01:00
+2026-10-17 14:47:51,133 | INFO | GBPCAD page 10: received=61, oldest=2026-10-13T18:30:00+01:00
+2026-10-17 14:47:51,140 | INFO | GBPCAD: collected 330 candles for 2026-10-13
+2026-10-17 14:47:51,474 | INFO | GBPCAD complete: candles=330, max GREEN=7, max RED=6
+2026-10-17 14:47:51,475 | INFO | ------------------------------------------------------------
+2026-10-17 14:47:51,475 | INFO | Processing CADJPY
+2026-10-17 14:47:51,476 | INFO | CADJPY asset check: matched symbol=CADJPY, available=True
+2026-10-17 14:47:51,477 | INFO | CADJPY: fetching historical candles for 2026-10-13
+2026-10-17 14:47:51,479 | INFO | CADJPY subscription requested: period=60
+2026-10-17 14:47:51,821 | INFO | CADJPY page 1: received=55, oldest=2026-10-13T23:27:00+01:00
+2026-10-17 14:47:51,983 | INFO | CADJPY page 2: received=54, oldest=2026-10-13T22:54:00+01:00
+2026-10-17 14:47:52,146 | INFO | CADJPY page 3: received=54, oldest=2026-10-13T22:21:00+01:00
+2026-10-17 14:47:52,315 | INFO | CADJPY page 4: received=54, oldest=2026-10-13T21:48:00+01:00
+2026-10-17 14:47:52,481 | INFO | CADJPY page 5: received=54, oldest=2026-10-13T21:15:00+01:00
+2026-10-17 14:47:52,645 | INFO | CADJPY page 6: received=54, oldest=2026-10-13T20:42:00+01:00
+2026-10-17 14:47:52,827 | INFO | CADJPY page 7: received=54, oldest=2026-10-13T20:09:00+01:00
+2026-10-17 14:47:52,988 | INFO | CADJPY page 8: received=54, oldest=2026-10-13T19:36:00+01:00
+2026-10-17 14:47:53,153 | INFO | CADJPY page 9: received=54, oldest=2026-10-13T19:03:00+01:00
+2026-10-17 14:47:53,319 | INFO | CADJPY page 10: received=54, oldest=2026-10-13T18:30:00+01:00
+2026-10-17 14:47:53,319 | INFO | CADJPY: collected 330 candles for 2026-10-13
+2026-10-17 14:47:53,757 | INFO | CADJPY complete: candles=330, max GREEN=6, max RED=6
+2026-10-17 14:47:54,230 | INFO | Binary report completed successfully.
+2026-10-17 14:47:54,371 | INFO | Pocket Option connection closed.
+2026-10-17 14:47:54,372 | INFO | Database connection closed.
+2026-10-17 14:49:18,817 | INFO | ========================================================================
+2026-10-17 14:49:18,820 | INFO | Starting Pocket Option binary historical report
+2026-10-17 14:49:18,821 | INFO | Report date: 2026-10-12
+2026-10-17 14:49:18,822 | INFO | Timezone: Africa/Lagos
+2026-10-17 14:49:18,823 | INFO | Database: C:\Users\OMASHOLA\Documents\sandboxes\firefly-ai\firefly_pocketoption_binary_reports.db
+2026-10-17 14:49:18,823 | INFO | ========================================================================
+2026-10-17 14:49:18,824 | INFO | Connecting to Pocket Option...
+2026-10-17 14:49:21,301 | INFO | Pocket Option connection established.
+2026-10-17 14:49:21,322 | INFO | ------------------------------------------------------------
+2026-10-17 14:49:21,333 | INFO | Processing USDJPY
+2026-10-17 14:49:21,343 | INFO | USDJPY asset check: matched symbol=USDJPY, available=True
+2026-10-17 14:49:21,349 | INFO | USDJPY: fetching historical candles for 2026-10-12
+2026-10-17 14:49:21,402 | INFO | USDJPY subscription requested: period=60
+2026-10-17 14:49:21,629 | INFO | USDJPY page 1: received=34, oldest=2026-10-12T23:27:00+01:00
+2026-10-17 14:49:21,799 | INFO | USDJPY page 2: received=33, oldest=2026-10-12T22:54:00+01:00
+2026-10-17 14:49:21,986 | INFO | USDJPY page 3: received=57, oldest=2026-10-12T22:21:00+01:00
+2026-10-17 14:49:22,161 | INFO | USDJPY page 4: received=57, oldest=2026-10-12T21:48:00+01:00
+2026-10-17 14:49:22,332 | INFO | USDJPY page 5: received=57, oldest=2026-10-12T21:15:00+01:00
+2026-10-17 14:49:22,504 | INFO | USDJPY page 6: received=57, oldest=2026-10-12T20:42:00+01:00
+2026-10-17 14:49:22,676 | INFO | USDJPY page 7: received=57, oldest=2026-10-12T20:09:00+01:00
+2026-10-17 14:49:22,846 | INFO | USDJPY page 8: received=57, oldest=2026-10-12T19:36:00+01:00
+2026-10-17 14:49:23,017 | INFO | USDJPY page 9: received=57, oldest=2026-10-12T19:03:00+01:00
+2026-10-17 14:49:23,186 | INFO | USDJPY page 10: received=57, oldest=2026-10-12T18:30:00+01:00
+2026-10-17 14:49:23,186 | INFO | USDJPY: collected 330 candles for 2026-10-12
+2026-10-17 14:49:23,503 | INFO | USDJPY complete: candles=330, max GREEN=7, max RED=6
+2026-10-17 14:49:23,505 | INFO | ------------------------------------------------------------
+2026-10-17 14:49:23,505 | INFO | Processing AUDUSD
+2026-10-17 14:49:23,506 | INFO | AUDUSD asset check: matched symbol=AUDUSD, available=True
+2026-10-17 14:49:23,506 | INFO | AUDUSD: fetching historical candles for 2026-10-12
+2026-10-17 14:49:23,509 | INFO | AUDUSD subscription requested: period=60
+2026-10-17 14:49:23,840 | INFO | AUDUSD page 1: received=53, oldest=2026-10-12T23:27:00+01:00
+2026-10-17 14:49:24,008 | INFO | AUDUSD page 2: received=52, oldest=2026-10-12T22:54:00+01:00
+2026-10-17 14:49:24,177 | INFO | AUDUSD page 3: received=52, oldest=2026-10-12T22:21:00+01:00
+2026-10-17 14:49:24,354 | INFO | AUDUSD page 4: received=52, oldest=2026-10-12T21:48:00+01:00
+2026-10-17 14:49:24,528 | INFO | AUDUSD page 5: received=52, oldest=2026-10-12T21:15:00+01:00
+2026-10-17 14:49:24,702 | INFO | AUDUSD page 6: received=52, oldest=2026-10-12T20:42:00+01:00
+2026-10-17 14:49:24,872 | INFO | AUDUSD page 7: received=52, oldest=2026-10-12T20:09:00+01:00
+2026-10-17 14:49:25,041 | INFO | AUDUSD page 8: received=52, oldest=2026-10-12T19:36:00+01:00
+2026-10-17 14:49:25,209 | INFO | AUDUSD page 9: received=52, oldest=2026-10-12T19:03:00+01:00
+2026-10-17 14:49:25,376 | INFO | AUDUSD page 10: received=52, oldest=2026-10-12T18:30:00+01:00
+2026-10-17 14:49:25,377 | INFO | AUDUSD: collected 330 candles for 2026-10-12
+2026-10-17 14:49:25,632 | INFO | AUDUSD complete: candles=330, max GREEN=8, max RED=7
+2026-10-17 14:49:25,634 | INFO | ------------------------------------------------------------
+2026-10-17 14:49:25,635 | INFO | Processing EURJPY
+2026-10-17 14:49:25,635 | INFO | EURJPY asset check: matched symbol=EURJPY, available=True
+2026-10-17 14:49:25,635 | INFO | EURJPY: fetching historical candles for 2026-10-12
+2026-10-17 14:49:25,638 | INFO | EURJPY subscription requested: period=60
+2026-10-17 14:49:25,983 | INFO | EURJPY page 1: received=60, oldest=2026-10-12T23:27:00+01:00
+2026-10-17 14:49:26,208 | INFO | EURJPY page 2: received=59, oldest=2026-10-12T22:54:00+01:00
+2026-10-17 14:49:26,387 | INFO | EURJPY page 3: received=59, oldest=2026-10-12T22:21:00+01:00
+2026-10-17 14:49:26,625 | INFO | EURJPY page 4: received=59, oldest=2026-10-12T21:48:00+01:00
+2026-10-17 14:49:26,793 | INFO | EURJPY page 5: received=59, oldest=2026-10-12T21:15:00+01:00
+2026-10-17 14:49:26,961 | INFO | EURJPY page 6: received=59, oldest=2026-10-12T20:42:00+01:00
+2026-10-17 14:49:27,145 | INFO | EURJPY page 7: received=59, oldest=2026-10-12T20:09:00+01:00
+2026-10-17 14:49:27,312 | INFO | EURJPY page 8: received=59, oldest=2026-10-12T19:36:00+01:00
+2026-10-17 14:49:27,480 | INFO | EURJPY page 9: received=59, oldest=2026-10-12T19:03:00+01:00
+2026-10-17 14:49:27,648 | INFO | EURJPY page 10: received=59, oldest=2026-10-12T18:30:00+01:00
+2026-10-17 14:49:27,648 | INFO | EURJPY: collected 330 candles for 2026-10-12
+2026-10-17 14:49:28,038 | INFO | EURJPY complete: candles=330, max GREEN=6, max RED=9
+2026-10-17 14:49:28,039 | INFO | ------------------------------------------------------------
+2026-10-17 14:49:28,039 | INFO | Processing AUDJPY
+2026-10-17 14:49:28,040 | INFO | AUDJPY asset check: matched symbol=AUDJPY, available=True
+2026-10-17 14:49:28,040 | INFO | AUDJPY: fetching historical candles for 2026-10-12
+2026-10-17 14:49:28,042 | INFO | AUDJPY subscription requested: period=60
+2026-10-17 14:49:28,383 | INFO | AUDJPY page 1: received=51, oldest=2026-10-12T23:27:00+01:00
+2026-10-17 14:49:28,666 | INFO | AUDJPY page 2: received=50, oldest=2026-10-12T22:54:00+01:00
+2026-10-17 14:49:28,839 | INFO | AUDJPY page 3: received=50, oldest=2026-10-12T22:21:00+01:00
+2026-10-17 14:49:29,010 | INFO | AUDJPY page 4: received=50, oldest=2026-10-12T21:48:00+01:00
+2026-10-17 14:49:29,186 | INFO | AUDJPY page 5: received=50, oldest=2026-10-12T21:15:00+01:00
+2026-10-17 14:49:29,359 | INFO | AUDJPY page 6: received=50, oldest=2026-10-12T20:42:00+01:00
+2026-10-17 14:49:29,536 | INFO | AUDJPY page 7: received=50, oldest=2026-10-12T20:09:00+01:00
+2026-10-17 14:49:29,703 | INFO | AUDJPY page 8: received=50, oldest=2026-10-12T19:36:00+01:00
+2026-10-17 14:49:29,874 | INFO | AUDJPY page 9: received=50, oldest=2026-10-12T19:03:00+01:00
+2026-10-17 14:49:30,041 | INFO | AUDJPY page 10: received=50, oldest=2026-10-12T18:30:00+01:00
+2026-10-17 14:49:30,041 | INFO | AUDJPY: collected 330 candles for 2026-10-12
+2026-10-17 14:49:30,303 | INFO | AUDJPY complete: candles=330, max GREEN=7, max RED=7
+2026-10-17 14:49:30,303 | INFO | ------------------------------------------------------------
+2026-10-17 14:49:30,304 | INFO | Processing GBPJPY
+2026-10-17 14:49:30,307 | INFO | GBPJPY asset check: matched symbol=GBPJPY, available=True
+2026-10-17 14:49:30,310 | INFO | GBPJPY: fetching historical candles for 2026-10-12
+2026-10-17 14:49:30,315 | INFO | GBPJPY subscription requested: period=60
+2026-10-17 14:49:30,655 | INFO | GBPJPY page 1: received=61, oldest=2026-10-12T23:27:00+01:00
+2026-10-17 14:49:30,828 | INFO | GBPJPY page 2: received=60, oldest=2026-10-12T22:54:00+01:00
+2026-10-17 14:49:31,005 | INFO | GBPJPY page 3: received=60, oldest=2026-10-12T22:21:00+01:00
+2026-10-17 14:49:31,173 | INFO | GBPJPY page 4: received=60, oldest=2026-10-12T21:48:00+01:00
+2026-10-17 14:49:31,346 | INFO | GBPJPY page 5: received=60, oldest=2026-10-12T21:15:00+01:00
+2026-10-17 14:49:31,511 | INFO | GBPJPY page 6: received=60, oldest=2026-10-12T20:42:00+01:00
+2026-10-17 14:49:31,689 | INFO | GBPJPY page 7: received=60, oldest=2026-10-12T20:09:00+01:00
+2026-10-17 14:49:31,874 | INFO | GBPJPY page 8: received=60, oldest=2026-10-12T19:36:00+01:00
+2026-10-17 14:49:32,043 | INFO | GBPJPY page 9: received=60, oldest=2026-10-12T19:03:00+01:00
+2026-10-17 14:49:32,218 | INFO | GBPJPY page 10: received=60, oldest=2026-10-12T18:30:00+01:00
+2026-10-17 14:49:32,218 | INFO | GBPJPY: collected 330 candles for 2026-10-12
+2026-10-17 14:49:32,584 | INFO | GBPJPY complete: candles=330, max GREEN=6, max RED=7
+2026-10-17 14:49:32,588 | INFO | ------------------------------------------------------------
+2026-10-17 14:49:32,591 | INFO | Processing GBPAUD
+2026-10-17 14:49:32,594 | INFO | GBPAUD asset check: matched symbol=GBPAUD, available=True
+2026-10-17 14:49:32,597 | INFO | GBPAUD: fetching historical candles for 2026-10-12
+2026-10-17 14:49:32,611 | INFO | GBPAUD subscription requested: period=60
+2026-10-17 14:49:32,951 | INFO | GBPAUD page 1: received=62, oldest=2026-10-12T23:27:00+01:00
+2026-10-17 14:49:33,468 | INFO | GBPAUD page 2: received=61, oldest=2026-10-12T22:54:00+01:00
+2026-10-17 14:49:33,668 | INFO | GBPAUD page 3: received=61, oldest=2026-10-12T22:21:00+01:00
+2026-10-17 14:49:33,838 | INFO | GBPAUD page 4: received=61, oldest=2026-10-12T21:48:00+01:00
+2026-10-17 14:49:34,023 | INFO | GBPAUD page 5: received=61, oldest=2026-10-12T21:15:00+01:00
+2026-10-17 14:49:34,196 | INFO | GBPAUD page 6: received=61, oldest=2026-10-12T20:42:00+01:00
+2026-10-17 14:49:34,370 | INFO | GBPAUD page 7: received=61, oldest=2026-10-12T20:09:00+01:00
+2026-10-17 14:49:34,545 | INFO | GBPAUD page 8: received=61, oldest=2026-10-12T19:36:00+01:00
+2026-10-17 14:49:34,718 | INFO | GBPAUD page 9: received=61, oldest=2026-10-12T19:03:00+01:00
+2026-10-17 14:49:34,891 | INFO | GBPAUD page 10: received=61, oldest=2026-10-12T18:30:00+01:00
+2026-10-17 14:49:34,891 | INFO | GBPAUD: collected 330 candles for 2026-10-12
+2026-10-17 14:49:35,367 | INFO | GBPAUD complete: candles=330, max GREEN=5, max RED=4
+2026-10-17 14:49:35,369 | INFO | ------------------------------------------------------------
+2026-10-17 14:49:35,372 | INFO | Processing GBPCAD
+2026-10-17 14:49:35,379 | INFO | GBPCAD asset check: matched symbol=GBPCAD, available=True
+2026-10-17 14:49:35,391 | INFO | GBPCAD: fetching historical candles for 2026-10-12
+2026-10-17 14:49:35,397 | INFO | GBPCAD subscription requested: period=60
+2026-10-17 14:49:35,741 | INFO | GBPCAD page 1: received=63, oldest=2026-10-12T23:27:00+01:00
+2026-10-17 14:49:35,909 | INFO | GBPCAD page 2: received=62, oldest=2026-10-12T22:54:00+01:00
+2026-10-17 14:49:36,135 | INFO | GBPCAD page 3: received=62, oldest=2026-10-12T22:21:00+01:00
+2026-10-17 14:49:36,304 | INFO | GBPCAD page 4: received=62, oldest=2026-10-12T21:48:00+01:00
+2026-10-17 14:49:36,470 | INFO | GBPCAD page 5: received=62, oldest=2026-10-12T21:15:00+01:00
+2026-10-17 14:49:36,640 | INFO | GBPCAD page 6: received=62, oldest=2026-10-12T20:42:00+01:00
+2026-10-17 14:49:36,810 | INFO | GBPCAD page 7: received=62, oldest=2026-10-12T20:09:00+01:00
+2026-10-17 14:49:36,981 | INFO | GBPCAD page 8: received=62, oldest=2026-10-12T19:36:00+01:00
+2026-10-17 14:49:37,157 | INFO | GBPCAD page 9: received=62, oldest=2026-10-12T19:03:00+01:00
+2026-10-17 14:49:37,325 | INFO | GBPCAD page 10: received=62, oldest=2026-10-12T18:30:00+01:00
+2026-10-17 14:49:37,325 | INFO | GBPCAD: collected 330 candles for 2026-10-12
+2026-10-17 14:49:37,594 | INFO | GBPCAD complete: candles=330, max GREEN=6, max RED=6
+2026-10-17 14:49:37,595 | INFO | ------------------------------------------------------------
+2026-10-17 14:49:37,595 | INFO | Processing CADJPY
+2026-10-17 14:49:37,595 | INFO | CADJPY asset check: matched symbol=CADJPY, available=True
+2026-10-17 14:49:37,596 | INFO | CADJPY: fetching historical candles for 2026-10-12
+2026-10-17 14:49:37,598 | INFO | CADJPY subscription requested: period=60
+2026-10-17 14:49:37,927 | INFO | CADJPY page 1: received=57, oldest=2026-10-12T23:27:00+01:00
+2026-10-17 14:49:38,145 | INFO | CADJPY page 2: received=56, oldest=2026-10-12T22:54:00+01:00
+2026-10-17 14:49:38,313 | INFO | CADJPY page 3: received=56, oldest=2026-10-12T22:21:00+01:00
+2026-10-17 14:49:38,485 | INFO | CADJPY page 4: received=56, oldest=2026-10-12T21:48:00+01:00
+2026-10-17 14:49:38,656 | INFO | CADJPY page 5: received=56, oldest=2026-10-12T21:15:00+01:00
+2026-10-17 14:49:38,819 | INFO | CADJPY page 6: received=56, oldest=2026-10-12T20:42:00+01:00
+2026-10-17 14:49:38,987 | INFO | CADJPY page 7: received=56, oldest=2026-10-12T20:09:00+01:00
+2026-10-17 14:49:39,164 | INFO | CADJPY page 8: received=56, oldest=2026-10-12T19:36:00+01:00
+2026-10-17 14:49:39,329 | INFO | CADJPY page 9: received=56, oldest=2026-10-12T19:03:00+01:00
+2026-10-17 14:49:39,500 | INFO | CADJPY page 10: received=56, oldest=2026-10-12T18:30:00+01:00
+2026-10-17 14:49:39,501 | INFO | CADJPY: collected 330 candles for 2026-10-12
+2026-10-17 14:49:39,787 | INFO | CADJPY complete: candles=330, max GREEN=5, max RED=7
+2026-10-17 14:49:39,917 | INFO | Binary report completed successfully.
+2026-10-17 14:49:40,111 | INFO | Pocket Option connection closed.
+2026-10-17 14:49:40,112 | INFO | Database connection closed.
